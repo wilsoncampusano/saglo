@@ -27,10 +27,20 @@ repositories {
 
 
 dependencies {
-	// compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	//compile('org.springframework.boot:spring-boot-starter-security')
+	//DATABASE DEPENDENCIES
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('mysql:mysql-connector-java')
+
+	compile('org.liquibase:liquibase-core')
+
+
+	//WEB DEPENDENCIES
+	compile group: 'org.webjars', name: 'bootstrap', version: '3.3.7'
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+
+	//DEVELOPMENT DEPENDENCIES
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
