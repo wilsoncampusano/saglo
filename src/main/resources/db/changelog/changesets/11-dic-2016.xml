@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="wilsoncampusano-001" author="wilsoncampusano">
+        <sql>
+            create table role(
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            role varchar(30) NOT NULL
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-002" author="wilsoncampusano">
+        <sql>
+            create table usuario_role(
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            usuario_id int  NOT NULL,
+            role_id int not null
+            );
+        </sql>
+    </changeSet>
+
+</databaseChangeLog>
