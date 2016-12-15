@@ -17,9 +17,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configAuthentication(AuthenticationManagerBuilder auth) throws Exception {
         auth.jdbcAuthentication().dataSource(dataSource)
                 .usersByUsernameQuery(
-                        "select username,password, activo from usuario where username=?")
+                        "select u.username, u.password, u.activo from usuario u where u.username=?")
                 .authoritiesByUsernameQuery(
-                        "select username, role from user_roles where username=?");
+                        "select u.username, r.role " +
+                                "from usuario_role ur " +
+                                "inner join usuario u on ur.usuario_id = u.id " +
+                                "inner join role r on ur.role_id = r.id " +
+                                "where u.username=?");
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -28,6 +32,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .anyRequest().permitAll()
                 .and()
                 .antMatchers("/propietario").access("hasRole('ROLE_PROPIETARIO')")
+                .anyRequest().permitAll()
+                .and()
+                .antMatchers("/tecnico").access("hasRole('ROLE_TECNICO')")
                 .anyRequest().permitAll()
                 .and()
                 .antMatchers("/inquilino").access("hasRole('ROLE_INQUILINO')")
