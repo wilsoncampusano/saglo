@@ -1,4 +1,4 @@
-package hello;
+package com.gmail.wilsoncampusanojorge;
 import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.config.annotation.web.servlet.configuration.EnableWebMvcSecurity;
+
 @Configuration
 @EnableWebMvcSecurity
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -25,18 +26,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                                 "inner join role r on ur.role_id = r.id " +
                                 "where u.username=?");
     }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/admin").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().permitAll()
-                .and()
                 .antMatchers("/propietario").access("hasRole('ROLE_PROPIETARIO')")
                 .anyRequest().permitAll()
-                .and()
                 .antMatchers("/tecnico").access("hasRole('ROLE_TECNICO')")
                 .anyRequest().permitAll()
-                .and()
                 .antMatchers("/inquilino").access("hasRole('ROLE_INQUILINO')")
                 .anyRequest().permitAll()
                 .and()
