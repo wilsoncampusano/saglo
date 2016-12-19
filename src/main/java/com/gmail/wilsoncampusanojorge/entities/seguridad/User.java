@@ -1,4 +1,4 @@
-package com.gmail.wilsoncampusanojorge.entities;
+package com.gmail.wilsoncampusanojorge.entities.seguridad;
 
 import javax.persistence.*;
 
