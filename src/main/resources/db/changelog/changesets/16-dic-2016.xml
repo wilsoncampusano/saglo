@@ -10,7 +10,23 @@
         <sql>
             INSERT INTO
             usuario(username,password,activo)
-            values()
+            values('ecapellan', 'prueba',1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-001" author="wilsoncampusano">
+        <sql>
+            INSERT INTO
+            usuario(username,password,activo)
+            values('wicampusano', 'prueba',1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-001" author="wilsoncampusano">
+        <sql>
+            INSERT INTO
+            usuario(username,password,activo)
+            values('rjimenez', 'prueba',1);
         </sql>
     </changeSet>
 
