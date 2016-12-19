@@ -14,7 +14,7 @@
         </sql>
     </changeSet>
 
-    <changeSet id="wilsoncampusano-001" author="wilsoncampusano">
+    <changeSet id="wilsoncampusano-002" author="wilsoncampusano">
         <sql>
             INSERT INTO
             usuario(username,password,activo)
@@ -22,7 +22,7 @@
         </sql>
     </changeSet>
 
-    <changeSet id="wilsoncampusano-001" author="wilsoncampusano">
+    <changeSet id="wilsoncampusano-003" author="wilsoncampusano">
         <sql>
             INSERT INTO
             usuario(username,password,activo)
