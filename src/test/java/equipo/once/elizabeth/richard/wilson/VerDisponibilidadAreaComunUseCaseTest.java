@@ -1,11 +1,10 @@
 package equipo.once.elizabeth.richard.wilson;
 
-import equipo.once.elizabeth.richard.wilson.service.AreaComunService;
+import equipo.once.elizabeth.richard.wilson.mocks.AreaComunServiceHappyPathMock;
 import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaUseCase;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class VerDisponibilidadAreaComunUseCaseTest {
@@ -31,6 +30,7 @@ public class VerDisponibilidadAreaComunUseCaseTest {
     DisponibilidadAreaResponse response = useCase.obtenerRespuesta();
 
     Assert.assertEquals(true, response.disponible);
+    Assert.assertNotNull(response.areaComun);
 
   }
 }

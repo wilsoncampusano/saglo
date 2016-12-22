@@ -1,4 +1,4 @@
-package equipo.once.elizabeth.richard.wilson;
+package equipo.once.elizabeth.richard.wilson.mocks;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
@@ -16,6 +16,6 @@ public class AreaComunServiceHappyPathMock implements AreaComunService {
 
   @Override
   public AreaComun buscarPorCodigo(String codigoArea) {
-    return null;
+    return new AreaComun();
   }
 }
