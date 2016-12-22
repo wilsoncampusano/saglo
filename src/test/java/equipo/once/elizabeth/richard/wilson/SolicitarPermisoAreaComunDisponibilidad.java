@@ -7,7 +7,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 
-public class SolicitarPermisoAreaComun {
+public class SolicitarPermisoAreaComunDisponibilidad {
 
   private static final String ACEPTADA = "ACEPTADA";
   private static final String RECHAZADA = "RECHAZADA";
