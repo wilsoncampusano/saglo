@@ -39,5 +39,46 @@
         </sql>
     </changeSet>
 
+    <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
+        <sql>
+            create table area_comun (
+                id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
+        <sql>
+            create table administracion_caso (
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-006" author="wilsoncampusano">
+        <sql>
+            create table solicitud_permiso (
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-007" author="wilsoncampusano">
+        <sql>
+            create table solicitud_averia (
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-008" author="wilsoncampusano">
+        <sql>
+            create table solicitud_area (
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+
 
 </databaseChangeLog>
