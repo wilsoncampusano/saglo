@@ -8,7 +8,7 @@
 
     <changeSet id="wilsoncampusano-001" author="wilsoncampusano">
         <sql>
-            ALTER TABLE usuario MODIFY COLUMN password VARCHAR(MAX);
+            ALTER TABLE usuario MODIFY COLUMN password VARCHAR(512);
         </sql>
     </changeSet>
 
