@@ -7,10 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-public class HomeController {
+public class LocalesController {
 
-  @RequestMapping(path = {"/", "/home"}, method = RequestMethod.GET)
-  public String index(){
-    return "redirect:login";
+  @RequestMapping(name = "/locales/registrar", method = RequestMethod.GET)
+  public  ModelAndView getRegistrarLocal(){
+    ModelAndView modelAndView = new ModelAndView("/admin/locales/registrar");
+    return modelAndView;
   }
 }
