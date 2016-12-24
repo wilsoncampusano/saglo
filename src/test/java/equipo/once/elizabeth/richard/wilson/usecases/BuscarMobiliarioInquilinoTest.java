@@ -6,6 +6,7 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquil
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoResponse;
 import org.hamcrest.core.Is;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
 public class BuscarMobiliarioInquilinoTest {
@@ -13,7 +14,7 @@ public class BuscarMobiliarioInquilinoTest {
   @Test
   public void buscaElMobiliarioAsignadoAlInquilino(){
     Inquilino inquilino = new Inquilino();
-    inquilino.codigo = "I-saglo-1";
+    inquilino.codigo = "I-richard-1";
     BuscarMobiliarioInquilinoRequest request = new BuscarMobiliarioInquilinoRequest();
 
     BuscarMobiliarioInquilinoUseCase useCase = new BuscarMobiliarioInquilinoUseCase();
