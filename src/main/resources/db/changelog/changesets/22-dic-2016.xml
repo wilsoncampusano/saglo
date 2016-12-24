@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="wilsoncampusano-001" author="wilsoncampusano">
+        <sql>
+            INSERT INTO
+            role(role)
+            values('ROLE_ADMIN');
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-002" author="wilsoncampusano">
+        <sql>
+            INSERT INTO
+            role(role)
+            values('ROLE_PROPIETARIO');
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="wilsoncampusano-003" author="wilsoncampusano">
+        <sql>
+            INSERT INTO
+            role(role)
+            values('ROLE_TECNICO');
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-004" author="wilsoncampusano">
+        <sql>
+            INSERT INTO
+            role(role)
+            values('ROLE_INQUILINO');
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
+        <sql>
+            create table area_comun (
+                id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
+        <sql>
+            create table administracion_caso (
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-006" author="wilsoncampusano">
+        <sql>
+            create table solicitud_permiso (
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-007" author="wilsoncampusano">
+        <sql>
+            create table solicitud_averia (
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-008" author="wilsoncampusano">
+        <sql>
+            create table solicitud_area (
+            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
+            );
+        </sql>
+    </changeSet>
+
+
+
+</databaseChangeLog>

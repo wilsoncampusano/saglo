@@ -8,5 +8,7 @@
 
     <include file="db/changelog/changesets/4-dic-2016.xml"/>
     <include file="db/changelog/changesets/11-dic-2016.xml"/>
+    <include file="db/changelog/changesets/15-dic-2016.xml"/>
+    <include file="db/changelog/changesets/16-dic-2016.xml"/>
 
 </databaseChangeLog>

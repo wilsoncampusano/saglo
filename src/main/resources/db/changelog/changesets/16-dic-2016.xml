@@ -8,14 +8,25 @@
 
     <changeSet id="wilsoncampusano-001" author="wilsoncampusano">
         <sql>
-            ALTER TABLE usuario MODIFY COLUMN password VARCHAR(512);
+            INSERT INTO
+            usuario(username,password,activo)
+            values('ecapellan', 'prueba',1);
         </sql>
     </changeSet>
 
-
     <changeSet id="wilsoncampusano-002" author="wilsoncampusano">
         <sql>
-            ALTER TABLE usuario ADD activo int(1) default 1;
+            INSERT INTO
+            usuario(username,password,activo)
+            values('wicampusano', 'prueba',1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-003" author="wilsoncampusano">
+        <sql>
+            INSERT INTO
+            usuario(username,password,activo)
+            values('rjimenez', 'prueba',1);
         </sql>
     </changeSet>
 

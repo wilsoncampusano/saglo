@@ -39,6 +39,7 @@ dependencies {
 	compile group: 'org.webjars', name: 'bootstrap', version: '3.3.7'
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
+	//compile('org.springframework.boot:spring-boot-starter-security')
 
 	//DEVELOPMENT DEPENDENCIES
 	runtime('org.springframework.boot:spring-boot-devtools')

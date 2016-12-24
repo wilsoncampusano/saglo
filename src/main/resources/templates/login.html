@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org">
+    <head>
+        <meta charset="UTF-8"/>
+        <title>Saglo</title>
+        <link type="text/css" rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css" />
+        <link href="/static/css/main.css"/>
+    </head>
+    <body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h2>
+                        SAGLO
+                    </h2>
+                    <p>
+                        Sistema de Administracion y Gestion de Locales.
+                    </p>
+                    <p>
+                        <a class="btn btn-secondary btn-large" href="#">Sobre SAGLO</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="login-panel panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Acceso al sistema</h3>
+                    </div>
+                    <div class="panel-body">
+                        <form role="form" id="form-login" method="POST" action="/j_spring_security_check">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Usuario" name="username" type="usuario" />
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Clave" name="password" type="password" value=""/>
+                                </div>
+                                <input type="hidden" name="${_csrf.parameterName}"
+                                       value="${_csrf.token}" />
+
+                                <button class="btn btn-lg btn-success btn-block" type="submit">Acceder</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
