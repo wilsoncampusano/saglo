@@ -1,4 +1,4 @@
-package equipo.once.elizabeth.richard.wilson.usecases;
+package equipo.once.elizabeth.richard.wilson.usecases.dtos;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 

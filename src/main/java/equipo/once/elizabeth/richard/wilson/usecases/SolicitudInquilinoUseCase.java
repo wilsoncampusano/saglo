@@ -2,7 +2,7 @@ package equipo.once.elizabeth.richard.wilson.usecases;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
-import equipo.once.elizabeth.richard.wilson.service.AreaComunService;
+import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 
 public class SolicitudInquilinoUseCase {
 

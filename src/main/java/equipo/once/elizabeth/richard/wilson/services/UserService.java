@@ -1,4 +1,4 @@
-package equipo.once.elizabeth.richard.wilson.service;
+package equipo.once.elizabeth.richard.wilson.services;
 
 import equipo.once.elizabeth.richard.wilson.entities.dao.UserDao;
 import org.springframework.beans.factory.annotation.Autowired;

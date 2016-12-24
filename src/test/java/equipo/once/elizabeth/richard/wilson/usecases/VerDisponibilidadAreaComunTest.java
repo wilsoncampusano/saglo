@@ -1,15 +1,13 @@
-package equipo.once.elizabeth.richard.wilson;
+package equipo.once.elizabeth.richard.wilson.usecases;
 
 import equipo.once.elizabeth.richard.wilson.mocks.AreaComunServiceHappyPathMock;
-import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaRequest;
-import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaResponse;
-import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaUseCase;
+import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaRequest;
+import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResponse;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
-public class VerDisponibilidadAreaComunUseCaseTest {
-
-
+public class VerDisponibilidadAreaComunTest {
 
   @Test
   public void verSiAreaComunEstaDisponibleParaLaFecha(){

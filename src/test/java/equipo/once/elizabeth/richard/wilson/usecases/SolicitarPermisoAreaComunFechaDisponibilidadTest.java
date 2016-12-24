@@ -1,15 +1,14 @@
-package equipo.once.elizabeth.richard.wilson;
+package equipo.once.elizabeth.richard.wilson.usecases;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
-import equipo.once.elizabeth.richard.wilson.usecases.SolicitudInquilinoUseCase;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
 import java.util.Date;
 
-public class SolicitarPermisoAreaComunFechaDisponibilidad {
+public class SolicitarPermisoAreaComunFechaDisponibilidadTest {
 
   @Test@Ignore
   public void inquilinoSolicitaAreaComunEnFechaDisponible(){

@@ -1,13 +1,14 @@
-package equipo.once.elizabeth.richard.wilson;
+package equipo.once.elizabeth.richard.wilson.usecases;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
 import equipo.once.elizabeth.richard.wilson.usecases.SolicitudInquilinoUseCase;
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 
-
-public class SolicitarPermisoAreaComunDisponibilidad {
+@Ignore
+public class SolicitarPermisoAreaComunDisponibilidadTest {
 
   private static final String ACEPTADA = "ACEPTADA";
   private static final String RECHAZADA = "RECHAZADA";
