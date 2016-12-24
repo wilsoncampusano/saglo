@@ -29,10 +29,10 @@ repositories {
 dependencies {
 	//DATABASE DEPENDENCIES
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	compile('org.springframework.boot:spring-boot-starter-jdbc')
-	compile('mysql:mysql-connector-java')
+	//compile('org.springframework.boot:spring-boot-starter-jdbc')
+	//compile('mysql:mysql-connector-java')
 
-	compile('org.liquibase:liquibase-core')
+	//compile('org.liquibase:liquibase-core')
 
 
 	//WEB DEPENDENCIES
