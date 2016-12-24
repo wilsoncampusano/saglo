@@ -25,7 +25,7 @@ public class VerDisponibilidadAreaComunTest {
 
     useCase.solicitar();
 
-    DisponibilidadAreaResponse response = useCase.obtenerRespuesta();
+    DisponibilidadAreaResponse response =(DisponibilidadAreaResponse) useCase.obtenerRespuesta();
 
     Assert.assertEquals(true, response.disponible);
     Assert.assertNotNull(response.areaComun);

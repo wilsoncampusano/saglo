@@ -22,7 +22,7 @@ public class BuscarAreaComunTest {
 
     useCase.solicitar();
 
-    BuscarAreaComunResponse response = useCase.obtenerRespuesta();
+    BuscarAreaComunResponse response = (BuscarAreaComunResponse)useCase.obtenerRespuesta();
 
     Assert.assertThat(response.areasComunes.size(), is(1));
   }

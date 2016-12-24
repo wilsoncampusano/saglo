@@ -4,8 +4,10 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResponse;
+import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunResponse;
+import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunUseCase;
 
-public class DisponibilidadAreaUseCase {
+public class DisponibilidadAreaUseCase implements AreaComunUseCase {
 
   public DisponibilidadAreaRequest request;
   public DisponibilidadAreaResponse response;
@@ -24,7 +26,7 @@ public class DisponibilidadAreaUseCase {
     response.areaComun = areaComun;
   }
 
-  public DisponibilidadAreaResponse obtenerRespuesta() {
+  public AreaComunResponse obtenerRespuesta() {
     return response;
   }
 }
