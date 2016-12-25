@@ -4,8 +4,10 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.MobiliarioInquilino
 import equipo.once.elizabeth.richard.wilson.services.MobiliarioService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoResponse;
+import equipo.once.elizabeth.richard.wilson.usecases.interfaces.InquilinoUseCase;
+import equipo.once.elizabeth.richard.wilson.usecases.interfaces.UseCase;
 
-public class BuscarMobiliarioInquilinoUseCase {
+public class BuscarMobiliarioInquilinoUseCase implements InquilinoUseCase {
 
   public BuscarMobiliarioInquilinoRequest request;
   public BuscarMobiliarioInquilinoResponse response;

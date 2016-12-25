@@ -7,7 +7,7 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResp
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunUseCase;
 
-public class DisponibilidadAreaUseCase implements AreaComunUseCase {
+public class DisponibilidadAreaComunUseCase implements AreaComunUseCase {
 
   public DisponibilidadAreaRequest request;
   public DisponibilidadAreaResponse response;

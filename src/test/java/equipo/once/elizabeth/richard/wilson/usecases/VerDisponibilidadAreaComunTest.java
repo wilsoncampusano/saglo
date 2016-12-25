@@ -4,7 +4,6 @@ import equipo.once.elizabeth.richard.wilson.mocks.AreaComunServiceHappyPathMock;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResponse;
 import org.junit.Assert;
-import org.junit.Ignore;
 import org.junit.Test;
 
 public class VerDisponibilidadAreaComunTest {
@@ -18,7 +17,7 @@ public class VerDisponibilidadAreaComunTest {
 
     disponibilidadAreaRequest.fechaSolicitud = "24-dic-2016";
 
-    DisponibilidadAreaUseCase useCase = new DisponibilidadAreaUseCase();
+    DisponibilidadAreaComunUseCase useCase = new DisponibilidadAreaComunUseCase();
     useCase.areaComunService = new AreaComunServiceHappyPathMock();
 
     useCase.request = disponibilidadAreaRequest;
