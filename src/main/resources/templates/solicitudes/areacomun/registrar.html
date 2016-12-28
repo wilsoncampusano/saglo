@@ -9,42 +9,46 @@
 <body>
 
 <div layout:fragment="content">
-
-    <div class="row">
-        <form class="col s12">
-            <div class="row">
-                <div class="col s12">
+        <div class="col s12 m12">
+            <form>
+                <div class="card blue-grey darken-1">
+                <div class="card-content white-text">
                     <div class="row">
-                        <div class="input-field col s12">
-                            <i class="material-icons prefix">textsms</i>
-                            <input type="text" id="autocomplete-input" class="autocomplete"/>
-                            <label for="autocomplete-input">Buscar Área Común</label>
+                        <div class="col s12">
+                            <div class="row">
+                                <div class="input-field col s12">
+                                    <i class="material-icons prefix">textsms</i>
+                                    <input type="text" id="autocomplete-input" class="autocomplete"/>
+                                    <label for="autocomplete-input">Buscar Área Común</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s6">
+                            <input value="" id="disabled" type="text" class="validate"/>
+                            <label for="disabled">Fecha Solicitud</label>
+                        </div>
+                        <div class="input-field col s6">
+                            <div class="chip">
+                                <i class="material-icons circle green">done_all</i>
+                                <i class="material-icons circle red">not_interested</i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <div class="row">
+                        <div class="col s6 offset-s10">
+                            <button class="btn waves-effect waves-light" type="submit" name="action">Solicitar
+                                <i class="material-icons right">send</i>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="input-field col s6">
-                    <input value="" id="disabled" type="text" class="validate"/>
-                    <label for="disabled">Fecha Solicitud</label>
-                </div>
-                <div class="input-field col s6">
-                    <div class="chip">
-                        <i class="material-icons circle green">done_all</i>
-                        <i class="material-icons circle red">not_interested</i>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col s6 offset-s10">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Solicitar
-                        <i class="material-icons right">send</i>
-                    </button>
-                </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 </div>
 
 </body>
