@@ -7,18 +7,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
     <link href="/webjars/materializecss/0.96.0/css/materialize.css"
           type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <title>Default Title</title>
 </head>
 <body>
 <div class="container">
-    <div class="row">
+    <div class="row teal lighten-2">
         <ul id="dropdown1" class="dropdown-content">
             <li><a href="#!">one</a></li>
             <li><a href="#!">two</a></li>
             <li class="divider"></li>
             <li><a href="#!">three</a></li>
         </ul>
-        <nav>
+        <nav class="teal lighten-2">
             <div class="nav-wrapper">
                 <a href="#!" class="brand-logo">SAGLO</a>
                 <ul class="right hide-on-med-and-down">
@@ -31,10 +32,38 @@
     </div>
 
     <div class="row">
-        <section layout:fragment="content">
-            <p>page content goes here</p>
-        </section>
+            <div class="col s12">
+                <div class="card ">
+                    <div class="card-content white-text">
+                        <div layout:fragment="content"></div>
+                    </div>
+                </div>
+            </div>
     </div>
+
+
+    <footer class="page-footer teal lighten-2" >
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">Footer </h5>
+                    <p class="grey-text text-lighten-4">saglo</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h5 class="white-text">Links</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Copyright Text
+                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+        </div>
+    </footer>
 </div>
 
 

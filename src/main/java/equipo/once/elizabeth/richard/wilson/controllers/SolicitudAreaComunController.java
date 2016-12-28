@@ -11,7 +11,7 @@ public class SolicitudAreaComunController {
 
     @RequestMapping(value = "/solicitudes/areacomun", method = RequestMethod.GET)
     public ModelAndView solicitudesAreaComunGet(){
-        ModelAndView modelAndView = new ModelAndView("/solicitudes/areas/registrar");
+        ModelAndView modelAndView = new ModelAndView("/solicitudes/areacomun/registrar");
 
         return modelAndView;
     }
