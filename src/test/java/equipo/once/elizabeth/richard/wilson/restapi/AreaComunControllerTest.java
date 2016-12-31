@@ -10,6 +10,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MockMvcBuilder;
+import org.springframework.test.web.servlet.MvcResult;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
@@ -35,9 +36,12 @@ public class AreaComunControllerTest {
 
   @Test
   public void buscaAreasTest() throws Exception{
-    this.mockMvc
+    MvcResult mvcResult = this.mockMvc
         .perform(get("/api/areacomun/buscar").param("palabra", "piscina"))
         .andDo(print())
-        .andExpect(status().isOk());
+        .andExpect(status().isOk())
+        .andReturn();
+
+    String response = mvcResult.getResponse().getContentAsString();
   }
 }
