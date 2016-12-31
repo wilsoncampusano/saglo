@@ -6,9 +6,11 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarAreaComunRequest
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarAreaComunResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunUseCase;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class BuscarAreaComunUseCase implements AreaComunUseCase {
   public AreaComunService areaComunService;
   public BuscarAreaComunRequest request;

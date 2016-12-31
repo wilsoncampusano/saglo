@@ -1,38 +1,37 @@
-package equipo.once.elizabeth.richard.wilson.mocks;
+package equipo.once.elizabeth.richard.wilson.services.impl;
 
+import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepository;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
-public class AreaComunServiceHappyPathMock implements AreaComunService {
-  AreaComun piscina = AreaComun.crear("A-piscina-1","Piscina");
-  AreaComun areaBBQ = AreaComun.crear("A-BBQ-1", "BBQ");
 
-  List<AreaComun> areasComunes = Arrays.asList(piscina, areaBBQ);
+@Component
+public class AreaComunServiceImpl implements AreaComunService{
+
+  @Autowired
+  private AreaComunRepository areaComunRepository;
+
   @Override
   public void buscarDisponibilidad(AreaComun areaComun, SolicitudInquilino solicitudInquilino) {
+
   }
 
   @Override
   public boolean disponibleALafecha(String codigoArea, String fechaSolicitud) {
-    return true;
+    return false;
   }
 
   @Override
   public AreaComun buscarPorCodigo(String codigoArea) {
-    return new AreaComun();
+    return null;
   }
 
   @Override
   public List<AreaComun> buscarPorPalabra(String palabraBusqueda) {
-    return
-        areasComunes
-            .stream()
-            .filter(a -> a.nombre.toLowerCase().matches(palabraBusqueda.toLowerCase()))
-            .collect(Collectors.toList());
+    return areaComunRepository.buscarPorPalabra(palabraBusqueda);
   }
 }

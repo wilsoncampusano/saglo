@@ -1,4 +1,9 @@
 package equipo.once.elizabeth.richard.wilson.entities.dao;
 
-public class AreaComunRepository {
+import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
+
+import java.util.List;
+
+public interface AreaComunRepository {
+  List<AreaComun> buscarPorPalabra(String palabra);
 }
