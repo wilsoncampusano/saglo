@@ -1,4 +1,4 @@
-package equipo.once.elizabeth.richard.wilson.controllers;
+package equipo.once.elizabeth.richard.wilson.controllers.view;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
