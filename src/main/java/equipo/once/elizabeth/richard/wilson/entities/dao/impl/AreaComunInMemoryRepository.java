@@ -22,7 +22,7 @@ public class AreaComunInMemoryRepository implements AreaComunRepository{
     return
         areasComunes
             .stream()
-            .filter(a -> a.nombre.toLowerCase().matches(palabra.toLowerCase()))
+            .filter(a -> a.nombre.toLowerCase().contains(palabra.toLowerCase()))
             .collect(Collectors.toList());
   }
 }
