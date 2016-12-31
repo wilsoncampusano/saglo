@@ -53,6 +53,5 @@ public class AreaComunControllerTest {
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
         .andExpect(jsonPath("$.areasComunes[0].nombre", is("Piscina")));
-    fail();
   }
 }
