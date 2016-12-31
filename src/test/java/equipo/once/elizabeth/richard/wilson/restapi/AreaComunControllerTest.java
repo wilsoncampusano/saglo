@@ -46,12 +46,11 @@ public class AreaComunControllerTest {
 
   @Test
   public void buscaAreasTest() throws Exception{
-    MvcResult mvcResult = this.mockMvc
+    this.mockMvc
         .perform(get("/api/areacomun/buscar").param("palabra", "pis"))
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$.areasComunes[0].nombre", is("Piscina")))
-        .andReturn();
+        .andExpect(jsonPath("$.areasComunes[0].nombre", is("Piscina")));
   }
 }
