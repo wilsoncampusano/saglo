@@ -15,11 +15,11 @@ public class AreaComunRestController {
   @Autowired
   private BuscarAreaComunUseCase buscarAreaComunUseCase;
 
-  @RequestMapping(value = "/buscar/areaComun")
+  @RequestMapping(value = "/buscar/areacomun")
   public
   @ResponseBody
   AreaComunResponse buscarAreasComunesDisponigles(
-      @RequestParam(value = "palabraBusqueda") String palabraBusqueda){
+      @RequestParam(value = "palabra") String palabraBusqueda){
 
     BuscarAreaComunRequest request = new BuscarAreaComunRequest();
     request.palabraBusqueda = palabraBusqueda;
