@@ -10,12 +10,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
+@RequestMapping(value = "/api/")
 public class AreaComunRestController {
 
   @Autowired
   private BuscarAreaComunUseCase buscarAreaComunUseCase;
 
-  @RequestMapping(value = "/buscar/areacomun")
+  @RequestMapping(value = "areacomun/buscar")
   public
   @ResponseBody
   AreaComunResponse buscarAreasComunesDisponigles(
