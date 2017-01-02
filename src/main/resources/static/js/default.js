@@ -1,0 +1,1 @@
+$.fn.sagloAutocomplete = $.fn.autocomplete;
