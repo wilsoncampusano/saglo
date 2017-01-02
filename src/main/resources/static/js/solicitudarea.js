@@ -1,11 +1,26 @@
 /**
  * Created by wilsoncampusano on 12/31/16.
  */
-$(document).ready(function(){
-    $('#autocomplete-areacomun').autocomplete({
-        source: function (request, response) {
-            var criterio = this.term;
 
+function getAreas(){
+    return $.ajax("/api/areacomun/buscar", {
+        global: false,
+        success: function (areaComunResponse) {
+            response($.map(areaComunResponse, function (elem, idx) {
+                return {
+                    label: elem.nombre,
+                    name: elem.nombre,
+                    code: elem.codigo
+                }
+            }));
+        }
+    });
+}
+
+
+$(document).ready(function(){
+   /* $('#autocomplete-areacomun').autocomplete({
+        source: function (request, response) {
             $.ajax("/api/areacomun/buscar", {
                 global: false,
                 success: function (areaComunResponse) {
@@ -27,6 +42,15 @@ $(document).ready(function(){
         select: function (event, ui) {
 
         }
+    }); */
+
+    $('#autocomplete-areacomun').autocomplete({
+        data: {
+            "Apple": null,
+            "Microsoft": null,
+            "Google": 'http://placehold.it/250x250'
+        }
     });
+
 
 });
