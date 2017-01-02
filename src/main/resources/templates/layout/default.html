@@ -5,55 +5,30 @@
     <meta charset="UTF-8"/>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
-    <link href="/webjars/materializecss/0.97.7/css/materialize.css"
+    <link href="/webjars/bootstrap/3.3.7/css/bootstrap.css"
           type="text/css" rel="stylesheet" media="screen,projection"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
     <link th:href="@{/css/main.css}"/>
+    <link th:href="@{/css/navbar-fixed-top.css}"/>
     <title>Default Title</title>
 </head>
+
 <body>
+
+<div layout:fragment="nav"></div>
+
 <div class="container">
-    <div class="row teal lighten-2">
-        <div layout:fragment="nav"></div>
-    </div>
-
-    <div class="row">
-            <div class="col s12">
-                <div layout:fragment="content"></div>
-            </div>
-    </div>
-
-    <footer class="page-footer teal lighten-2 z-depth-2" >
-
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer </h5>
-                    <p class="grey-text text-lighten-4">saglo</p>
-                </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-copyright">
-            <div class="container">
-                © 2017 Copyright Text
-                <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-            </div>
-        </div>
-
-    </footer>
+    <div layout:fragment="content"></div>
 </div>
 
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">Place sticky footer content here.</p>
+    </div>
+</footer>
 
 <script src="/webjars/jquery/2.1.4/jquery.js"></script>
 <script th:src="@{/js/default.js}" type="application/javascript"></script>
-<script src="/webjars/materializecss/0.97.7/js/materialize.js"></script>
+<script src="/webjars/bootstrap/3.3.7/js/bootstrap.js"></script>
 <div layout:fragment="script"></div>
 </body>
 </html>

@@ -38,6 +38,7 @@ dependencies {
 	//WEB DEPENDENCIES
 	compile group: 'org.webjars', name: 'bootstrap', version: '3.3.7'
 	compile 'org.webjars:materializecss:0.97.7'
+	compile 'org.webjars:bootstrap:3.3.7'
 	compile 'org.webjars:jquery:2.1.4'
 	compile 'org.webjars:jquery-ui:1.12.1'
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
