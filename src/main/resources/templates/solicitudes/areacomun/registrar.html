@@ -9,50 +9,166 @@
 <body>
 
 <div layout:fragment="content">
-        <div class="col s12 m12">
-            <form>
-                <div class="card blue-grey darken-1">
-                <div class="card-content white-text">
-                    <div class="row">
-                        <div class="col s12">
-                            <div class="row">
-                                <div class="input-field col s12">
-                                    <i class="material-icons prefix">textsms</i>
-                                    <input type="text" id="autocomplete-areacomun" class="autocomplete"/>
-                                    <label for="autocomplete-areacomun">Buscar Área Común</label>
-                                </div>
-                            </div>
+    <div class="row">
+        <form>
+    <div class="col-md-12 panel-principal">
+        <div class="panel panel-default">
+            <div class="panel-heading" >
+                <h3 class="panel-title">Solicitud Area Comun <label class="control-label"></label>
+                </h3>
+            </div>
+
+            <div class="panel-body">
+                <div class="form-horizontal" role="form">
+                    <div class="form-group">
+                        <div class="col-md-3 col-xs-12">
+                            <label class="control-label" ></label>
+                            <select  id="tipoExgratia"
+                                    class="form-control select">
+                                <option value=""></option>
+
+                            </select>
+                        </div>
+                        <div class="col-md-3 col-xs-12">
+                            <label class="control-label" ></label>
+
+                            <select id="autorizadoPor"
+                                    class="form-control select">
+                                <option value="" ></option>
+
+                            </select>
+                        </div>
+
+                        <div class="col-md-6 col-xs-12">
+                            <label class="control-label"></label>
+
+                            <select  id="motivo-rechazo"
+                                    class="form-control select" data-live-search="true">
+                                <option value="" ></option>
+
+                            </select>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field col s6">
-                            <input value="" id="disabled" type="text" class="validate"/>
-                            <label for="disabled">Fecha Solicitud</label>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-xs-12 porCobertura">
+                            <label class="control-label" ></label>
+                            <input type="text"  class="form-control"/>
+                            <input type="hidden"
+                                   th:id="codigo-cobertura"/>
+                            <input type="hidden"
+                                   th:id="id-detalle-exgratia"/>
+                            <input type="hidden"
+                                   th:id="id-cobertura"/>
+                            <input type="hidden"
+                                   th:id="tipo-cobertura"/>
+                            <input type="hidden"
+
+                                   th:id="nombre-cobertura"/>
                         </div>
-                        <div class="input-field col s6">
-                            <div class="chip">
-                                <i class="material-icons circle green">done_all</i>
-                                <i class="material-icons circle red">not_interested</i>
-                            </div>
+
+                        <div id="montoDiv" class="col-md-3 col-xs-12">
+                            <label class="control-label"></label>
+
+                            <input  class="form-control solo-numeros"
+                                   type="text" placeholder="$"/>
+
+                        </div>
+
+                        <div id="porcentajeDiv" class="col-md-3 col-xs-12">
+                            <label class="control-label" ></label>
+                            <input  id="mensajePorciento"
+                                   type="hidden" placeholder="$"/>
+                            <input  class="form-control solo-numeros"
+                                   type="number" max="100" min="1" placeholder="%" step="1"/>
                         </div>
                     </div>
-                </div>
-                <div class="card-action">
-                    <div class="row">
-                        <div class="col s6 offset-s10">
-                            <button class="btn waves-effect waves-light" type="submit" name="action">Solicitar
-                                <i class="material-icons right">send</i>
+
+                    <div class="form-group porCobertura">
+                        <div class="col-md-12 col-xs-12 text-right col-btn">
+                            <button type="button" name="limpiarCampos" id="limpiarCampos"
+                                    class="btn btn-default btn-outline btn-condensed"
+                                    title="Limpiar Campos" data-placement="bottom">
+                                <span class="fa fa-trash-o"></span>
+                                <span ></span>
+                            </button>
+                            <button type="submit" name="agregarCobertura" th:id="agregarCobertura"
+                                    class="btn btn-success btn-condensed"
+
+                                    title="Agregar" data-placement="bottom">
+                                <span class="fa fa-plus"></span>
+                                <span ></span>
                             </button>
                         </div>
+
+
+                        <div class="col-xs-12 table-responsive table-fixed col-tabla porCobertura">
+                            <table class="tabla-datos-autorizacion table table-bordered">
+                                <thead>
+                                <tr>
+                                    <th ></th>
+                                    <th ></th>
+                                    <th ></th>
+                                    <th ></th>
+                                </tr>
+                                </thead>
+                                <tbody >
+                                <tr >
+                                    <td ></td>
+                                    <td class="text-right"
+                                        ></td>
+                                    <td class="text-right"
+                                        ></td>
+                                    <td class="text-center">
+                                        <div class="btn-group">
+                                            <button type="submit" name="eliminarExgratiaDetalle"
+
+                                                    class="btn btn-default fa fa-trash-o"
+                                                     title="Eliminar"></button>
+                                            <button type="button" name="editarExgratiaDetalle"
+                                                    class="editar-exgratia-detalle btn btn-default"
+                                                    title="Editar" >
+                                                <span class="fa fa-pencil"></span>
+
+                                            </button>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-12 col-xs-12">
+                            <label class="control-label" ></label>
+                            <input  class="form-control" rows="5"
+                                   type="text" />
+                        </div>
+
+                    </div>
+                    <div class="col-md-12 col-xs-12 text-right">
+                        <button type="submit" name="cancelar"
+                                class="btn btn-link btn-outline">
+                            <span ></span>
+                        </button>
+                        <button id="guardarReclamo" type="submit" name="registrar"
+                                 class="btn btn-success">
+                            <span class="fa fa-save"></span>
+                            <span ></span>
+                        </button>
                     </div>
                 </div>
             </div>
-            </form>
         </div>
+    </div>
+</form>
+    </div>
 </div>
 
 <div layout:fragment="script">
-    <script th:src="@{/js/solicitudarea.js}" type="application/javascript"> </script>
+    <script th:src="@{/js/solicitudarea.js}" type="application/javascript"></script>
 </div>
 
 </body>
