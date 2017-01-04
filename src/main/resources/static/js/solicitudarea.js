@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function(){
-    $('#autocomplete-areacomun').sagloAutocomplete({
+    $('#areacomunautocomplete').autocomplete({
         source: function (request, response) {
             $.ajax("/api/areacomun/buscar?palabra="+request.term, {
                 global: false,
