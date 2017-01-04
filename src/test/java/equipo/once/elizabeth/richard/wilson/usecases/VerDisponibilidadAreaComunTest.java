@@ -15,7 +15,7 @@ public class VerDisponibilidadAreaComunTest {
 
     disponibilidadAreaRequest.codigoArea = "A-piscina";
 
-    disponibilidadAreaRequest.fechaSolicitud = "24-dic-2016";
+    disponibilidadAreaRequest.fechaSolicitud = "24-12-2016";
 
     DisponibilidadAreaComunUseCase useCase = new DisponibilidadAreaComunUseCase();
     useCase.areaComunService = new AreaComunServiceHappyPathMock();
