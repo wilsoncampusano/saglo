@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
 public class SolicitudAreaComunController {
 
 
-    public static final String SOLICITUDES_AREACOMUN_REGISTRAR = "/solicitudes/areacomun/registrar";
+    public static final String SOLICITUDES_AREACOMUN_REGISTRAR = "/inquilino/solicitudes/areacomun/registrar";
 
     @RequestMapping(value = "/solicitudes/areacomun", method = RequestMethod.GET)
     public ModelAndView solicitudesAreaComunGet(){
