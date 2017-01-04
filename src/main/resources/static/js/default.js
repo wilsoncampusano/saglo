@@ -1,4 +1,4 @@
 $('.datepicker').datepicker({
     format: 'mm-dd-yyyy',
-    startDate: '-3d'
+    startDate: '-1d'
 });

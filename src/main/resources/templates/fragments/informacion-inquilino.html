@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Informacion Inquilino</title>
+</head>
+<body>
+<div th:fragment="informacionInquilino(inquilino, mobiliario)">
+    <div class="row">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title" th:text="|${inquilino.nombre}|"><label class="control-label"></label>
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+
+                    </div>
+                    <div class="panel-footer">
+
+                    </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+</body>
+</html>

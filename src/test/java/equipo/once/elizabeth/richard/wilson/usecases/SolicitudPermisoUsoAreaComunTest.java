@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.mockito.internal.matchers.NotNull;
 
 import static org.hamcrest.core.Is.*;
+import static org.junit.Assert.*;
 import static org.mockito.internal.matchers.NotNull.*;
 
 public class SolicitudPermisoUsoAreaComunTest {
@@ -29,8 +30,8 @@ public class SolicitudPermisoUsoAreaComunTest {
         useCase.request = request;
 
 
-        Assert.assertThat(useCase.request.form.areaComun, is(NOT_NULL));
-        Assert.assertThat(useCase.request.form.fechaSolicitud, is("01-01-2016"));
-        Assert.assertThat(useCase.request.form.comentario, is(NOT_NULL));
+        assertThat(useCase.request.form.areaComun, is(NOT_NULL));
+        assertThat(useCase.request.form.fechaSolicitud, is("01-01-2016"));
+        assertThat(useCase.request.form.comentario, is(NOT_NULL));
     }
 }

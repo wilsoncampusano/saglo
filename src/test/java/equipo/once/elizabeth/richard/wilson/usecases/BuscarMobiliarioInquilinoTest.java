@@ -9,6 +9,9 @@ import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
 
+import static org.hamcrest.core.Is.*;
+import static org.junit.Assert.*;
+
 public class BuscarMobiliarioInquilinoTest {
 
   @Test
@@ -27,6 +30,6 @@ public class BuscarMobiliarioInquilinoTest {
 
     BuscarMobiliarioInquilinoResponse response = useCase.obtenerRespuesta();
 
-    Assert.assertThat(response.mobiliario.inquilino , Is.is(inquilino));
+    assertThat(response.mobiliario.inquilino , is(inquilino));
   }
 }
