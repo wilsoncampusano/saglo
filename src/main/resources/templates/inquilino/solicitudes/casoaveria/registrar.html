@@ -4,7 +4,7 @@
       layout:decorator="layout/default-inquilino">
 <head>
     <meta charset="UTF-8"/>
-    <title>Saglo - Solicitud Area Comun</title>
+    <title>Saglo - Solicitud Caso Averia</title>
 </head>
 <body>
 
@@ -14,7 +14,7 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Solicitud Area Comun <label class="control-label"></label>
+                        <h3 class="panel-title">Solicitud Caso Averia<label class="control-label"></label>
                         </h3>
                     </div>
 
@@ -22,27 +22,41 @@
                         <div class="form-horizontal" role="form">
 
                             <div class="form-group">
+                                <div class="col-md-3 col-xs-12">
+                                    <label class="control-label">Ubicacion Averia</label>
+                                    <select class="form-control" type="text" id="">
+                                        <option>Seleccione</option>
+                                        <option>Opcion</option>
+                                        <option>Opcion</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3 col-xs-12">
+                                    <label class="control-label">Tipo de Averia</label>
+
+                                    <select type="text" class="form-control ">
+                                        <option>Seleccione</option>
+                                        <option>Opcion</option>
+                                        <option>Opcion</option>
+                                    </select>
+                                </div>
+
                                 <div class="col-md-6 col-xs-12">
-                                    <label class="control-label">Area Comun</label>
-                                    <input class="form-control autocomplete" type="text" id="areacomunautocomplete"/>
-                                </div>
-                                <div class="col-md-3 col-xs-12">
-                                    <label class="control-label">Fecha Solicitud</label>
+                                    <label class="control-label">Incidente</label>
 
-                                    <input type="text" class="form-control datepicker"/>
+                                    <select type="text" class="form-control">
+                                        <option>Seleccione</option>
+                                        <option>Opcion</option>
+                                        <option>Opcion</option>
+                                    </select>
                                 </div>
 
-                                <div class="col-md-3 col-xs-12">
-                                    <label class="control-label">Disponibilidad</label>
-                                    <span class="label label-success">Disponible</span>
-
-                                </div>
                             </div>
 
                             <div class="form-group">
                                 <div class="col-md-12 col-xs-12">
                                     <label class="control-label">Comentario</label>
-                                    <input class="form-control" rows="5"
+                                    <textarea class="form-control" rows="5"
                                            type="text"/>
                                 </div>
 
