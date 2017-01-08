@@ -1,8 +1,11 @@
-/**
- * Created by wilsoncampusano on 12/31/16.
- */
 
 $(document).ready(function(){
+    $('menu_inquilino_areacomun').addClass("active");
+    configurarAutoCompleteAreaComun();
+});
+
+
+function configurarAutoCompleteAreaComun(){
     $('#areacomunautocomplete').autocomplete({
         source: function (request, response) {
             $.ajax("/api/areacomun/buscar?palabra="+request.term, {
@@ -26,4 +29,4 @@ $(document).ready(function(){
         select: function (event, ui) {
         }
     });
-});
+}
