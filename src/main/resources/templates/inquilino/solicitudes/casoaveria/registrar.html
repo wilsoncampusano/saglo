@@ -26,8 +26,7 @@
                                     <label class="control-label">Ubicacion Averia</label>
                                     <select class="form-control" type="text" id="">
                                         <option>Seleccione</option>
-                                        <option>Opcion</option>
-                                        <option>Opcion</option>
+                                        <option th:each="ubicacion : ${catalogoUbiciacion}" th:text="${ubicacion}">Opcion</option>
                                     </select>
                                 </div>
 
@@ -36,8 +35,7 @@
 
                                     <select type="text" class="form-control ">
                                         <option>Seleccione</option>
-                                        <option>Opcion</option>
-                                        <option>Opcion</option>
+                                        <option th:each="tipoaveria : ${catalogoTipoAveria}" th:text="${tipoaveria}">Opcion</option>
                                     </select>
                                 </div>
 
@@ -46,8 +44,7 @@
 
                                     <select type="text" class="form-control">
                                         <option>Seleccione</option>
-                                        <option>Opcion</option>
-                                        <option>Opcion</option>
+                                        <option th:each="incidente : ${catalogoIncidente}" th:text="${incidente}">Opcion</option>
                                     </select>
                                 </div>
 
