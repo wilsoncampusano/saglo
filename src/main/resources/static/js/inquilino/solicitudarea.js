@@ -2,6 +2,7 @@
 $(document).ready(function(){
     $('#menu_inquilino_areacomun').addClass("active");
     configurarAutoCompleteAreaComun();
+    configurarFechaSolicitud();
 });
 
 
@@ -27,6 +28,15 @@ function configurarAutoCompleteAreaComun(){
             }
         },
         select: function (event, ui) {
+            $("#form_areaComun_codigo").val(ui.item.code);
         }
+    });
+}
+
+
+function configurarFechaSolicitud(){
+    $("#fechaSolicitud").change(function(){
+
+
     });
 }

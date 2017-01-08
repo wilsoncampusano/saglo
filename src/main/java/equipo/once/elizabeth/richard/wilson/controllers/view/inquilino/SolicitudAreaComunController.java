@@ -38,4 +38,14 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
         return modelAndView;
     }
+
+
+
+    @RequestMapping(value = "areacomun",params = {"verificarDisponibilidad"}, method = RequestMethod.POST)
+    public ModelAndView solicitudesAreaComunPostVerificar(SolicitudAreaComunForm form , RedirectAttributes redirectAttrs,
+                                                         HttpSession httpSession){
+        ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+
+        return modelAndView;
+    }
 }
