@@ -12,15 +12,86 @@
     <div class="row">
         <form th:action="@{/solicitudes/areacomun#areacomun}" method="post" id="registrarForm">
             <div class="col-md-12">
+
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Pagos<label class="control-label"></label>
+                        <h3 class="panel-title">Pagos Pendientes<label class="control-label"></label>
                         </h3>
                     </div>
 
                     <div class="panel-body">
                         <div class="form-horizontal" role="form">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Año</th>
+                                        <th>Mes</th>
+                                        <th>Concepto</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2017</td>
+                                        <td>Enero</td>
+                                        <td>Cuota de Mantenimiento</td>
 
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2017</td>
+                                        <td>Febrero</td>
+                                        <td>Cuota de Mantenimiento</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="form-horizontal text-right text-right">
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Pagos Realizados<label class="control-label"></label>
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="form-horizontal" role="form">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Año</th>
+                                        <th>Mes</th>
+                                        <th>Concepto</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>2016</td>
+                                        <td>Diciembre</td>
+                                        <td>Cuota Mantenimineto</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>2016</td>
+                                        <td>Noviembre</td>
+                                        <td>Cuota Mantenimiento</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
 
 
                         </div>
@@ -31,6 +102,7 @@
                         </div>
                     </div>
                 </div>
+
             </div>
         </form>
     </div>
