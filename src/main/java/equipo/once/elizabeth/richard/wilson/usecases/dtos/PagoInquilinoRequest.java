@@ -1,6 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.usecases.dtos;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Entidad;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 
 /**
  * Created by wicampusano on 1/11/2017.
@@ -8,5 +9,5 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.Entidad;
 public class PagoInquilinoRequest {
     public String fechaInicio;
     public String estado;
-    public Entidad entidad;
+    public Inquilino entidad;
 }

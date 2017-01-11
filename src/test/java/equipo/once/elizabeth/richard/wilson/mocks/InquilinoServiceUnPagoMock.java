@@ -18,7 +18,9 @@ public class InquilinoServiceUnPagoMock implements PagoInquilinoService {
     static{
         PagoInquilino pago = new PagoInquilino();
         Inquilino inquilino = new InquilinoMock();
+
         pago.inquilino = inquilino;
+        pago.estado = "completado";
         pagos.add(pago);
     }
     @Override

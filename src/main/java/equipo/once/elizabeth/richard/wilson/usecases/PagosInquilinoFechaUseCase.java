@@ -8,6 +8,7 @@ import equipo.once.elizabeth.richard.wilson.usecases.interfaces.InquilinoUseCase
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.UseCaseResponse;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Created by wicampusano on 1/11/2017.
@@ -26,7 +27,10 @@ public class PagosInquilinoFechaUseCase implements InquilinoUseCase{
 
         response = new PagoInquilinoResponse();
 
-        response.pagos = pagoInquilinos;
+        response.pagos = pagoInquilinos.stream().filter(pagoInquilino ->
+        {
+            return pagoInquilino.estado.equals(request.estado);
+        }).collect(Collectors.toList());
     }
 
     @Override

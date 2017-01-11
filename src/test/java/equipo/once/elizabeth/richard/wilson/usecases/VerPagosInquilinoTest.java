@@ -3,6 +3,7 @@ package equipo.once.elizabeth.richard.wilson.usecases;
 
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Entidad;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoServiceUnPagoMock;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoRequest;
@@ -21,7 +22,7 @@ public class VerPagosInquilinoTest {
     @Test
     public void pagosPertenecenAlInquilinoSolicitado(){
         PagoInquilinoRequest request = new PagoInquilinoRequest();
-        Entidad richard = new InquilinoMock();
+        Inquilino richard = new InquilinoMock();
         richard.setCodigo("I-richard-01");
 
         request.fechaInicio = "01-06-2019";
@@ -44,9 +45,12 @@ public class VerPagosInquilinoTest {
     public void pagosRealizados(){
 
        PagoInquilinoRequest request = new PagoInquilinoRequest();
+        Inquilino richard = new InquilinoMock();
+        richard.setCodigo("I-richard-01");
 
         request.fechaInicio = "01-06-2019";
         request.estado = "completado";
+        request.entidad = richard;
 
         PagosInquilinoFechaUseCase useCase = new PagosInquilinoFechaUseCase();
         useCase.pagoInquilinoService = new InquilinoServiceUnPagoMock();
@@ -61,11 +65,15 @@ public class VerPagosInquilinoTest {
     }
 
     @Test
-    @Ignore
     public void pagosPendientes(){
         PagoInquilinoRequest request = new PagoInquilinoRequest();
+
+        Inquilino richard = new InquilinoMock();
+        richard.setCodigo("I-richard-01");
+
         request.fechaInicio = "01-06-2016";
         request.estado = "pendiente";
+        request.entidad = richard;
 
         PagosInquilinoFechaUseCase useCase = new PagosInquilinoFechaUseCase();
         useCase.pagoInquilinoService = new InquilinoServiceUnPagoMock();
