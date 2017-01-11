@@ -1,14 +1,11 @@
 package equipo.once.elizabeth.richard.wilson.usecases;
 
 
+import equipo.once.elizabeth.richard.wilson.mocks.InquilinoServiceUnPagoMock;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoResponse;
-import equipo.once.elizabeth.richard.wilson.usecases.interfaces.InquilinoResponse;
-import equipo.once.elizabeth.richard.wilson.usecases.interfaces.UseCaseResponse;
 import org.junit.Assert;
 import org.junit.Test;
-
-import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 
@@ -26,6 +23,7 @@ public class VerPagosInquilinoTest {
         request.estado = "completado";
 
         PagosInquilinoFechaUseCase useCase = new PagosInquilinoFechaUseCase();
+        useCase.pagoInquilinoService = new InquilinoServiceUnPagoMock();
 
         useCase.request = request;
 
