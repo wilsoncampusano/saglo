@@ -1,6 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.mocks;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Entidad;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.PagoInquilino;
 import equipo.once.elizabeth.richard.wilson.services.PagoInquilinoService;
 
@@ -16,6 +17,8 @@ public class InquilinoServiceUnPagoMock implements PagoInquilinoService {
 
     static{
         PagoInquilino pago = new PagoInquilino();
+        Inquilino inquilino = new InquilinoMock();
+        pago.inquilino = inquilino;
         pagos.add(pago);
     }
     @Override

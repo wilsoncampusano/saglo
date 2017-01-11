@@ -12,4 +12,20 @@ public abstract class Entidad {
     public void setCodigo(String codigo){
         this.codigo = codigo;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Entidad entidad = (Entidad) o;
+
+        return codigo.equals(entidad.codigo);
+
+    }
+
+    @Override
+    public int hashCode() {
+        return codigo.hashCode();
+    }
 }

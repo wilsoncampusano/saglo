@@ -3,7 +3,7 @@ package equipo.once.elizabeth.richard.wilson.usecases;
 
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Entidad;
-import equipo.once.elizabeth.richard.wilson.mocks.InquilinoRichard;
+import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoServiceUnPagoMock;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoResponse;
@@ -21,7 +21,7 @@ public class VerPagosInquilinoTest {
     @Test
     public void pagosPertenecenAlInquilinoSolicitado(){
         PagoInquilinoRequest request = new PagoInquilinoRequest();
-        Entidad richard = new InquilinoRichard();
+        Entidad richard = new InquilinoMock();
         richard.setCodigo("I-richard-01");
 
         request.fechaInicio = "01-06-2019";
