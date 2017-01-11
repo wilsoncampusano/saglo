@@ -17,7 +17,7 @@ public class BuscarMobiliarioInquilinoTest {
   @Test
   public void buscaElMobiliarioAsignadoAlInquilino(){
     Inquilino inquilino = new Inquilino();
-    inquilino.codigo = "I-richard-1";
+    inquilino.setCodigo("I-richard-1");
     BuscarMobiliarioInquilinoRequest request = new BuscarMobiliarioInquilinoRequest();
 
     BuscarMobiliarioInquilinoUseCase useCase = new BuscarMobiliarioInquilinoUseCase();

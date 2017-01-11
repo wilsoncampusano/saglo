@@ -31,11 +31,11 @@ public class MobiliarioServiceHappyPathMock implements MobiliarioService{
     MobiliarioInquilino mobiliarioInquilino3 = new MobiliarioInquilino();
 
     Inquilino elizabeth = new Inquilino();
-    elizabeth.codigo = "I-elizabeth-1";
+    elizabeth.setCodigo("I-elizabeth-1");
     Inquilino richard = new Inquilino();
-    richard.codigo = "I-richard-1";
+    richard.setCodigo("I-richard-1");
     Inquilino wilson = new Inquilino();
-    wilson.codigo = "I-wilson-1";
+    wilson.setCodigo("I-wilson-1");
 
     mobiliarioInquilino1.inquilino = elizabeth;
     mobiliarioInquilino2.inquilino = richard;

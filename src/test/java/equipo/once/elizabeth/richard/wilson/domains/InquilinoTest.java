@@ -13,8 +13,8 @@ public class InquilinoTest {
     Inquilino richard = new Inquilino();
     Inquilino inquilino = new Inquilino();
 
-    richard.codigo = "I-richard-1";
-    inquilino.codigo = "I-richard-1";
+    richard.setCodigo("I-richard-1");
+    inquilino.setCodigo("I-richard-1");
 
     Assert.assertThat(inquilino, Is.is(richard));
   }
