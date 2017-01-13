@@ -1,8 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.entities.dominio;
 
-/**
- * Created by wicampusano on 1/11/2017.
- */
+
 public abstract class Entidad {
     private String codigo;
 

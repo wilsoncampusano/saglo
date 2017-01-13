@@ -10,9 +10,7 @@ import equipo.once.elizabeth.richard.wilson.usecases.interfaces.UseCaseResponse;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by wicampusano on 1/11/2017.
- */
+
 public class PagosInquilinoFechaUseCase implements InquilinoUseCase{
     public PagoInquilinoRequest request;
     private PagoInquilinoResponse response;

@@ -4,9 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * Created by wicampusano on 1/5/2017.
- */
+
 @Controller
 @RequestMapping(value = "/inquilino/estados")
 public class InquilinoEstadoPagoController extends InquilinoController {

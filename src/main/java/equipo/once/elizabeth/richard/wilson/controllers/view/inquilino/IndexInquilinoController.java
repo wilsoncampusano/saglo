@@ -5,9 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-/**
- * Created by wicampusano on 1/5/2017.
- */
+
 @Controller
 @RequestMapping("/inquilino")
 public class IndexInquilinoController extends InquilinoController {
