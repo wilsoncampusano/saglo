@@ -1,6 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.usecases;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
+import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.MobiliarioServiceHappyPathMock;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoResponse;
@@ -17,7 +18,8 @@ public class BuscarMobiliarioInquilinoTest {
   @Test
   public void buscaElMobiliarioAsignadoAlInquilino(){
     Inquilino inquilino = new Inquilino();
-    inquilino.setCodigo("I-richard-1");
+    inquilino.setCodigo(InquilinoMock.CODIGO_INQUILINO_MOCK);
+
     BuscarMobiliarioInquilinoRequest request = new BuscarMobiliarioInquilinoRequest();
 
     BuscarMobiliarioInquilinoUseCase useCase = new BuscarMobiliarioInquilinoUseCase();

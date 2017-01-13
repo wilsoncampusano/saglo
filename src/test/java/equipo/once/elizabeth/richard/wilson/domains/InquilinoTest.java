@@ -1,6 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.domains;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
+import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import org.hamcrest.core.Is;
 import org.junit.Assert;
 import org.junit.Test;
@@ -13,8 +14,8 @@ public class InquilinoTest {
     Inquilino richard = new Inquilino();
     Inquilino inquilino = new Inquilino();
 
-    richard.setCodigo("I-richard-1");
-    inquilino.setCodigo("I-richard-1");
+    richard.setCodigo("I-richard-01");
+    inquilino.setCodigo("I-richard-01");
 
     Assert.assertThat(inquilino, Is.is(richard));
   }
