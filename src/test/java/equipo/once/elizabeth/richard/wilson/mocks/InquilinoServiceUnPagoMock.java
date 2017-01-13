@@ -9,9 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-/**
- * Created by wicampusano on 1/11/2017.
- */
+
 public class InquilinoServiceUnPagoMock implements PagoInquilinoService {
     public static List<PagoInquilino> pagos = new ArrayList<>();
 

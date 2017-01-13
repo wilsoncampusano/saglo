@@ -6,7 +6,7 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResp
 import org.junit.Assert;
 import org.junit.Test;
 
-public class VerDisponibilidadAreaComunTest {
+public class DisponibilidadAreaComunTest {
 
   @Test
   public void verSiAreaComunEstaDisponibleParaLaFecha(){

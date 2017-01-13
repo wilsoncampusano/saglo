@@ -3,14 +3,11 @@ package equipo.once.elizabeth.richard.wilson.usecases;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudInquilinoAreaComunRequest;
-import org.hamcrest.core.Is;
-import org.junit.Assert;
 import org.junit.Test;
-import org.mockito.internal.matchers.NotNull;
 
-import static org.hamcrest.core.Is.*;
-import static org.junit.Assert.*;
-import static org.mockito.internal.matchers.NotNull.*;
+import static org.hamcrest.core.Is.is;
+import static org.junit.Assert.assertThat;
+import static org.mockito.internal.matchers.NotNull.NOT_NULL;
 
 public class SolicitudPermisoUsoAreaComunTest {
 

@@ -2,35 +2,40 @@ package equipo.once.elizabeth.richard.wilson.usecases;
 
 
 
-import equipo.once.elizabeth.richard.wilson.entities.dominio.Entidad;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoServiceUnPagoMock;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoResponse;
 import org.junit.Assert;
-import org.junit.Ignore;
+import org.junit.Before;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.is;
 
-/**
- * Created by wicampusano on 1/11/2017.
- */
-public class VerPagosInquilinoTest {
 
-    @Test
-    public void pagosPertenecenAlInquilinoSolicitado(){
-        PagoInquilinoRequest request = new PagoInquilinoRequest();
-        Inquilino richard = new InquilinoMock();
-        richard.setCodigo("I-richard-01");
+public class PagosInquilinoTest {
+
+    private Inquilino inquilino;
+    private PagoInquilinoRequest request;
+    private PagosInquilinoFechaUseCase useCase;
+
+
+    @Before
+    public void setUp(){
+        request = new PagoInquilinoRequest();
+        inquilino = new InquilinoMock();
 
         request.fechaInicio = "01-06-2019";
         request.estado = "completado";
-        request.entidad = richard;
+        request.entidad = inquilino;
 
-        PagosInquilinoFechaUseCase useCase = new PagosInquilinoFechaUseCase();
+        useCase = new PagosInquilinoFechaUseCase();
         useCase.pagoInquilinoService = new InquilinoServiceUnPagoMock();
+    }
+
+    @Test
+    public void pagosPertenecenAlInquilinoSolicitado(){
 
         useCase.request = request;
 
@@ -44,17 +49,6 @@ public class VerPagosInquilinoTest {
     @Test
     public void pagosRealizados(){
 
-       PagoInquilinoRequest request = new PagoInquilinoRequest();
-        Inquilino richard = new InquilinoMock();
-        richard.setCodigo("I-richard-01");
-
-        request.fechaInicio = "01-06-2019";
-        request.estado = "completado";
-        request.entidad = richard;
-
-        PagosInquilinoFechaUseCase useCase = new PagosInquilinoFechaUseCase();
-        useCase.pagoInquilinoService = new InquilinoServiceUnPagoMock();
-
         useCase.request = request;
 
         useCase.solicitar();
@@ -66,17 +60,7 @@ public class VerPagosInquilinoTest {
 
     @Test
     public void pagosPendientes(){
-        PagoInquilinoRequest request = new PagoInquilinoRequest();
-
-        Inquilino richard = new InquilinoMock();
-        richard.setCodigo("I-richard-01");
-
-        request.fechaInicio = "01-06-2016";
         request.estado = "pendiente";
-        request.entidad = richard;
-
-        PagosInquilinoFechaUseCase useCase = new PagosInquilinoFechaUseCase();
-        useCase.pagoInquilinoService = new InquilinoServiceUnPagoMock();
 
         useCase.request = request;
 
