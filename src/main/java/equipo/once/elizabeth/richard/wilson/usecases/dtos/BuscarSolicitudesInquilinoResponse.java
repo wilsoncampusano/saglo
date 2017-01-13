@@ -5,9 +5,7 @@ import equipo.once.elizabeth.richard.wilson.usecases.interfaces.InquilinoRespons
 
 import java.util.List;
 
-/**
- * Created by wicampusano on 1/13/2017.
- */
+
 public class BuscarSolicitudesInquilinoResponse implements InquilinoResponse{
     public List<SolicitudInquilino> solicitudes;
 }
