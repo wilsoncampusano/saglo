@@ -3,6 +3,7 @@ package equipo.once.elizabeth.richard.wilson.mocks;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudInquilinoService;
+import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,5 +25,16 @@ public class SolicitudInquilinoServiceUnaSolicitudMock implements SolicitudInqui
                 .stream()
                 .filter(s -> s.inquilino.equals(inquilino))
                 .collect(Collectors.toList());
+    }
+
+    @Override
+    public SolicitudInquilino guardar(SolicitudAreaComunForm form) {
+        SolicitudInquilino solicitudInquilino = new SolicitudInquilino();
+        solicitudInquilino.inquilino = form.inquilino;
+        solicitudInquilino.areaComun = form.areaComun;
+        solicitudInquilino.fechaSolicitud = form.fechaSolicitud;
+        solicitudesInquilino.add(solicitudInquilino);
+
+        return solicitudInquilino;
     }
 }
