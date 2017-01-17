@@ -5,4 +5,5 @@ import java.util.Date;
 public class SolicitudInquilino {
   public String estatus;
   public Date fechaSolicitud;
+  public Inquilino inquilino;
 }
