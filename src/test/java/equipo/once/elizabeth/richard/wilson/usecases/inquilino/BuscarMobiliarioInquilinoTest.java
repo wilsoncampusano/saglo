@@ -1,8 +1,9 @@
-package equipo.once.elizabeth.richard.wilson.usecases;
+package equipo.once.elizabeth.richard.wilson.usecases.inquilino;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.MobiliarioServiceHappyPathMock;
+import equipo.once.elizabeth.richard.wilson.usecases.BuscarMobiliarioInquilinoUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoResponse;
 import org.hamcrest.core.Is;

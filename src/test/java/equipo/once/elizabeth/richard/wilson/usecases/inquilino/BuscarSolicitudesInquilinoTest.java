@@ -1,9 +1,10 @@
-package equipo.once.elizabeth.richard.wilson.usecases;
+package equipo.once.elizabeth.richard.wilson.usecases.inquilino;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.SolicitudInquilinoServiceUnaSolicitudMock;
+import equipo.once.elizabeth.richard.wilson.usecases.BuscarSolicitudesInquilinoUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarSolicitudesInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarSolicitudesInquilinoResponse;
 import org.junit.Assert;

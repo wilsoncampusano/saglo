@@ -1,10 +1,11 @@
-package equipo.once.elizabeth.richard.wilson.usecases;
+package equipo.once.elizabeth.richard.wilson.usecases.inquilino;
 
 
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoServiceUnPagoMock;
+import equipo.once.elizabeth.richard.wilson.usecases.PagosInquilinoFechaUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoResponse;
 import org.junit.Assert;

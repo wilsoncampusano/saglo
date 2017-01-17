@@ -1,6 +1,7 @@
-package equipo.once.elizabeth.richard.wilson.usecases;
+package equipo.once.elizabeth.richard.wilson.usecases.areacomun;
 
 import equipo.once.elizabeth.richard.wilson.mocks.AreaComunServiceHappyPathMock;
+import equipo.once.elizabeth.richard.wilson.usecases.BuscarAreaComunUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarAreaComunRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarAreaComunResponse;
 import org.junit.Assert;

@@ -1,6 +1,7 @@
-package equipo.once.elizabeth.richard.wilson.usecases;
+package equipo.once.elizabeth.richard.wilson.usecases.inquilino;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
+import equipo.once.elizabeth.richard.wilson.usecases.SolicitudInquilinoAreaComunUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudInquilinoAreaComunRequest;
 import org.junit.Test;
