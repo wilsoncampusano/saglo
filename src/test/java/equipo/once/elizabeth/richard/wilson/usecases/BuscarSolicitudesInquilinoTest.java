@@ -13,6 +13,7 @@ import org.junit.Test;
 import java.util.List;
 
 import static org.hamcrest.core.Is.is;
+import static org.hamcrest.core.IsNot.not;
 
 public class BuscarSolicitudesInquilinoTest {
 
@@ -35,11 +36,15 @@ public class BuscarSolicitudesInquilinoTest {
     public void lasSolicitudesPertenecenAlInquilinoActual() {
         useCase.request = request;
 
+        Inquilino otroInquilino = new InquilinoMock();
+        otroInquilino.setCodigo("I-otro-01");
+
         useCase.solicitar();
 
         BuscarSolicitudesInquilinoResponse response = (BuscarSolicitudesInquilinoResponse) useCase.obtenerRespuesta();
         List<SolicitudInquilino> solicitudesInquilino = response.solicitudes;
         Assert.assertThat(solicitudesInquilino.size(), is(1));
         Assert.assertThat(solicitudesInquilino.stream().findAny().get().inquilino, is(richard));
+        Assert.assertThat(solicitudesInquilino.stream().findAny().get().inquilino, is(not(otroInquilino)));
     }
 }
