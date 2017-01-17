@@ -1,6 +1,5 @@
 package equipo.once.elizabeth.richard.wilson.usecases.dtos;
 
-import equipo.once.elizabeth.richard.wilson.entities.dominio.Entidad;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.InquilinoResponse;
 

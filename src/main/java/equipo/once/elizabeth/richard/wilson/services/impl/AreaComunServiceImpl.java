@@ -1,6 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
-import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepository;
+import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
@@ -13,7 +13,7 @@ import java.util.List;
 public class AreaComunServiceImpl implements AreaComunService{
 
   @Autowired
-  private AreaComunRepository areaComunRepository;
+  private AreaComunRepositoryCustom areaComunRepository;
 
   @Override
   public void buscarDisponibilidad(AreaComun areaComun, SolicitudInquilino solicitudInquilino) {
@@ -32,6 +32,6 @@ public class AreaComunServiceImpl implements AreaComunService{
 
   @Override
   public List<AreaComun> buscarPorPalabra(String palabraBusqueda) {
-    return areaComunRepository.buscarPorPalabra(palabraBusqueda);
+    return areaComunRepository.findByNombre(palabraBusqueda);
   }
 }
