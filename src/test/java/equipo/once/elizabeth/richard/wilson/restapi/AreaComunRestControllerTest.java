@@ -1,6 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.restapi;
 
 import equipo.once.elizabeth.richard.wilson.SagloApplication;
+import equipo.once.elizabeth.richard.wilson.controllers.restapi.AreaComunRestController;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,16 +22,19 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = SagloApplication.class)
 @WebAppConfiguration
-public class AreaComunControllerTest {
+public class AreaComunRestControllerTest {
 
   @Autowired
   private WebApplicationContext wac ;
+
+  @Autowired
+  AreaComunRestController areaComunRestController;
   private MockMvc mockMvc;
 
 
   @Before
   public void setUp() {
-    mockMvc = MockMvcBuilders.webAppContextSetup(this.wac).build();
+    mockMvc = MockMvcBuilders.standaloneSetup(areaComunRestController).build();
   }
 
 
