@@ -6,9 +6,9 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarAreaComunRequest
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarAreaComunResponse;
 import org.junit.Assert;
 import org.junit.Test;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.hamcrest.core.Is.is;
-
 public class BuscarAreaComunTest {
 
   @Test

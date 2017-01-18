@@ -29,4 +29,7 @@ public class AreaComunRestController {
     return buscarAreaComunUseCase.obtenerRespuesta();
   }
 
+  public void setBuscarAreaComunUseCase(BuscarAreaComunUseCase buscarAreaComunUseCase) {
+    this.buscarAreaComunUseCase = buscarAreaComunUseCase;
+  }
 }

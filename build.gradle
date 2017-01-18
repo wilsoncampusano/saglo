@@ -28,8 +28,8 @@ repositories {
 
 dependencies {
 	//DATABASE DEPENDENCIES
-	//compile('org.springframework.boot:spring-boot-starter-data-jpa')
-	//compile('org.springframework.boot:spring-boot-starter-jdbc')
+	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('org.springframework.boot:spring-boot-starter-jdbc')
 	//compile('mysql:mysql-connector-java')
 
 	//compile('org.liquibase:liquibase-core')
@@ -49,4 +49,5 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile 'com.jayway.jsonpath:json-path'
+	testCompile('org.hsqldb:hsqldb')
 }
