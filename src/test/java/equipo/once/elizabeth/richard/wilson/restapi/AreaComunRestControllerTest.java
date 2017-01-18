@@ -64,11 +64,10 @@ public class AreaComunRestControllerTest {
   @Test
   public void buscaAreasTest() throws Exception{
     this.mockMvc
-        .perform(get("/api/areacomun/buscar").param("palabra", "Pis"))
+        .perform(get("/api/areacomun/buscar").param("palabra", "pis"))
         .andDo(print())
         .andExpect(status().isOk())
         .andExpect(content().contentTypeCompatibleWith(MediaType.APPLICATION_JSON))
-        .andExpect(jsonPath("$.areasComunes[0].nombre", is("piscina")));
-    //TODO: VER COMO PONER EL NOMBRE CAPITALIZADO PARA MOSTRARLO
+        .andExpect(jsonPath("$.areasComunes[0].nombre", is("Piscina")));
   }
 }

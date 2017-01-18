@@ -32,7 +32,7 @@ public class AreaComunServiceImpl implements AreaComunService{
 
   @Override
   public List<AreaComun> buscarPorPalabra(String palabraBusqueda) {
-    return areaComunRepository.findByNombreContaining(palabraBusqueda);
+    return areaComunRepository.findByNombreIgnoreCaseContaining(palabraBusqueda);
   }
 
   public void setAreaComunRepository(AreaComunRepositoryCustom areaComunRepository) {

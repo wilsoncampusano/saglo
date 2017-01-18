@@ -9,5 +9,5 @@ import java.util.List;
 
 
 public interface AreaComunRepositoryCustom extends CrudRepository<AreaComun, Long> {
-  List<AreaComun> findByNombreContaining(String palabra);
+  List<AreaComun> findByNombreIgnoreCaseContaining(String palabra);
 }

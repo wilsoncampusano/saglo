@@ -18,8 +18,8 @@ public class AreaComunRepositoryImpl implements AreaComunRepositoryCustom{
 
 
   @Override
-  public List<AreaComun> findByNombreContaining(String palabra) {
-    return this.findByNombreContaining(palabra);
+  public List<AreaComun> findByNombreIgnoreCaseContaining(String palabra) {
+    return this.findByNombreIgnoreCaseContaining(palabra);
   }
 
   @Override
