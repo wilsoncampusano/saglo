@@ -18,17 +18,13 @@ public class AreaComunRepositoryImpl implements AreaComunRepositoryCustom{
 
 
   @Override
-  public List<AreaComun> findByNombre(String palabra) {
-    return
-        areasComunes
-            .stream()
-            .filter(a -> a.nombre.toLowerCase().contains(palabra.toLowerCase()))
-            .collect(Collectors.toList());
+  public List<AreaComun> findByNombreContaining(String palabra) {
+    return this.findByNombreContaining(palabra);
   }
 
   @Override
   public <S extends AreaComun> S save(S entity) {
-    return null;
+    return this.save(entity);
   }
 
   @Override

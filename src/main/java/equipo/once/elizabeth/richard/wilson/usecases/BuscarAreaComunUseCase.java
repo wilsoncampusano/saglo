@@ -21,7 +21,7 @@ public class BuscarAreaComunUseCase implements AreaComunUseCase {
   @Override
   public void solicitar() {
     List<AreaComun> areasComunes =
-        areaComunService.buscarPorPalabra(request.palabraBusqueda);
+        areaComunService.buscarPorPalabra(request.palabraBusqueda.toLowerCase());
 
     BuscarAreaComunResponse response = new BuscarAreaComunResponse();
 

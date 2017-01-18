@@ -32,6 +32,10 @@ public class AreaComunServiceImpl implements AreaComunService{
 
   @Override
   public List<AreaComun> buscarPorPalabra(String palabraBusqueda) {
-    return areaComunRepository.findByNombre(palabraBusqueda);
+    return areaComunRepository.findByNombreContaining(palabraBusqueda);
+  }
+
+  public void setAreaComunRepository(AreaComunRepositoryCustom areaComunRepository) {
+    this.areaComunRepository = areaComunRepository;
   }
 }

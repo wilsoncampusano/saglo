@@ -24,7 +24,7 @@ public class AreaComun {
 
   public static AreaComun crear(String codigo, String nombre) {
     AreaComun areaComun = new AreaComun();
-    areaComun.nombre = nombre;
+    areaComun.nombre = nombre.toLowerCase();
     areaComun.codigo = codigo;
     return areaComun;
   }

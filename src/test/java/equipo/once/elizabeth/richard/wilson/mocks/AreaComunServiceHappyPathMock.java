@@ -1,5 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.mocks;
 
+import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
@@ -34,5 +35,10 @@ public class AreaComunServiceHappyPathMock implements AreaComunService {
             .stream()
             .filter(a -> a.nombre.toLowerCase().matches(palabraBusqueda.toLowerCase()))
             .collect(Collectors.toList());
+  }
+
+  @Override
+  public void setAreaComunRepository(AreaComunRepositoryCustom areaComunRepository) {
+
   }
 }
