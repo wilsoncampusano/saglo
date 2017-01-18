@@ -17,7 +17,9 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
+
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
 
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -28,18 +30,20 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @SpringApplicationConfiguration(classes = SagloApplication.class)
 @WebAppConfiguration
 public class AreaComunRestControllerTest {
-
+  
   private AreaComunRestController areaComunRestController;
   private AreaComunService areaComunService;
   private BuscarAreaComunUseCase buscarAreaComunUseCase;
   @Autowired
   private AreaComunRepositoryCustom areaComunRepositoryCustom;
 
+
   private MockMvc mockMvc;
 
 
   @Before
   public void setUp() {
+
     InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
     viewResolver.setPrefix("/WEB-INF/jsp/view/");
     viewResolver.setSuffix(".jsp");
@@ -58,6 +62,7 @@ public class AreaComunRestControllerTest {
 
     mockMvc = MockMvcBuilders.standaloneSetup(areaComunRestController)
             .setViewResolvers(viewResolver).build();
+
   }
 
 
