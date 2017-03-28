@@ -53,9 +53,6 @@ public class AreaComunRestControllerTest {
     areaComunRestController = new AreaComunRestController();
     buscarAreaComunUseCase = new BuscarAreaComunUseCase();
     areaComunService = new AreaComunServiceImpl();
-    AreaComun areaComun = AreaComun.crear("A-piscina-01", "Piscina");
-
-    areaComun = areaComunRepositoryCustom.save(areaComun);
 
     areaComunService.setAreaComunRepository(areaComunRepositoryCustom);
     buscarAreaComunUseCase.areaComunService = areaComunService;
