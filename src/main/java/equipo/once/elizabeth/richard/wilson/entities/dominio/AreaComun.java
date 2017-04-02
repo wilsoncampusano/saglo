@@ -10,7 +10,6 @@ public class AreaComun {
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
 
-  public boolean estaDisponible;
   public String nombre;
   public String codigo;
 

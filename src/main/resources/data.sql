@@ -1,4 +1,5 @@
-insert into areacomun ( nombre,codigo, esta_disponible)
+insert into areacomun ( nombre,codigo)
 values
-('Piscina', 'A-piscina-01', 1),
-('Area BBQ', 'A-bbq-01', 1);
+('Piscina', 'A-piscina-01'),
+('Area BBQ', 'A-bbq-01'),
+('Cancha Basketball', 'A-canchabaskt-01');
