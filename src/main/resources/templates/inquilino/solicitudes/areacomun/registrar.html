@@ -10,7 +10,7 @@
 
 <div layout:fragment="content">
     <div class="row">
-        <form th:action="@{/solicitudes/areacomun#areacomun}" method="post" id="registrarForm">
+        <form th:action="@{/inquilino/solicitudes/areacomun#areacomun}" method="post" id="registrarForm">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -35,7 +35,8 @@
 
                                 <div class="col-md-3 col-xs-12">
                                     <label class="control-label">Disponibilidad</label>
-                                    <span class="label label-success">Disponible</span>
+                                    <span class="hide label label-success areacomun-disponibilidad">Disponible</span>
+                                    <span class="hide label label-danger areacomun-disponiblidad">No Disponible</span>
 
                                 </div>
                             </div>
@@ -53,7 +54,7 @@
                     </div>
                     <div class="panel-footer">
                         <div class="form-horizontal text-right text-right">
-                            <button type="submit" class="hide" name="verificarDisponibilidad"></button>
+                            <button type="submit" class="hide" name="verificarDisponibilidad" id="verificarDisponibilidad"></button>
 
                             <button type="submit" name="cancelar"
                                     class="btn btn-link btn-outline">

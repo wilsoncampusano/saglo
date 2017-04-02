@@ -9,4 +9,5 @@ public class SolicitudAreaComunForm {
     public String fechaSolicitud;
     public String comentario;
     public Inquilino inquilino;
+    public boolean disponible;
 }

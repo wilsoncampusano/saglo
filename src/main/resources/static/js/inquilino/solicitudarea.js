@@ -36,7 +36,20 @@ function configurarAutoCompleteAreaComun(){
 
 function configurarFechaSolicitud(){
     $("#fechaSolicitud").change(function(){
+        $("#verificarDisponibilidad").click();
+    });
+}
 
 
+function escucharDisponibilidad(){
+    $('#fechaSolicitud').on('disponibilidad:trigger', function(event, disponibilidad){
+
+        if(disponibilidad.disponible){
+            $('.areacomun-disponibilidad .label-success').show();
+            $('.areacomun-disponibilidad .label-warning').hide();
+        }else {
+            $('.areacomun-disponibilidad .label-success').hide();
+            $('.areacomun-disponibilidad .label-warning').show();
+        }
     });
 }
