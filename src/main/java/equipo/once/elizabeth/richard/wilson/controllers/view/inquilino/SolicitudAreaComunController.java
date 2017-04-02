@@ -19,13 +19,15 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
     @Autowired
     private DisponibilidadAreaComunUseCase disponibilidadAreaComunUseCase;
-    ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
-
-    public static final String SOLICITUDES_AREACOMUN_REGISTRAR = "/inquilino/solicitudes/areacomun/registrar";
+    private ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+    private static final String SOLICITUD_AREACOMUN_FORM = "solicitudAreaComunForm";
+    private static final String SOLICITUDES_AREACOMUN_REGISTRAR = "/inquilino/solicitudes/areacomun/registrar";
 
     @RequestMapping(value = "areacomun", method = RequestMethod.GET)
     public ModelAndView solicitudesAreaComunGet(){
         modelAndView.clear();
+
+        modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, new SolicitudAreaComunForm());
         return modelAndView;
     }
 
@@ -63,7 +65,7 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
         form = SolicitudAreaComunForm.construirForm(response);
 
-        modelAndView.addObject("solicitudAreaComunForm", form);
+        modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, form);
 
         return modelAndView;
     }
