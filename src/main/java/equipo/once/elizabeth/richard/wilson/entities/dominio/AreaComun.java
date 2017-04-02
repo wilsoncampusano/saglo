@@ -20,16 +20,6 @@ public class AreaComun extends Entidad{
     this.id = id;
   }
 
-  @Override
-  public String getCodigo() {
-    return super.getCodigo();
-  }
-
-  @Override
-  public void setCodigo(String codigo) {
-    super.setCodigo(codigo);
-  }
-
   public static AreaComun crear(String codigo, String nombre) {
     AreaComun areaComun = new AreaComun();
     areaComun.nombre = nombre;

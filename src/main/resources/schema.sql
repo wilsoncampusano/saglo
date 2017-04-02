@@ -7,6 +7,7 @@ CREATE TABLE areacomun (
 
 create table inquilino(
   id integer identity primary key,
+  codigo varchar(30),
   nombres varchar,
   apellidos varchar
 

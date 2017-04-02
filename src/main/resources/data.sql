@@ -5,7 +5,7 @@ values
 ('Cancha Basketball', 'A-canchabaskt-01');
 
 
-insert into inquilino(nombres, apellidos)
+insert into inquilino(codigo , nombres, apellidos)
 VALUES
-('Wilson', 'Campusano Jorge'),
-('Elizabeth', 'Capellan ')
+('I-wilson-01', 'Wilson', 'Campusano Jorge'),
+('I-elizabeth-01','Elizabeth', 'Capellan ')
