@@ -1,7 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.mocks;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudInquilinoService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 
@@ -10,17 +10,17 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class SolicitudInquilinoServiceUnaSolicitudMock implements SolicitudInquilinoService{
-    static List<SolicitudInquilino> solicitudesInquilino = new ArrayList<SolicitudInquilino>();
+    static List<SolicitudAreacomun> solicitudesInquilino = new ArrayList<SolicitudAreacomun>();
 
     static {
-        SolicitudInquilino solicitudInquilino = new SolicitudInquilino();
+        SolicitudAreacomun solicitudAreacomun = new SolicitudAreacomun();
         Inquilino inquilino = new InquilinoMock();
-        solicitudInquilino.inquilino = inquilino;
-        solicitudesInquilino.add(solicitudInquilino);
+        solicitudAreacomun.inquilino = inquilino;
+        solicitudesInquilino.add(solicitudAreacomun);
     }
 
     @Override
-    public List<SolicitudInquilino> buscarSolicitudesDe(Inquilino inquilino) {
+    public List<SolicitudAreacomun> buscarSolicitudesDe(Inquilino inquilino) {
         return solicitudesInquilino
                 .stream()
                 .filter(s -> s.inquilino.equals(inquilino))
@@ -28,13 +28,13 @@ public class SolicitudInquilinoServiceUnaSolicitudMock implements SolicitudInqui
     }
 
     @Override
-    public SolicitudInquilino guardar(SolicitudAreaComunForm form) {
-        SolicitudInquilino solicitudInquilino = new SolicitudInquilino();
-        solicitudInquilino.inquilino = form.inquilino;
-        solicitudInquilino.areaComun = form.areaComun;
-        solicitudInquilino.fechaSolicitud = form.fechaSolicitud;
-        solicitudesInquilino.add(solicitudInquilino);
+    public SolicitudAreacomun guardar(SolicitudAreaComunForm form) {
+        SolicitudAreacomun solicitudAreacomun = new SolicitudAreacomun();
+        solicitudAreacomun.inquilino = form.inquilino;
+        solicitudAreacomun.areaComun = form.areaComun;
+        solicitudAreacomun.fechaSolicitud = form.fechaSolicitud;
+        solicitudesInquilino.add(solicitudAreacomun);
 
-        return solicitudInquilino;
+        return solicitudAreacomun;
     }
 }

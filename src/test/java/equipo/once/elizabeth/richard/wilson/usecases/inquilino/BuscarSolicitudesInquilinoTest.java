@@ -1,7 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.usecases.inquilino;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.SolicitudInquilinoServiceUnaSolicitudMock;
 import equipo.once.elizabeth.richard.wilson.usecases.BuscarSolicitudesInquilinoUseCase;
@@ -43,7 +43,7 @@ public class BuscarSolicitudesInquilinoTest {
         useCase.solicitar();
 
         BuscarSolicitudesInquilinoResponse response = (BuscarSolicitudesInquilinoResponse) useCase.obtenerRespuesta();
-        List<SolicitudInquilino> solicitudesInquilino = response.solicitudes;
+        List<SolicitudAreacomun> solicitudesInquilino = response.solicitudes;
         Assert.assertThat(solicitudesInquilino.size(), is(1));
         Assert.assertThat(solicitudesInquilino.stream().findAny().get().inquilino, is(richard));
         Assert.assertThat(solicitudesInquilino.stream().findAny().get().inquilino, is(not(otroInquilino)));

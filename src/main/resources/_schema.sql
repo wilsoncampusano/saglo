@@ -1,5 +1,0 @@
-CREATE TABLE areacomun (
-  id INTEGER IDENTITY PRIMARY KEY,
-  codigo VARCHAR(30),
-  nombre  VARCHAR(50)
-);

@@ -28,7 +28,7 @@ public class SolicitudPermisoUsoAreaComunTest {
         form.comentario  = "comentario";
 
         request.form = form;
-        useCase.solicitudInquilinoService = new SolicitudInquilinoServiceUnaSolicitudMock();;
+        useCase.solicitudInquilinoService = new SolicitudInquilinoServiceUnaSolicitudMock();
         useCase.request = request;
 
         useCase.solicitar();

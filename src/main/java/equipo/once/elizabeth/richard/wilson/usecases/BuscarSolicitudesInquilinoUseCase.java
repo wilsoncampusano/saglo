@@ -1,14 +1,12 @@
 package equipo.once.elizabeth.richard.wilson.usecases;
 
-import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudInquilinoService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarSolicitudesInquilinoRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarSolicitudesInquilinoResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.InquilinoUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.UseCaseResponse;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class BuscarSolicitudesInquilinoUseCase implements InquilinoUseCase{
@@ -19,7 +17,7 @@ public class BuscarSolicitudesInquilinoUseCase implements InquilinoUseCase{
     @Override
     public void solicitar() {
         response = new BuscarSolicitudesInquilinoResponse();
-        List<SolicitudInquilino> solicitudesInquilino =
+        List<SolicitudAreacomun> solicitudesInquilino =
                 solicitudInquilinoService
                 .buscarSolicitudesDe(request.inquilino);
 

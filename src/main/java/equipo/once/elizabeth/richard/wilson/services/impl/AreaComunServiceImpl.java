@@ -2,7 +2,7 @@ package equipo.once.elizabeth.richard.wilson.services.impl;
 
 import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
@@ -16,7 +16,7 @@ public class AreaComunServiceImpl implements AreaComunService{
   private AreaComunRepositoryCustom areaComunRepository;
 
   @Override
-  public void buscarDisponibilidad(AreaComun areaComun, SolicitudInquilino solicitudInquilino) {
+  public void buscarDisponibilidad(AreaComun areaComun, SolicitudAreacomun solicitudAreacomun) {
 
   }
 

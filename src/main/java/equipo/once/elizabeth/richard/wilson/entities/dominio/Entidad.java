@@ -2,7 +2,7 @@ package equipo.once.elizabeth.richard.wilson.entities.dominio;
 
 
 public abstract class Entidad {
-    private String codigo;
+    public String codigo;
 
     public String getCodigo(){
         return this.codigo;

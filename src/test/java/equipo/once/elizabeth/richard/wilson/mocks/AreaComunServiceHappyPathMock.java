@@ -2,9 +2,8 @@ package equipo.once.elizabeth.richard.wilson.mocks;
 
 import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudInquilino;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
-import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
 import java.util.List;
@@ -15,7 +14,7 @@ public class AreaComunServiceHappyPathMock implements AreaComunService {
 
   List<AreaComun> areasComunes = Arrays.asList(piscina, areaBBQ);
   @Override
-  public void buscarDisponibilidad(AreaComun areaComun, SolicitudInquilino solicitudInquilino) {
+  public void buscarDisponibilidad(AreaComun areaComun, SolicitudAreacomun solicitudAreacomun) {
   }
 
   @Override
