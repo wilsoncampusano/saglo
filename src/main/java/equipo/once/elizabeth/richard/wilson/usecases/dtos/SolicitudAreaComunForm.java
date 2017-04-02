@@ -10,4 +10,9 @@ public class SolicitudAreaComunForm {
     public String comentario;
     public Inquilino inquilino;
     public boolean disponible;
+
+    public static SolicitudAreaComunForm construirForm(DisponibilidadAreaResponse response) {
+
+        return null;
+    }
 }

@@ -6,13 +6,16 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaRequ
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunUseCase;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DisponibilidadAreaComunUseCase implements AreaComunUseCase {
-
+  @Autowired
+  public AreaComunService areaComunService;
   public DisponibilidadAreaRequest request;
   public DisponibilidadAreaResponse response;
 
-  public AreaComunService areaComunService;
 
   public void solicitar() {
     AreaComun areaComun = areaComunService.buscarPorCodigo(request.codigoArea);
