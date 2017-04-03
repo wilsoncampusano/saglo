@@ -47,5 +47,4 @@ public class AreaComunRespositoryTest{
         Assert.assertThat(all, is(NOT_NULL));
         Assert.assertThat(areaComuns.size(), not(0));
     }
-
 }
