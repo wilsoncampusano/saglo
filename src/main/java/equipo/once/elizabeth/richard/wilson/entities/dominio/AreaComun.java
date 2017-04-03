@@ -5,12 +5,12 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "areacomun")
-public class AreaComun extends Entidad{
+public class AreaComun{
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   private Long id;
-
   public String nombre;
+  public String codigo;
 
   public Long getId() {
     return id;
@@ -18,6 +18,22 @@ public class AreaComun extends Entidad{
 
   public void setId(Long id) {
     this.id = id;
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    AreaComun areaComun = (AreaComun) o;
+
+    return codigo != null ? codigo.equals(areaComun.codigo) : areaComun.codigo == null;
+
+  }
+
+  @Override
+  public int hashCode() {
+    return codigo != null ? codigo.hashCode() : 0;
   }
 
   public static AreaComun crear(String codigo, String nombre) {

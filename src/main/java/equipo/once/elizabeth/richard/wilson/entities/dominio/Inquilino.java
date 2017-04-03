@@ -4,20 +4,26 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "inquilino")
-public class Inquilino extends Entidad {
+public class Inquilino {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   public Long id;
+  public String codigo;
   public String nombres;
   public String apellidos;
 
-  @Override
-  public String getCodigo() {
-    return super.getCodigo();
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    Inquilino inquilino = (Inquilino) o;
+
+    return codigo != null ? codigo.equals(inquilino.codigo) : inquilino.codigo == null;
+
   }
 
   @Override
-  public void setCodigo(String codigo) {
-    super.setCodigo(codigo);
+  public int hashCode() {
+    return codigo != null ? codigo.hashCode() : 0;
   }
 }

@@ -19,7 +19,7 @@ public class BuscarMobiliarioInquilinoTest {
   @Test
   public void buscaElMobiliarioAsignadoAlInquilino(){
     Inquilino inquilino = new Inquilino();
-    inquilino.setCodigo(InquilinoMock.CODIGO_INQUILINO_MOCK);
+    inquilino.codigo = InquilinoMock.CODIGO_INQUILINO_MOCK;
 
     BuscarMobiliarioInquilinoRequest request = new BuscarMobiliarioInquilinoRequest();
 

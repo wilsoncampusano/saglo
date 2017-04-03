@@ -27,8 +27,9 @@ public class InquilinoRepositoryTest {
   @Test
   public void puedeBuscarInquilinoPorCodigo() {
     Inquilino inquilino = inquilinoRespositoryCustom.findByCodigo("I-wilson-01");
+    Inquilino wilson = new Inquilino();
+    wilson.codigo = "I-wilson-01";
 
-    Assert.assertThat(inquilino.nombres, is("Wilson"));
-    Assert.assertThat(inquilino.apellidos, is("Campusano Jorge"));
+    Assert.assertThat(inquilino, is(wilson));
   }
 }

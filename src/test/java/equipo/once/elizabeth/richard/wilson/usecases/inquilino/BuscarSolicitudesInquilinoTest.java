@@ -38,7 +38,7 @@ public class BuscarSolicitudesInquilinoTest {
         useCase.request = request;
 
         Inquilino otroInquilino = new InquilinoMock();
-        otroInquilino.setCodigo("I-otro-01");
+        otroInquilino.codigo = "I-otro-01";
 
         useCase.solicitar();
 

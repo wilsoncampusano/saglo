@@ -1,6 +1,5 @@
 package equipo.once.elizabeth.richard.wilson.mocks;
 
-import equipo.once.elizabeth.richard.wilson.entities.dominio.Entidad;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.PagoInquilino;
 import equipo.once.elizabeth.richard.wilson.services.PagoInquilinoService;
@@ -22,10 +21,10 @@ public class InquilinoServiceUnPagoMock implements PagoInquilinoService {
         pagos.add(pago);
     }
     @Override
-    public List<PagoInquilino> pagosPorEntidadDesdeFecha(Entidad entidad, String fecha) {
+    public List<PagoInquilino> pagosPorInquilinoDesdeFecha(Inquilino entidad, String fecha) {
         pagos = pagos
                 .stream()
-                .filter(pa -> pa.inquilino.getCodigo().equals(entidad.getCodigo()))
+                .filter(pa -> pa.inquilino.codigo.equals(entidad.codigo))
                 .collect(Collectors.toList());
         return pagos;
     }

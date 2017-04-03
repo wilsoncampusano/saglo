@@ -14,8 +14,8 @@ public class InquilinoTest {
     Inquilino richard = new Inquilino();
     Inquilino inquilino = new Inquilino();
 
-    richard.setCodigo("I-richard-01");
-    inquilino.setCodigo("I-richard-01");
+    richard.codigo = "I-richard-01";
+    inquilino.codigo = "I-richard-01";
 
     Assert.assertThat(inquilino, Is.is(richard));
   }

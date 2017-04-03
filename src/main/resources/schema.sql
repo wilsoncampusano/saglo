@@ -1,3 +1,5 @@
+DROP SCHEMA PUBLIC CASCADE;
+
 CREATE TABLE areacomun (
   id INTEGER IDENTITY PRIMARY KEY,
   codigo VARCHAR(30),
@@ -8,8 +10,8 @@ CREATE TABLE areacomun (
 create table inquilino(
   id integer identity primary key,
   codigo varchar(30),
-  nombres varchar,
-  apellidos varchar
+  nombres varchar(30),
+  apellidos varchar(50)
 
 );
 

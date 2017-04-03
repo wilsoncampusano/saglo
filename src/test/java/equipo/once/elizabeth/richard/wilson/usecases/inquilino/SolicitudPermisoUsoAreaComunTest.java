@@ -40,6 +40,5 @@ public class SolicitudPermisoUsoAreaComunTest {
         assertThat(useCaseResponse.form.fechaSolicitud, is("01-01-2016"));
         assertThat(useCaseResponse.form.comentario, is(NOT_NULL));
         assertThat(useCaseResponse.solicitud, is(NOT_NULL));
-        assertThat(useCaseResponse.solicitud.getCodigo(), is(not("")));
     }
 }

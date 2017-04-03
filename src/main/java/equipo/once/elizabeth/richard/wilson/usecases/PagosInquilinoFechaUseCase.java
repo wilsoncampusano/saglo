@@ -21,7 +21,7 @@ public class PagosInquilinoFechaUseCase implements InquilinoUseCase{
     public void solicitar() {
 
         List<PagoInquilino> pagoInquilinos = pagoInquilinoService
-                .pagosPorEntidadDesdeFecha(request.entidad, request.fechaInicio);
+                .pagosPorInquilinoDesdeFecha(request.entidad, request.fechaInicio);
 
         response = new PagoInquilinoResponse();
 

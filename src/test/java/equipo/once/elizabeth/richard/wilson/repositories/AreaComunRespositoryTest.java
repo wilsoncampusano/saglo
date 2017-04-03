@@ -1,7 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.repositories;
 
 import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCustom;
-import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import org.junit.Test;
 import org.junit.runner.RunWith;
