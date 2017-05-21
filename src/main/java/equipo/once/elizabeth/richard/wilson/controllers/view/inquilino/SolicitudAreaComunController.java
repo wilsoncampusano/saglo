@@ -19,14 +19,13 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
     @Autowired
     private DisponibilidadAreaComunUseCase disponibilidadAreaComunUseCase;
-    private ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+    private ModelAndView modelAndView ;
     private static final String SOLICITUD_AREACOMUN_FORM = "solicitudAreaComunForm";
-    private static final String SOLICITUDES_AREACOMUN_REGISTRAR = "/inquilino/solicitudes/areacomun/registrar";
+    private static final String SOLICITUDES_AREACOMUN_REGISTRAR = "inquilino/solicitudes/areacomun/registrar";
 
     @RequestMapping(value = "areacomun", method = RequestMethod.GET)
     public ModelAndView solicitudesAreaComunGet(){
-        modelAndView.clear();
-
+        modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
         modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, new SolicitudAreaComunForm());
         return modelAndView;
     }
@@ -34,7 +33,7 @@ public class SolicitudAreaComunController extends InquilinoController  {
     @RequestMapping(value = "areacomun",params = {"registrar"}, method = RequestMethod.POST)
     public ModelAndView solicitudesAreaComunPostRegistrar(SolicitudAreaComunForm form , RedirectAttributes redirectAttrs,
                                                  HttpSession httpSession){
-        modelAndView.clear();
+        modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
 
         return modelAndView;
     }
@@ -42,8 +41,7 @@ public class SolicitudAreaComunController extends InquilinoController  {
     @RequestMapping(value = "areacomun",params = {"cancelar"}, method = RequestMethod.POST)
     public ModelAndView solicitudesAreaComunPostCancelar(SolicitudAreaComunForm form , RedirectAttributes redirectAttrs,
                                                  HttpSession httpSession){
-        modelAndView.clear();
-
+        modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
         return modelAndView;
     }
 
@@ -53,7 +51,7 @@ public class SolicitudAreaComunController extends InquilinoController  {
     public ModelAndView solicitudesAreaComunPostVerificar(SolicitudAreaComunForm form ,
                                                           RedirectAttributes redirectAttrs,
                                                          HttpSession httpSession){
-        modelAndView.clear();
+        modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
         DisponibilidadAreaRequest request = DisponibilidadAreaRequest.construirRequest(form);
         disponibilidadAreaComunUseCase.request = request;
 
