@@ -37,7 +37,7 @@ public class AreaComunRestControllerTest {
   private AreaComunService areaComunService;
   private BuscarAreaComunUseCase buscarAreaComunUseCase;
   @Autowired
-  private AreaComunRepositoryCustom areaComunRepositoryCustom;
+  private AreaComunRepositoryCustom repository;
 
 
   private MockMvc mockMvc;
@@ -54,13 +54,17 @@ public class AreaComunRestControllerTest {
     buscarAreaComunUseCase = new BuscarAreaComunUseCase();
     areaComunService = new AreaComunServiceImpl();
 
-    areaComunService.setAreaComunRepository(areaComunRepositoryCustom);
+    areaComunService.setAreaComunRepository(repository);
     buscarAreaComunUseCase.areaComunService = areaComunService;
 
     areaComunRestController.setBuscarAreaComunUseCase(buscarAreaComunUseCase);
 
     mockMvc = MockMvcBuilders.standaloneSetup(areaComunRestController)
             .setViewResolvers(viewResolver).build();
+
+
+    AreaComun areaComun = AreaComun.crear("A-piscina-01", "Piscina");
+    repository.save(areaComun);
 
   }
 

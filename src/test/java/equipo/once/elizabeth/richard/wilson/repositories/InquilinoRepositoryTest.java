@@ -2,8 +2,8 @@ package equipo.once.elizabeth.richard.wilson.repositories;
 
 import equipo.once.elizabeth.richard.wilson.entities.dao.InquilinoRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
-import org.hamcrest.core.Is;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,11 +22,19 @@ import static org.hamcrest.core.Is.*;
 public class InquilinoRepositoryTest {
 
   @Autowired
-  InquilinoRepositoryCustom inquilinoRespositoryCustom;
+  InquilinoRepositoryCustom repository;
+
+
+  @Before
+  public void conInquilino(){
+    Inquilino inquilino = new Inquilino();
+    inquilino.codigo =  "I-wilson-01";
+    repository.save(inquilino);
+  }
 
   @Test
   public void puedeBuscarInquilinoPorCodigo() {
-    Inquilino inquilino = inquilinoRespositoryCustom.findByCodigo("I-wilson-01");
+    Inquilino inquilino = repository.findByCodigo("I-wilson-01");
     Inquilino wilson = new Inquilino();
     wilson.codigo = "I-wilson-01";
 

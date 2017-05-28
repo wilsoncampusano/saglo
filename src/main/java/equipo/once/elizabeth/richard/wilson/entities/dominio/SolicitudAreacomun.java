@@ -16,4 +16,45 @@ public class SolicitudAreacomun {
   public Inquilino inquilino;
   @ManyToOne
   public AreaComun areaComun;
+
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public String getFechaSolicitud() {
+    return fechaSolicitud;
+  }
+
+  public void setFechaSolicitud(String fechaSolicitud) {
+    this.fechaSolicitud = fechaSolicitud;
+  }
+
+  public String getCodigo() {
+    return codigo;
+  }
+
+  public void setCodigo(String codigo) {
+    this.codigo = codigo;
+  }
+
+  public Inquilino getInquilino() {
+    return inquilino;
+  }
+
+  public void setInquilino(Inquilino inquilino) {
+    this.inquilino = inquilino;
+  }
+
+  public AreaComun getAreaComun() {
+    return areaComun;
+  }
+
+  public void setAreaComun(AreaComun areaComun) {
+    this.areaComun = areaComun;
+  }
 }

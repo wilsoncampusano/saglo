@@ -4,6 +4,7 @@ import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCust
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import org.hamcrest.core.IsNot;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,10 +30,9 @@ public class AreaComunRespositoryTest{
     @Autowired
     AreaComunRepositoryCustom repository;
 
-    @Test
-    public void puedeInsertarAreaComun() {
+    @Before
+    public void conUnAreaInsertada() {
         AreaComun areaComun = AreaComun.crear("A-piscina-01", "Piscina");
-
         repository.save(areaComun);
     }
 
@@ -47,5 +47,4 @@ public class AreaComunRespositoryTest{
         Assert.assertThat(all, is(NOT_NULL));
         Assert.assertThat(areaComuns.size(), not(0));
     }
-
 }
