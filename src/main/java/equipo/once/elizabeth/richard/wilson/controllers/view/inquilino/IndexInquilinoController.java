@@ -7,10 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 
 @Controller
-@RequestMapping("/inquilino")
 public class IndexInquilinoController extends InquilinoController {
-
-    public static final String INQUILINO_INDEX = "/inquilino/index";
 
     @RequestMapping(value = {"/","","/index", "home"}, method = RequestMethod.GET)
     public ModelAndView inquilinoIndexGet(){
