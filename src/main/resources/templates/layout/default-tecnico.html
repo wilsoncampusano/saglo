@@ -25,13 +25,13 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li id="menu_tecnico_areacomun"><a th:href="@{/tecnico/solicitudes/areacomun}">Solicitar Area Comun</a></li>
-                        <li id="menu_tecnico_casoaveria"><a th:href="@{/tecnico/solicitudes/casoaveria}">Solicitud Caso Averia</a></li>
+                        <li id="menu_tecnico_areacomun"><a th:href="@{/tecnico/averias/averias}">Averias Asignadas</a></li>
+                        <li id="menu_tecnico_casoaveria"><a th:href="@{/tecnico/mantenimientos/mantenimientos}">Mantenimientos Asignados</a></li>
                         <li id="menu_tecnico_dropdown" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tecnico <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a th:href="@{/tecnico/estados/pagos/}">Pagos</a></li>
-                                <li><a th:href="@{/tecnico/estados/solicitudes/}">Solicitudes</a></li>
+                                <li><a th:href="@{/tecnico/averias/averias/}">Averias</a></li>
+                                <li><a th:href="@{/tecnico/mantenimientos/mantenimientos/}">Mantenimientos</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li class="dropdown-header">Perfil</li>
                                 <li><a th:href="@{/tecnico/perfil/}">My perfil</a></li>

@@ -25,16 +25,17 @@
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li id="menu_admin_areacomun"><a th:href="@{/admin/solicitudes/areacomun}">Solicitar Area Comun</a></li>
-                        <li id="menu_admin_casoaveria"><a th:href="@{/admin/solicitudes/casoaveria}">Solicitud Caso Averia</a></li>
+                        <li id="menu_admin_averias"><a th:href="@{/admin/locales/averias/}">Averias Reportadas</a></li>
+                        <li id="menu_admin_solicitudes"><a th:href="@{/admin/locales/solicitudes/}">Solicitudes Realizadas</a></li>
+                        <li id="menu_admin_mantenimientos"><a th:href="@{/admin/locales/mantenimientos/mantenimientos}">Mantenimientos Reportados</a></li>
                         <li id="menu_admin_dropdown" class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a th:href="@{/admin/estados/pagos/}">Pagos</a></li>
-                                <li><a th:href="@{/admin/estados/solicitudes/}">Solicitudes</a></li>
+                                <li><a th:href="@{/admin/estados/pagos/pagos}">Pagos</a></li>
+                                <li><a th:href="@{/admin/estados/pagos/registrar}">Registrar Pago</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li class="dropdown-header">Perfil</li>
-                                <li><a th:href="@{/admin/perfil/}">My perfil</a></li>
+                                <li class="dropdown-header">Admin</li>
+                                <li><a th:href="@{/admin/}">Admin</a></li>
                             </ul>
                         </li>
                     </ul>
