@@ -1,10 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      layout:decorator="layout/default"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no"/>
+
+    <title>Tecnico - </title>
 </head>
 <body>
+<div layout:fragment="nav">
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="row">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a id="menu_tecnico_index" class="navbar-brand" th:href="@{/tecnico}">Tecnico Menu</a>
+                </div>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li id="menu_tecnico_areacomun"><a th:href="@{/tecnico/solicitudes/areacomun}">Solicitar Area Comun</a></li>
+                        <li id="menu_tecnico_casoaveria"><a th:href="@{/tecnico/solicitudes/casoaveria}">Solicitud Caso Averia</a></li>
+                        <li id="menu_tecnico_dropdown" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Tecnico <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a th:href="@{/tecnico/estados/pagos/}">Pagos</a></li>
+                                <li><a th:href="@{/tecnico/estados/solicitudes/}">Solicitudes</a></li>
+                                <li role="separator" class="divider"></li>
+                                <li class="dropdown-header">Perfil</li>
+                                <li><a th:href="@{/tecnico/perfil/}">My perfil</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
 
+                        <li class="active"><a href="./">Salir <span class="sr-only">(current)</span></a></li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+    </nav>
+</div>
 </body>
 </html>

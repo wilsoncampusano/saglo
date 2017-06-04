@@ -1,10 +1,44 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default-tecnico">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <title>Saglo - Tecnico - Index</title>
 </head>
 <body>
+
+<div layout:fragment="content">
+    <div class="row">
+        <form th:action="@{/solicitudes/areacomun#areacomun}" method="post" id="registrarForm">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Tecnico<label class="control-label"></label>
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="form-horizontal" role="form">
+
+
+
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="form-horizontal text-right text-right">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div layout:fragment="script">
+    <script th:src="@{/js/tecnico/index.js}" type="application/javascript"></script>
+</div>
 
 </body>
 </html>
