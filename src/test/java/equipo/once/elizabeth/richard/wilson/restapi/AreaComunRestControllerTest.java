@@ -37,18 +37,15 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
+@ActiveProfiles({"test"})
 @SpringApplicationConfiguration(classes = SagloApplication.class)
 @WebAppConfiguration
 public class AreaComunRestControllerTest {
-  
+
   private AreaComunRestController areaComunRestController;
-
-  @Autowired
   private AreaComunService areaComunService;
-
   private BuscarAreaComunUseCase buscarAreaComunUseCase;
-
-  @Mock
+  @Autowired
   private AreaComunRepositoryCustom repository;
 
 
@@ -66,21 +63,17 @@ public class AreaComunRestControllerTest {
     buscarAreaComunUseCase = new BuscarAreaComunUseCase();
     areaComunService = new AreaComunServiceImpl();
 
-
-    List<AreaComun> areasComun = new ArrayList<>();
-    AreaComun a = AreaComun.crear("A-piscina", "Piscina");
-    areasComun.add(a);
-
-    Mockito.when(repository.findByNombreIgnoreCaseContaining("pis"))
-        .thenReturn(areasComun);
-
     areaComunService.setAreaComunRepository(repository);
     buscarAreaComunUseCase.areaComunService = areaComunService;
 
     areaComunRestController.setBuscarAreaComunUseCase(buscarAreaComunUseCase);
 
     mockMvc = MockMvcBuilders.standaloneSetup(areaComunRestController)
-            .setViewResolvers(viewResolver).build();
+        .setViewResolvers(viewResolver).build();
+
+
+    AreaComun areaComun = AreaComun.crear("A-piscina-01", "Piscina");
+    repository.save(areaComun);
 
 
   }
