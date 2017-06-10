@@ -10,11 +10,17 @@ import equipo.once.elizabeth.richard.wilson.usecases.BuscarAreaComunUseCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.EmbeddedDatabaseConnection;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
@@ -22,21 +28,27 @@ import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ActiveProfiles({"test"})
 @SpringApplicationConfiguration(classes = SagloApplication.class)
 @WebAppConfiguration
 public class AreaComunRestControllerTest {
   
   private AreaComunRestController areaComunRestController;
-  private AreaComunService areaComunService;
-  private BuscarAreaComunUseCase buscarAreaComunUseCase;
+
   @Autowired
+  private AreaComunService areaComunService;
+
+  private BuscarAreaComunUseCase buscarAreaComunUseCase;
+
+  @Mock
   private AreaComunRepositoryCustom repository;
 
 
@@ -54,6 +66,14 @@ public class AreaComunRestControllerTest {
     buscarAreaComunUseCase = new BuscarAreaComunUseCase();
     areaComunService = new AreaComunServiceImpl();
 
+
+    List<AreaComun> areasComun = new ArrayList<>();
+    AreaComun a = AreaComun.crear("A-piscina", "Piscina");
+    areasComun.add(a);
+
+    Mockito.when(repository.findByNombreIgnoreCaseContaining("pis"))
+        .thenReturn(areasComun);
+
     areaComunService.setAreaComunRepository(repository);
     buscarAreaComunUseCase.areaComunService = areaComunService;
 
@@ -62,9 +82,6 @@ public class AreaComunRestControllerTest {
     mockMvc = MockMvcBuilders.standaloneSetup(areaComunRestController)
             .setViewResolvers(viewResolver).build();
 
-
-    AreaComun areaComun = AreaComun.crear("A-piscina-01", "Piscina");
-    repository.save(areaComun);
 
   }
 
