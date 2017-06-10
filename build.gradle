@@ -52,3 +52,14 @@ dependencies {
 	testCompile 'com.jayway.jsonpath:json-path'
 	testCompile('org.hsqldb:hsqldb')
 }
+
+
+test {
+	beforeTest { descriptor ->
+		logger.lifecycle("Running test: ${descriptor}")
+	}
+
+	afterTest { desc, result ->
+		println "Executing test ${desc.name} [${desc.className}] with result: ${result.resultType}"
+	}
+}

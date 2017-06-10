@@ -10,17 +10,24 @@ import equipo.once.elizabeth.richard.wilson.usecases.BuscarAreaComunUseCase;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.jdbc.EmbeddedDatabaseConnection;
 import org.springframework.boot.test.SpringApplicationConfiguration;
+import org.springframework.boot.test.autoconfigure.orm.jpa.AutoConfigureTestDatabase;
+import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
-
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import java.util.ArrayList;
+import java.util.List;
 
 import static org.hamcrest.core.Is.is;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
@@ -29,8 +36,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ActiveProfiles({"test"})
-@SpringApplicationConfiguration(classes = SagloApplication.class)
+@SpringBootTest(classes = SagloApplication.class)
 @WebAppConfiguration
+@DataJpaTest
+@AutoConfigureTestDatabase(connection = EmbeddedDatabaseConnection.HSQL)
 public class AreaComunRestControllerTest {
   
   private AreaComunRestController areaComunRestController;
@@ -54,7 +63,6 @@ public class AreaComunRestControllerTest {
     buscarAreaComunUseCase = new BuscarAreaComunUseCase();
     areaComunService = new AreaComunServiceImpl();
 
-    areaComunService.setAreaComunRepository(repository);
     buscarAreaComunUseCase.areaComunService = areaComunService;
 
     areaComunRestController.setBuscarAreaComunUseCase(buscarAreaComunUseCase);
@@ -62,7 +70,7 @@ public class AreaComunRestControllerTest {
     mockMvc = MockMvcBuilders.standaloneSetup(areaComunRestController)
             .setViewResolvers(viewResolver).build();
 
-
+    areaComunService.setAreaComunRepository(repository);
     AreaComun areaComun = AreaComun.crear("A-piscina-01", "Piscina");
     repository.save(areaComun);
 
