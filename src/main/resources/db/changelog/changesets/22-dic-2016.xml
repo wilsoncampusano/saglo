@@ -41,44 +41,43 @@
 
     <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
         <sql>
-            create table area_comun (
-                id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
-            );
+
+            CREATE TABLE areacomun (
+            id int IDENTITY PRIMARY KEY,
+            codigo VARCHAR(30),
+            nombre  VARCHAR(50)
+            ) ENGINE = InnoDB;
         </sql>
     </changeSet>
 
-    <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
-        <sql>
-            create table administracion_caso (
-            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
-            );
-        </sql>
-    </changeSet>
 
     <changeSet id="wilsoncampusano-006" author="wilsoncampusano">
         <sql>
-            create table solicitud_permiso (
-            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
-            );
+            create table inquilino(
+            id int identity primary key,
+            codigo varchar(30)
+            ) ENGINE = InnoDB;
         </sql>
     </changeSet>
 
     <changeSet id="wilsoncampusano-007" author="wilsoncampusano">
         <sql>
-            create table solicitud_averia (
-            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
-            );
+            insert into areacomun (nombre,codigo)
+            values
+            ('Piscina', 'A-piscina-01'),
+            ('Area BBQ', 'A-bbq-01'),
+            ('Cancha Basketball', 'A-canchabaskt-01');
         </sql>
     </changeSet>
 
     <changeSet id="wilsoncampusano-008" author="wilsoncampusano">
         <sql>
-            create table solicitud_area (
-            id INT(8) UNSIGNED AUTO_INCREMENT PRIMARY KEY
-            );
+            insert into inquilino (codigo)
+            values
+            ('I-wilson-001'),
+            ('I-elizabeth-002')
         </sql>
     </changeSet>
-
 
 
 </databaseChangeLog>
