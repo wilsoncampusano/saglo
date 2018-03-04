@@ -12,12 +12,12 @@
         <sql>
 
             CREATE TABLE solicitud_areacomun (
-            id int IDENTITY PRIMARY KEY,
-            area_comun_id int,
-            inquilino_id  int,
+            id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+            area_comun_id int not null,
+            inquilino_id  int not null,
             fecha_solicitud date,
             CONSTRAINT cons_inquilino
-            FOREIGN KEY fk_inquilino (inquilino_id) REFERENCES inquilino (id)
+            FOREIGN KEY fk_inquilino (inquilino_id) REFERENCES inquilino(id)
             ) ENGINE = InnoDB;
         </sql>
     </changeSet>
