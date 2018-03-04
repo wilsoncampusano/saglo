@@ -10,4 +10,10 @@ public class Administrador {
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
 
+  @Column(name = "nombre")
+  public String nombre;
+
+  @OneToOne
+  public Usuario usuario;
+
 }

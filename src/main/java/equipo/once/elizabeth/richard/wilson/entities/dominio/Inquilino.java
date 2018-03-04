@@ -9,9 +9,10 @@ public class Inquilino {
   @GeneratedValue(strategy = GenerationType.AUTO)
   public Long id;
   public String codigo;
-  public String nombres;
-  public String apellidos;
+  public String nombre;
 
+  @OneToOne
+  public Usuario usuario;
 
   public Long getId() {
     return id;
@@ -29,20 +30,20 @@ public class Inquilino {
     this.codigo = codigo;
   }
 
-  public String getNombres() {
-    return nombres;
+  public String getNombre() {
+    return nombre;
   }
 
-  public void setNombres(String nombres) {
-    this.nombres = nombres;
+  public void setNombre(String nombre) {
+    this.nombre = nombre;
   }
 
-  public String getApellidos() {
-    return apellidos;
+  public Usuario getUsuario() {
+    return usuario;
   }
 
-  public void setApellidos(String apellidos) {
-    this.apellidos = apellidos;
+  public void setUsuario(Usuario usuario) {
+    this.usuario = usuario;
   }
 
   public boolean equals(Object o) {
