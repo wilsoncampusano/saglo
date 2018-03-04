@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+
+
+    <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
+        <sql>
+
+            CREATE TABLE solicitud_areacomun (
+            id int IDENTITY PRIMARY KEY,
+            area_comun_id int,
+            inquilino_id  int,
+            fecha_solicitud date,
+            CONSTRAINT cons_inquilino
+            FOREIGN KEY fk_inquilino (inquilino_id) REFERENCES inquilino (id)
+            ) ENGINE = InnoDB;
+        </sql>
+    </changeSet>
+
+
+</databaseChangeLog>
