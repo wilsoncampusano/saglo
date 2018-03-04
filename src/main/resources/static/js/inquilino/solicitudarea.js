@@ -9,7 +9,7 @@
             configurarFechaSolicitud();
         });
 
-        function configurarAutoCompleteAreaComun() {
+        function configurarAutoCompleteAreaComun(config) {
             $('#areacomunautocomplete').autocomplete({
                 source: function (request, response) {
                     $.ajax("/api/areacomun/buscar?palabra=" + request.term, {
