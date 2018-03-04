@@ -12,10 +12,10 @@ public class MobiliarioInquilino {
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
 
-  @OneToOne
+  @ManyToOne
   public Inquilino inquilino;
 
-  @OneToOne
+  @ManyToOne
   public Mobiliario mobiliario;
 
   public long getId() {

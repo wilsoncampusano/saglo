@@ -10,9 +10,9 @@ public class SolicitudMantenimiento {
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
 
-  @OneToOne
+  @ManyToOne
   public Tecnico tecnico;
-  @OneToOne
+  @ManyToOne
   public Mantenimiento mantenimiento;
 
   public long getId() {

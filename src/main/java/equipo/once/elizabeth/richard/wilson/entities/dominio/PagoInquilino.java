@@ -10,10 +10,10 @@ public class PagoInquilino {
     @GeneratedValue(strategy = GenerationType.AUTO)
     public long id;
 
-    @OneToOne
+    @ManyToOne
     public Inquilino inquilino;
 
-    @OneToOne
+    @ManyToOne
     public Pago pago;
 
     public String estado;
