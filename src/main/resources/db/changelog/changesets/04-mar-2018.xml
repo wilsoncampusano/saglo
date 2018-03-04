@@ -11,14 +11,115 @@
     <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
         <sql>
 
-            CREATE TABLE solicitud_areacomun (
-            id int UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-            area_comun_id int not null,
-            inquilino_id  int not null,
-            fecha_solicitud date,
-            CONSTRAINT cons_inquilino
-            FOREIGN KEY fk_inquilino (inquilino_id) REFERENCES inquilino(id)
-            ) ENGINE = InnoDB;
+            CREATE TABLE `solicitud_areacomun` (
+            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `inquilino_id` int(20) unsigned NOT NULL,
+            `area_comun_id` int(20) unsigned NOT NULL,
+            `fecha_solicitud` date NOT NULL,
+            PRIMARY KEY (`id`),
+            KEY `inquilino_id` (`inquilino_id`),
+            KEY `area_comun_id` (`area_comun_id`),
+            CONSTRAINT `solicitud_areacomun_ibfk_1` FOREIGN KEY (`inquilino_id`) REFERENCES `inquilino` (`id`),
+            CONSTRAINT `solicitud_areacomun_ibfk_2` FOREIGN KEY (`area_comun_id`) REFERENCES `areacomun` (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-006" author="wilsoncampusano">
+    <sql>
+
+        CREATE TABLE `mantenimiento` (
+        `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+        `nombre` varchar(100) DEFAULT '',
+        `descripcion` varchar(100) DEFAULT 'null',
+        PRIMARY KEY (`id`)
+        ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-007" author="wilsoncampusano">
+        <sql>
+
+            CREATE TABLE `mobiliario` (
+            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `nombre` varchar(500) DEFAULT NULL,
+            `descripcion` varchar(500) NOT NULL DEFAULT '',
+            PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </sql>
+    </changeSet>
+
+
+
+    <changeSet id="wilsoncampusano-008" author="wilsoncampusano">
+        <sql>
+
+            CREATE TABLE `pago` (
+            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `tipo_pago` varchar(10) NOT NULL DEFAULT '',
+            PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-009" author="wilsoncampusano">
+        <sql>
+
+            CREATE TABLE `tecnico` (
+            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `usuario_id` int(11) DEFAULT NULL,
+            `nombre` varchar(100) NOT NULL DEFAULT '',
+            PRIMARY KEY (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="wilsoncampusano-010" author="wilsoncampusano">
+        <sql>
+
+            CREATE TABLE `mobiliario_inquilino` (
+            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `mobiliario_id` int(11) unsigned NOT NULL,
+            `inquilino_id` int(11) unsigned NOT NULL,
+            PRIMARY KEY (`id`),
+            KEY `inquilino_id` (`inquilino_id`),
+            KEY `mobiliario_id` (`mobiliario_id`),
+            CONSTRAINT `mobiliario_inquilino_ibfk_1` FOREIGN KEY (`inquilino_id`) REFERENCES `inquilino` (`id`),
+            CONSTRAINT `mobiliario_inquilino_ibfk_2` FOREIGN KEY (`mobiliario_id`) REFERENCES `mobiliario` (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-011" author="wilsoncampusano">
+        <sql>
+
+            CREATE TABLE `pago_inquilino` (
+            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `pago_id` int(11) unsigned NOT NULL,
+            `inquilino_id` int(11) unsigned NOT NULL,
+            PRIMARY KEY (`id`),
+            KEY `inquilino_id` (`inquilino_id`),
+            KEY `pago_id` (`pago_id`),
+            CONSTRAINT `pago_inquilino_ibfk_1` FOREIGN KEY (`inquilino_id`) REFERENCES `inquilino` (`id`),
+            CONSTRAINT `pago_inquilino_ibfk_2` FOREIGN KEY (`pago_id`) REFERENCES `pago` (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-012" author="wilsoncampusano">
+        <sql>
+
+            CREATE TABLE `solicitud_mantemimiento` (
+            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `tecnico_id` int(11) unsigned NOT NULL,
+            `mantenimiento_id` int(11) unsigned NOT NULL,
+            PRIMARY KEY (`id`),
+            KEY `tecnico_id` (`tecnico_id`),
+            KEY `mantenimiento_id` (`mantenimiento_id`),
+            CONSTRAINT `solicitud_mantemimiento_ibfk_1` FOREIGN KEY (`tecnico_id`) REFERENCES `tecnico` (`id`),
+            CONSTRAINT `solicitud_mantemimiento_ibfk_2` FOREIGN KEY (`mantenimiento_id`) REFERENCES `mantenimiento` (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
         </sql>
     </changeSet>
 
