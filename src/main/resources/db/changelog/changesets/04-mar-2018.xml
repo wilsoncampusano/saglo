@@ -123,5 +123,20 @@
         </sql>
     </changeSet>
 
+    <changeSet id="wilsoncampusano-013" author="wilsoncampusano">
+        <sql>
+
+            CREATE TABLE `administrador` (
+            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+            `nombre` varchar(100),
+            `usuario_id` int(11) unsigned NOT NULL,
+            PRIMARY KEY (`id`),
+            KEY `usuario_id` (`usuario_id`),
+            CONSTRAINT `administrador_ibfk_1` FOREIGN KEY (`usuario_id`) REFERENCES `usuario` (`id`)
+            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+        </sql>
+    </changeSet>
+
+
 
 </databaseChangeLog>
