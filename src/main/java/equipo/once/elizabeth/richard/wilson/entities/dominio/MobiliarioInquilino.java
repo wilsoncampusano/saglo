@@ -11,5 +11,34 @@ public class MobiliarioInquilino {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
+
+  @OneToOne
   public Inquilino inquilino;
+
+  @OneToOne
+  public Mobiliario mobiliario;
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public Inquilino getInquilino() {
+    return inquilino;
+  }
+
+  public void setInquilino(Inquilino inquilino) {
+    this.inquilino = inquilino;
+  }
+
+  public Mobiliario getMobiliario() {
+    return mobiliario;
+  }
+
+  public void setMobiliario(Mobiliario mobiliario) {
+    this.mobiliario = mobiliario;
+  }
 }

@@ -9,4 +9,33 @@ public class SolicitudMantenimiento {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
+
+  @OneToOne
+  public Tecnico tecnico;
+  @OneToOne
+  public Mantenimiento mantenimiento;
+
+  public long getId() {
+    return id;
+  }
+
+  public void setId(long id) {
+    this.id = id;
+  }
+
+  public Tecnico getTecnico() {
+    return tecnico;
+  }
+
+  public void setTecnico(Tecnico tecnico) {
+    this.tecnico = tecnico;
+  }
+
+  public Mantenimiento getMantenimiento() {
+    return mantenimiento;
+  }
+
+  public void setMantenimiento(Mantenimiento mantenimiento) {
+    this.mantenimiento = mantenimiento;
+  }
 }
