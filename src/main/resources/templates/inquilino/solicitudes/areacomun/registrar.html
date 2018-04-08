@@ -26,11 +26,12 @@
                                 <div class="form-group" id="solicitudAreaFragment">
                                     <div class="col-md-6 col-xs-12">
                                         <label class="control-label">Area Comun</label>
+                                        <input type="hidden" th:field="*{areaComunCodigo}"/>
                                         <input class="form-control autocomplete" type="text" id="areacomunautocomplete"/>
-                                        <input type="hidden" th:field="*{areaComunCodigo}" id="form_areaComun_codigo" />
                                     </div>
                                     <div class="col-md-3 col-xs-12">
                                         <label class="control-label">Fecha Solicitud</label>
+                                        <input th:type="hidden" th:field="*{areaComun.codigo}" id="form_areaComun_codigo" />
                                         <input type="text" class="form-control datepicker" th:field="*{fechaSolicitud}" id="fechaSolicitud"/>
                                     </div>
 

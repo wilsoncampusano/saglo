@@ -6,6 +6,7 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResp
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -50,7 +51,7 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
 
     @RequestMapping(value = "ajax/verificar", method = RequestMethod.POST)
-    public ModelAndView solicitudesAreaComunPostVerificar(SolicitudAreaComunForm form ,
+    public ModelAndView solicitudesAreaComunPostVerificar(@ModelAttribute("form") SolicitudAreaComunForm form ,
                                                           RedirectAttributes redirectAttrs,
                                                          HttpSession httpSession){
         modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment");
