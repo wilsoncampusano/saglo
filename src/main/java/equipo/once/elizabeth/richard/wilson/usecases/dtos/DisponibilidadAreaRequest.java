@@ -10,7 +10,7 @@ public class DisponibilidadAreaRequest implements AreaComunRequest{
 
   public static DisponibilidadAreaRequest construirRequest(SolicitudAreaComunForm form) {
     DisponibilidadAreaRequest disponibilidadAreaRequest = new DisponibilidadAreaRequest();
-    disponibilidadAreaRequest.codigoArea = form.getAreaComun().getCodigo();
+    disponibilidadAreaRequest.codigoArea = form.getAreaComunCodigo();
     disponibilidadAreaRequest.fechaSolicitud = form.fechaSolicitud;
     return disponibilidadAreaRequest;
   }

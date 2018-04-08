@@ -12,6 +12,15 @@ public class SolicitudAreaComunForm {
     public String comentario;
     public Inquilino inquilino;
     public boolean disponible;
+    public String areaComunCodigo;
+
+    public String getAreaComunCodigo() {
+        return areaComunCodigo;
+    }
+
+    public void setAreaComunCodigo(String areaComunCodigo) {
+        this.areaComunCodigo = areaComunCodigo;
+    }
 
     public static SolicitudAreaComunForm construirForm(DisponibilidadAreaResponse response) {
 
