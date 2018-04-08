@@ -27,7 +27,8 @@ public class SolicitudAreaComunController extends InquilinoController  {
     @RequestMapping(value = "areacomun", method = RequestMethod.GET)
     public ModelAndView solicitudesAreaComunGet(){
         modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
-        modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, new SolicitudAreaComunForm());
+        SolicitudAreaComunForm form = new SolicitudAreaComunForm();
+        modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, form);
         return modelAndView;
     }
 

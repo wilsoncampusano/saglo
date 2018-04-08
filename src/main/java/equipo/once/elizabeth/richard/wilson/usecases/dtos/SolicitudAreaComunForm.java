@@ -12,15 +12,7 @@ public class SolicitudAreaComunForm {
     public String comentario;
     public Inquilino inquilino;
     public boolean disponible;
-    public String areaComunCodigo;
-
-    public String getAreaComunCodigo() {
-        return areaComunCodigo;
-    }
-
-    public void setAreaComunCodigo(String areaComunCodigo) {
-        this.areaComunCodigo = areaComunCodigo;
-    }
+    private String areaComunCodigo = "";
 
     public static SolicitudAreaComunForm construirForm(DisponibilidadAreaResponse response) {
 
@@ -65,5 +57,13 @@ public class SolicitudAreaComunForm {
 
     public void setDisponible(boolean disponible) {
         this.disponible = disponible;
+    }
+
+    public String getAreaComunCodigo() {
+        return areaComunCodigo;
+    }
+
+    public void setAreaComunCodigo(String areaComunCodigo) {
+        this.areaComunCodigo = areaComunCodigo;
     }
 }
