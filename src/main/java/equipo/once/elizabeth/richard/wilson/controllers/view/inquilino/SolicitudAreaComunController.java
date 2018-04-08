@@ -52,7 +52,6 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
     @RequestMapping(value = "ajax/verificar", method = RequestMethod.POST)
     public ModelAndView solicitudesAreaComunPostVerificar(@ModelAttribute("form") SolicitudAreaComunForm form ,
-                                                          RedirectAttributes redirectAttrs,
                                                          HttpSession httpSession){
         modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment");
         DisponibilidadAreaRequest request = DisponibilidadAreaRequest.construirRequest(form);
