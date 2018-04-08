@@ -9,7 +9,7 @@ public class SolicitudAreacomun {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
-  public String fechaSolicitud;
+  public Date fechaSolicitud;
   public String codigo;
 
   @ManyToOne
@@ -26,11 +26,11 @@ public class SolicitudAreacomun {
     this.id = id;
   }
 
-  public String getFechaSolicitud() {
+  public Date getFechaSolicitud() {
     return fechaSolicitud;
   }
 
-  public void setFechaSolicitud(String fechaSolicitud) {
+  public void setFechaSolicitud(Date fechaSolicitud) {
     this.fechaSolicitud = fechaSolicitud;
   }
 

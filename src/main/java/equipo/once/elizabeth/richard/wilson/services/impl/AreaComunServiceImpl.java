@@ -7,6 +7,7 @@ import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
 import java.util.List;
 
 @Component
@@ -21,7 +22,7 @@ public class AreaComunServiceImpl implements AreaComunService{
   }
 
   @Override
-  public boolean disponibleALafecha(String codigoArea, String fechaSolicitud) {
+  public boolean disponibleALafecha(String codigoArea, Date fechaSolicitud) {
     return false;
   }
 

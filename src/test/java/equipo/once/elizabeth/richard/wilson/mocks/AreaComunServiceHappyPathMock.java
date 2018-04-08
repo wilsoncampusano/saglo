@@ -6,6 +6,7 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 public class AreaComunServiceHappyPathMock implements AreaComunService {
@@ -18,7 +19,7 @@ public class AreaComunServiceHappyPathMock implements AreaComunService {
   }
 
   @Override
-  public boolean disponibleALafecha(String codigoArea, String fechaSolicitud) {
+  public boolean disponibleALafecha(String codigoArea, Date fechaSolicitud) {
     return true;
   }
 

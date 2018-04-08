@@ -8,6 +8,8 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudInquilinoArea
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudInquilinoAreaComunResponse;
 import org.junit.Test;
 
+import java.util.Date;
+
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNot.not;
 import static org.junit.Assert.assertThat;
@@ -24,7 +26,7 @@ public class SolicitudPermisoUsoAreaComunTest {
         AreaComun areaComun = new AreaComun();
 
         form.areaComun = areaComun;
-        form.fechaSolicitud = "01-01-2016";
+        form.fechaSolicitud = new Date();
         form.comentario  = "comentario";
 
         request.form = form;

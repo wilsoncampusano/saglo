@@ -7,6 +7,8 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResp
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.util.Date;
+
 public class DisponibilidadAreaComunTest {
 
   @Test
@@ -16,7 +18,7 @@ public class DisponibilidadAreaComunTest {
 
     disponibilidadAreaRequest.codigoArea = "A-piscina";
 
-    disponibilidadAreaRequest.fechaSolicitud = "24-12-2016";
+    disponibilidadAreaRequest.fechaSolicitud = new Date();
 
     DisponibilidadAreaComunUseCase useCase = new DisponibilidadAreaComunUseCase();
     useCase.areaComunService = new AreaComunServiceHappyPathMock();

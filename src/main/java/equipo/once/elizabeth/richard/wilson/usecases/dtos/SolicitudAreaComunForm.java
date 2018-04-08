@@ -3,10 +3,12 @@ package equipo.once.elizabeth.richard.wilson.usecases.dtos;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 
+import java.util.Date;
+
 
 public class SolicitudAreaComunForm {
     public AreaComun areaComun;
-    public String fechaSolicitud;
+    public Date fechaSolicitud;
     public String comentario;
     public Inquilino inquilino;
     public boolean disponible;
@@ -24,11 +26,11 @@ public class SolicitudAreaComunForm {
         this.areaComun = areaComun;
     }
 
-    public String getFechaSolicitud() {
+    public Date getFechaSolicitud() {
         return fechaSolicitud;
     }
 
-    public void setFechaSolicitud(String fechaSolicitud) {
+    public void setFechaSolicitud(Date fechaSolicitud) {
         this.fechaSolicitud = fechaSolicitud;
     }
 
