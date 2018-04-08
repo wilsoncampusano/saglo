@@ -21,7 +21,7 @@ public class SolicitudAreaComunController extends InquilinoController  {
     @Autowired
     private DisponibilidadAreaComunUseCase disponibilidadAreaComunUseCase;
     private ModelAndView modelAndView ;
-    private static final String SOLICITUD_AREACOMUN_FORM = "solicitudAreaComunForm";
+    private static final String SOLICITUD_AREACOMUN_FORM = "form";
     private static final String SOLICITUDES_AREACOMUN_REGISTRAR = "inquilino/solicitudes/areacomun/registrar";
 
     @RequestMapping(value = "areacomun", method = RequestMethod.GET)
@@ -48,11 +48,11 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
 
 
-    @RequestMapping(value = "areacomun",params = {"verificarDisponibilidad"}, method = RequestMethod.POST)
+    @RequestMapping(value = "ajax/verificar", method = RequestMethod.POST)
     public ModelAndView solicitudesAreaComunPostVerificar(SolicitudAreaComunForm form ,
                                                           RedirectAttributes redirectAttrs,
                                                          HttpSession httpSession){
-        modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+        modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment");
         DisponibilidadAreaRequest request = DisponibilidadAreaRequest.construirRequest(form);
         disponibilidadAreaComunUseCase.request = request;
 

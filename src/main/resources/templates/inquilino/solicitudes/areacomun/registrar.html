@@ -10,7 +10,9 @@
 
 <div layout:fragment="content">
     <div class="row">
-        <form th:action="@{/inquilino/solicitudes/areacomun#areacomun}" method="post" id="registrarForm">
+        <form th:action="@{/inquilino/solicitudes/areacomun#areacomun}"
+              th:object="${form}"
+              method="post" id="registrarForm">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -20,32 +22,33 @@
 
                     <div class="panel-body">
                         <div class="form-horizontal" role="form">
+                            <th:block th:fragment="solicitudAreaFragment">
+                                <div class="form-group" id="solicitudAreaFragment">
+                                    <div class="col-md-6 col-xs-12">
+                                        <label class="control-label">Area Comun</label>
+                                        <input class="form-control autocomplete" type="text" id="areacomunautocomplete"/>
+                                        <input type="hidden" th:field="*{areaComun.codigo}" id="form_areaComun_codigo" />
+                                    </div>
+                                    <div class="col-md-3 col-xs-12">
+                                        <label class="control-label">Fecha Solicitud</label>
 
-                            <div class="form-group">
-                                <div class="col-md-6 col-xs-12">
-                                    <label class="control-label">Area Comun</label>
-                                    <input class="form-control autocomplete" type="text" id="areacomunautocomplete"/>
-                                    <input type="hidden" name="areaComun.codigo" id="form_areaComun_codigo" />
+                                        <input type="text" class="form-control datepicker" th:field="*{fechaSolicitud}" id="fechaSolicitud"/>
+                                    </div>
+
+                                    <div class="col-md-3 col-xs-12">
+                                        <label class="control-label">Disponibilidad</label>
+                                        <span th:if="*{disponible}" class="hide label label-success areacomun-disponibilidad">Disponible</span>
+                                        <span th:if="*{!disponible}" class="hide label label-danger areacomun-disponiblidad">No Disponible</span>
+                                    </div>
                                 </div>
-                                <div class="col-md-3 col-xs-12">
-                                    <label class="control-label">Fecha Solicitud</label>
 
-                                    <input type="text" class="form-control datepicker" name="fechaSolicitud" id="fechaSolicitud"/>
-                                </div>
+                            </th:block>
 
-                                <div class="col-md-3 col-xs-12">
-                                    <label class="control-label">Disponibilidad</label>
-                                    <span class="hide label label-success areacomun-disponibilidad">Disponible</span>
-                                    <span class="hide label label-danger areacomun-disponiblidad">No Disponible</span>
-                                    <span class="label label-primary areacomun-disponibilidad"> - </span>
-
-                                </div>
-                            </div>
 
                             <div class="form-group">
                                 <div class="col-md-12 col-xs-12">
                                     <label class="control-label">Comentario</label>
-                                    <textarea class="form-control" rows="5"
+                                    <textarea th:field="*{comentario}" class="form-control" rows="5"
                                            type="text" name="comentario"></textarea>
                                 </div>
 

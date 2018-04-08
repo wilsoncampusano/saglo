@@ -42,20 +42,17 @@
 
         function configurarFechaSolicitud() {
             $("#fechaSolicitud").change(function () {
-                $("#verificarDisponibilidad").click();
-            });
-        }
+                $.ajax( {
+                    url: '/inquilino/solicitudes/ajax/verificar',
+                    method: 'post',
+                    data: JSON.stringify($("#registrarForm").serialize()),
+                    success: function (HTML) {
+                        $("#solicitudAreaFragment").html(HTML);
+                    }
+                }).done(function(HTML){
+                    $("#solicitudAreaFragment").html(HTML);
 
-        function escucharDisponibilidad() {
-            $('#fechaSolicitud').on('disponibilidad:trigger', function (event, disponibilidad) {
-
-                if (disponibilidad.disponible) {
-                    $('.areacomun-disponibilidad .label-success').show();
-                    $('.areacomun-disponibilidad .label-warning').hide();
-                } else {
-                    $('.areacomun-disponibilidad .label-success').hide();
-                    $('.areacomun-disponibilidad .label-warning').show();
-                }
+                });
             });
         }
     }
