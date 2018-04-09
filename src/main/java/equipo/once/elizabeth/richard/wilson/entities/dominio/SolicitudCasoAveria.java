@@ -15,7 +15,7 @@ public class SolicitudCasoAveria {
   @ManyToOne
   public Inquilino inquilino;
 
-  @OneToMany
+  @ManyToOne
   public MobiliarioInquilino mobiliarioInquilino;
 
   public long getId() {
