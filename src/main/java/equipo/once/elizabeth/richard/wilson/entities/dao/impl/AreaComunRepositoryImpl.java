@@ -2,6 +2,7 @@ package equipo.once.elizabeth.richard.wilson.entities.dao.impl;
 
 import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
+import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
@@ -10,6 +11,11 @@ public class AreaComunRepositoryImpl implements AreaComunRepositoryCustom{
   @Override
   public List<AreaComun> findByNombreIgnoreCaseContaining(String palabra) {
     return this.findByNombreIgnoreCaseContaining(palabra);
+  }
+
+  @Override
+  public AreaComun buscarPorCodigo(@Param("codigo") String codigoArea) {
+    return null;
   }
 
   @Override
