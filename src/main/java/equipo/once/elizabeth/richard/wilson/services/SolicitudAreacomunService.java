@@ -11,4 +11,5 @@ public interface SolicitudAreacomunService {
 
 
     void guardar(SolicitudAreaComunForm form );
+    boolean isAreaComunDisponible(SolicitudAreaComunForm form );
 }

@@ -36,4 +36,12 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         SolicitudAreacomun save = solicitudAreaComunRepository.save(s);
 
     }
+
+    @Override
+    public boolean isAreaComunDisponible(SolicitudAreaComunForm form) {
+
+        boolean disponibilidad = areaComunService
+            .disponibleALafecha(form.areaComun.codigo, form.fechaSolicitud);
+        return disponibilidad;
+    }
 }

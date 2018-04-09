@@ -45,7 +45,10 @@ public class SolicitudAreaComunController extends InquilinoController  {
                                                           HttpSession httpSession){
         modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
         Mensaje mensaje;
-        if(!disponible(form)){
+
+        form.disponible = solicitudAreacomunService.isAreaComunDisponible(form);
+
+        if(!form.disponible){
             mensaje = Mensaje.ADVERTENCIA;
             mensaje.setMensaje("El area no se encuentra disponible!");
         } else{
@@ -69,22 +72,11 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
     @RequestMapping(value = "ajax/verificar", method = RequestMethod.POST)
     public String solicitudesAreaComunPostVerificar(SolicitudAreaComunForm form, Model model){
-        disponible(form);
+
+        form.disponible = solicitudAreacomunService.isAreaComunDisponible(form);
+
         model.addAttribute(SOLICITUD_AREACOMUN_FORM,form);
 
         return SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment";
-    }
-
-    private boolean disponible(SolicitudAreaComunForm form) {
-        DisponibilidadAreaRequest request = DisponibilidadAreaRequest.construirRequest(form);
-        disponibilidadAreaComunUseCase.request = request;
-
-        disponibilidadAreaComunUseCase.solicitar();
-
-        DisponibilidadAreaResponse response =
-            (DisponibilidadAreaResponse) disponibilidadAreaComunUseCase.obtenerRespuesta();
-
-        SolicitudAreaComunForm formResponse = SolicitudAreaComunForm.construirForm(response);
-       return formResponse.disponible;
     }
 }
