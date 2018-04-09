@@ -64,7 +64,6 @@ public class SolicitudAreaComunController extends InquilinoController  {
         SolicitudAreaComunForm formResponse = SolicitudAreaComunForm.construirForm(response);
         form.setDisponible(formResponse.disponible);
         model.addAttribute(SOLICITUD_AREACOMUN_FORM,form);
-        //model.containsAttribute("form");
 
         return SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment";
     }
