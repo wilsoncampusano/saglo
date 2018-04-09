@@ -57,7 +57,7 @@
 
         function configurarFechas() {
             $(".fechas").datepicker({
-                format: 'dd/mm/yyyy',
+                dateFormat: 'dd/mm/yy',
                 autoclose: true,
                 todayHighlight: false
             });

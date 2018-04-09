@@ -12,7 +12,7 @@ import java.util.Date;
 @Controller
 public abstract class CommonViewController {
 
-    protected String dateFormatString = "MM-dd-yyyy";
+    protected String dateFormatString = "dd/MM/yyyy";
 
     @InitBinder
     public void initBinder(WebDataBinder webDataBinder) {

@@ -26,7 +26,7 @@
                                 <div class="form-group">
                                     <div class="col-md-6 col-xs-12">
                                         <label class="control-label">Area Comun</label>
-                                        <input class="form-control autocomplete" type="text" id="areacomunautocomplete"/>
+                                        <input class="form-control autocomplete" th:field="${form.areaComun.nombre}" type="text" id="areacomunautocomplete"/>
                                     </div>
                                     <div class="col-md-3 col-xs-12">
                                         <label class="control-label">Fecha Solicitud</label>
@@ -36,8 +36,8 @@
 
                                     <div class="col-md-3 col-xs-12">
                                         <label class="control-label">Disponibilidad</label>
-                                        <span th:if="${form.disponible}" class="hide label label-success areacomun-disponibilidad">Disponible</span>
-                                        <span th:if="${not form.disponible}" class="hide label label-danger areacomun-disponiblidad">No Disponible</span>
+                                        <span th:if="${form.disponible}" class="label label-success areacomun-disponibilidad">Disponible</span>
+                                        <span th:if="${not form.disponible}" class="label label-danger areacomun-disponiblidad">No Disponible</span>
                                     </div>
                                 </div>
 
