@@ -52,7 +52,7 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
 
     @RequestMapping(value = "ajax/verificar", method = RequestMethod.POST)
-    public String solicitudesAreaComunPostVerificar(Model model, @ModelAttribute("form") SolicitudAreaComunForm form){
+    public String solicitudesAreaComunPostVerificar(SolicitudAreaComunForm form, Model model){
         DisponibilidadAreaRequest request = DisponibilidadAreaRequest.construirRequest(form);
         disponibilidadAreaComunUseCase.request = request;
 
@@ -61,11 +61,10 @@ public class SolicitudAreaComunController extends InquilinoController  {
         DisponibilidadAreaResponse response =
             (DisponibilidadAreaResponse) disponibilidadAreaComunUseCase.obtenerRespuesta();
 
-
         SolicitudAreaComunForm formResponse = SolicitudAreaComunForm.construirForm(response);
         form.setDisponible(formResponse.disponible);
         model.addAttribute(SOLICITUD_AREACOMUN_FORM,form);
-        model.containsAttribute("form");
+        //model.containsAttribute("form");
 
         return SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment";
     }

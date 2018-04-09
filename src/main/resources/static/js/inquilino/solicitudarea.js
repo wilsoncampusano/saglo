@@ -1,7 +1,7 @@
 (function (solicitudAreaCode) {
 
     solicitudAreaCode(window.jQuery, window, document);
-
+    configurarFechas();
 }(function ($, window, document) {
         $(function () {
             $('#menu_inquilino_areacomun').addClass("active");
@@ -44,12 +44,21 @@
             $("#fechaSolicitud").change(function () {
                 $.ajax( {
                     url: '/inquilino/solicitudes/ajax/verificar',
-                    method: 'post',
-                    data: JSON.stringify($("#registrarForm").serialize())
-                }).done(function(HTML){
+                    method: 'POST',
+                    type:'POST',
+                    data: $("#registrarForm").serialize()
+                }).success(function(HTML){
                     $("#solicitudAreaFragment").html(HTML);
-
+                    configurarFechas();
                 });
+            });
+        }
+
+        function configurarFechas() {
+            $(".datepicker").datepicker({
+                format: 'dd/mm/yyyy',
+                autoclose: true,
+                todayHighlight: false
             });
         }
     }

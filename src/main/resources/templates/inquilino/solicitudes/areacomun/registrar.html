@@ -26,34 +26,33 @@
                                 <div class="form-group">
                                     <div class="col-md-6 col-xs-12">
                                         <label class="control-label">Area Comun</label>
-                                        <input type="hidden" th:field="*{areaComunCodigo}"/>
                                         <input class="form-control autocomplete" type="text" id="areacomunautocomplete"/>
                                     </div>
                                     <div class="col-md-3 col-xs-12">
                                         <label class="control-label">Fecha Solicitud</label>
-                                        <input th:type="hidden" th:field="*{areaComun.codigo}" id="form_areaComun_codigo" />
-                                        <input type="text" class="form-control datepicker" th:field="*{fechaSolicitud}" id="fechaSolicitud"/>
+                                        <input th:type="hidden" th:field="${form.areaComun.codigo}" id="form_areaComun_codigo" />
+                                        <input type="text" class="form-control datepicker" th:field="${form.fechaSolicitud}" id="fechaSolicitud"/>
                                     </div>
 
                                     <div class="col-md-3 col-xs-12">
                                         <label class="control-label">Disponibilidad</label>
-                                        <span th:if="*{disponible}" class="hide label label-success areacomun-disponibilidad">Disponible</span>
-                                        <span th:if="*{!disponible}" class="hide label label-danger areacomun-disponiblidad">No Disponible</span>
+                                        <span th:if="${form.disponible}" class="hide label label-success areacomun-disponibilidad">Disponible</span>
+                                        <span th:if="${not form.disponible}" class="hide label label-danger areacomun-disponiblidad">No Disponible</span>
                                     </div>
                                 </div>
 
-                            </th:block>
+
 
 
                             <div class="form-group">
                                 <div class="col-md-12 col-xs-12">
                                     <label class="control-label">Comentario</label>
-                                    <textarea th:field="*{comentario}" class="form-control" rows="5"
+                                    <textarea th:field="${form.comentario}" class="form-control" rows="5"
                                            type="text" name="comentario"></textarea>
                                 </div>
 
                             </div>
-
+                            </th:block>
                         </div>
                     </div>
                     <div class="panel-footer">
