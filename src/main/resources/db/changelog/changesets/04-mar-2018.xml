@@ -11,17 +11,24 @@
     <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
         <sql>
 
-            CREATE TABLE `solicitud_areacomun` (
-            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-            `inquilino_id` int(20) unsigned NOT NULL,
-            `area_comun_id` int(20) unsigned NOT NULL,
-            `fecha_solicitud` date NOT NULL,
+            CREATE TABLE `saglo`.`solicitud_areacomun` (
+            `id` INT NOT NULL AUTO_INCREMENT,
+            `inquilino_id` INT NOT NULL,
+            `area_comun_id` INT NOT NULL,
+            `fecha_solicitud` DATE NOT NULL,
             PRIMARY KEY (`id`),
-            KEY `inquilino_id` (`inquilino_id`),
-            KEY `area_comun_id` (`area_comun_id`),
-            CONSTRAINT `solicitud_areacomun_ibfk_1` FOREIGN KEY (`inquilino_id`) REFERENCES `inquilino` (`id`),
-            CONSTRAINT `solicitud_areacomun_ibfk_2` FOREIGN KEY (`area_comun_id`) REFERENCES `areacomun` (`id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            INDEX `solicitud_areacomun_ibfk_1_idx` (`inquilino_id` ASC),
+            INDEX `solicitud_areacomun_ibfk_2_idx` (`area_comun_id` ASC),
+            CONSTRAINT `solicitud_areacomun_ibfk_1`
+            FOREIGN KEY (`inquilino_id`)
+            REFERENCES `saglo`.`inquilino` (`id`)
+            ON DELETE NO ACTION
+            ON UPDATE NO ACTION,
+            CONSTRAINT `solicitud_areacomun_ibfk_2`
+            FOREIGN KEY (`area_comun_id`)
+            REFERENCES `saglo`.`areacomun` (`id`)
+            ON DELETE NO ACTION
+            ON UPDATE NO ACTION);
         </sql>
     </changeSet>
 
@@ -78,16 +85,27 @@
     <changeSet id="wilsoncampusano-010" author="wilsoncampusano">
         <sql>
 
-            CREATE TABLE `mobiliario_inquilino` (
-            `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-            `mobiliario_id` int(11) unsigned NOT NULL,
-            `inquilino_id` int(11) unsigned NOT NULL,
-            PRIMARY KEY (`id`),
-            KEY `inquilino_id` (`inquilino_id`),
-            KEY `mobiliario_id` (`mobiliario_id`),
-            CONSTRAINT `mobiliario_inquilino_ibfk_1` FOREIGN KEY (`inquilino_id`) REFERENCES `inquilino` (`id`),
-            CONSTRAINT `mobiliario_inquilino_ibfk_2` FOREIGN KEY (`mobiliario_id`) REFERENCES `mobiliario` (`id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            CREATE TABLE `saglo`.`mobiliario_inquilino` (
+            `id` INT NOT NULL AUTO_INCREMENT,
+            `mobiliario_id` INT NOT NULL,
+            `inquilino_id` INT NOT NULL,
+            PRIMARY KEY (`id`));
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-010.1" author="wilsoncampusano">
+        <sql>
+
+            ALTER TABLE `saglo`.`mobiliario_inquilino`
+            ADD INDEX `fk_mob_inquilino_fk1_idx` (`inquilino_id` ASC);
+            ALTER TABLE `saglo`.`mobiliario_inquilino`
+            ADD CONSTRAINT `fk_mob_inquilino_fk1`
+            FOREIGN KEY (`inquilino_id`)
+            REFERENCES `saglo`.`inquilino` (`id`)
+            ON DELETE NO ACTION
+            ON UPDATE NO ACTION;
+
         </sql>
     </changeSet>
 
@@ -100,10 +118,8 @@
             `inquilino_id` int(11) unsigned NOT NULL,
             PRIMARY KEY (`id`),
             KEY `inquilino_id` (`inquilino_id`),
-            KEY `pago_id` (`pago_id`),
-            CONSTRAINT `pago_inquilino_ibfk_1` FOREIGN KEY (`inquilino_id`) REFERENCES `inquilino` (`id`),
-            CONSTRAINT `pago_inquilino_ibfk_2` FOREIGN KEY (`pago_id`) REFERENCES `pago` (`id`)
-            ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+            KEY `pago_id` (`pago_id`)
+            );
         </sql>
     </changeSet>
 

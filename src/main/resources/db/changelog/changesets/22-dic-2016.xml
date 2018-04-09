@@ -42,11 +42,11 @@
     <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
         <sql>
 
-            CREATE TABLE areacomun (
-            id int IDENTITY PRIMARY KEY,
-            codigo VARCHAR(30),
-            nombre  VARCHAR(50)
-            ) ENGINE = InnoDB;
+            CREATE TABLE `saglo`.`areacomun` (
+            `id` INT NOT NULL AUTO_INCREMENT,
+            `codigo` VARCHAR(45) NULL,
+            `nombre` VARCHAR(50) NULL,
+            PRIMARY KEY (`id`));
         </sql>
     </changeSet>
 
@@ -54,9 +54,10 @@
     <changeSet id="wilsoncampusano-006" author="wilsoncampusano">
         <sql>
             create table inquilino(
-            id int identity primary key,
-            codigo varchar(30)
-            ) ENGINE = InnoDB;
+            `id` INT NOT NULL AUTO_INCREMENT,
+            codigo varchar(30),
+            PRIMARY KEY (`id`)
+            );
         </sql>
     </changeSet>
 

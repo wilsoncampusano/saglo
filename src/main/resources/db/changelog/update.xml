@@ -10,6 +10,7 @@
     <include file="db/changelog/changesets/11-dic-2016.xml"/>
     <include file="db/changelog/changesets/15-dic-2016.xml"/>
     <include file="db/changelog/changesets/16-dic-2016.xml"/>
+    <include file="db/changelog/changesets/22-dic-2016.xml"/>
     <include file="db/changelog/changesets/04-mar-2018.xml"/>
 
 </databaseChangeLog>
