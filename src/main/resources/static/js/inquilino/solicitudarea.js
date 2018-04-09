@@ -1,12 +1,12 @@
 (function (solicitudAreaCode) {
 
     solicitudAreaCode(window.jQuery, window, document);
-    configurarFechas();
 }(function ($, window, document) {
         $(function () {
             $('#menu_inquilino_areacomun').addClass("active");
             configurarAutoCompleteAreaComun({onResponse: onResponseSearchAreacomun, onSelect: onSelectAreaComun});
             configurarFechaSolicitud();
+            configurarFechas();
         });
 
         function configurarAutoCompleteAreaComun(config) {
@@ -49,13 +49,14 @@
                     data: $("#registrarForm").serialize()
                 }).success(function(HTML){
                     $("#solicitudAreaFragment").html(HTML);
+                    configurarAutoCompleteAreaComun({onResponse: onResponseSearchAreacomun, onSelect: onSelectAreaComun});
                     configurarFechas();
                 });
             });
         }
 
         function configurarFechas() {
-            $(".datepicker").datepicker({
+            $(".fechas").datepicker({
                 format: 'dd/mm/yyyy',
                 autoclose: true,
                 todayHighlight: false

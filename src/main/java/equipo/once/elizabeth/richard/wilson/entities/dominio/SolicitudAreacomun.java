@@ -10,7 +10,6 @@ public class SolicitudAreacomun {
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
   public Date fechaSolicitud;
-  public String codigo;
 
   @ManyToOne
   public Inquilino inquilino;
@@ -32,14 +31,6 @@ public class SolicitudAreacomun {
 
   public void setFechaSolicitud(Date fechaSolicitud) {
     this.fechaSolicitud = fechaSolicitud;
-  }
-
-  public String getCodigo() {
-    return codigo;
-  }
-
-  public void setCodigo(String codigo) {
-    this.codigo = codigo;
   }
 
   public Inquilino getInquilino() {
