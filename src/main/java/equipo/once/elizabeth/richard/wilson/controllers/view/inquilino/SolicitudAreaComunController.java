@@ -1,5 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.controllers.view.inquilino;
 
+import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaComunUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaRequest;
@@ -39,15 +40,21 @@ public class SolicitudAreaComunController extends InquilinoController  {
     }
 
     @RequestMapping(value = "areacomun",params = {"registrar"}, method = RequestMethod.POST)
-    public ModelAndView solicitudesAreaComunPostRegistrar(SolicitudAreaComunForm form , RedirectAttributes redirectAttrs,
-                                                 HttpSession httpSession){
+    public ModelAndView solicitudesAreaComunPostRegistrar(SolicitudAreaComunForm form ,
+                                                          RedirectAttributes redirectAttrs,
+                                                          HttpSession httpSession){
         modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+        Mensaje mensaje;
         if(!form.disponible){
-            modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, form);
+            mensaje = Mensaje.ADVERTENCIA;
+            mensaje.setMensaje("El area no se encuentra disponible!");
         } else{
             solicitudAreacomunService.guardar(form);
+            mensaje = Mensaje.EXITO;
+            mensaje.setMensaje("Se ha reservado el area!");
         }
-
+        modelAndView.addObject(MENSAJE_KEY, mensaje);
+        modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, form);
         return modelAndView;
     }
 

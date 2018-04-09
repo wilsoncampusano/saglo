@@ -34,7 +34,7 @@ public class AreaComunServiceImpl implements AreaComunService{
 
   @Override
   public AreaComun buscarPorCodigo(String codigoArea) {
-    return null;
+    return areaComunRepository.buscarPorCodigo(codigoArea);
   }
 
   @Override

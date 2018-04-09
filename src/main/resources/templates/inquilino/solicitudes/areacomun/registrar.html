@@ -9,6 +9,7 @@
 <body>
 
 <div layout:fragment="content">
+    <div th:replace="alerta :: alert (mensaje=${errorMessage})">...</div>
     <div class="row">
         <form th:action="@{/inquilino/solicitudes/areacomun}"
               th:object="${form}"
