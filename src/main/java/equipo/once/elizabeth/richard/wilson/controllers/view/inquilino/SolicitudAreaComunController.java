@@ -6,6 +6,7 @@ import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResp
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -51,9 +52,9 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
 
     @RequestMapping(value = "ajax/verificar", method = RequestMethod.POST)
-    public ModelAndView solicitudesAreaComunPostVerificar(@ModelAttribute("form") SolicitudAreaComunForm form ,
-                                                         HttpSession httpSession){
-        modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment");
+    public String solicitudesAreaComunPostVerificar(Model model, @ModelAttribute("form") SolicitudAreaComunForm form ,
+                                                    HttpSession httpSession){
+        //modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment");
         DisponibilidadAreaRequest request = DisponibilidadAreaRequest.construirRequest(form);
         disponibilidadAreaComunUseCase.request = request;
 
@@ -63,10 +64,11 @@ public class SolicitudAreaComunController extends InquilinoController  {
             (DisponibilidadAreaResponse) disponibilidadAreaComunUseCase.obtenerRespuesta();
 
 
-        form = SolicitudAreaComunForm.construirForm(response);
+        SolicitudAreaComunForm formResponse = SolicitudAreaComunForm.construirForm(response);
+        form.setDisponible(formResponse.disponible);
+       // modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, form);
+        model.addAttribute(SOLICITUD_AREACOMUN_FORM,form);
 
-        modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, form);
-
-        return modelAndView;
+        return SOLICITUDES_AREACOMUN_REGISTRAR + ":: solicitudAreaFragment";
     }
 }

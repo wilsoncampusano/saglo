@@ -45,10 +45,7 @@
                 $.ajax( {
                     url: '/inquilino/solicitudes/ajax/verificar',
                     method: 'post',
-                    data: JSON.stringify($("#registrarForm").serialize()),
-                    success: function (HTML) {
-                        $("#solicitudAreaFragment").html(HTML);
-                    }
+                    data: JSON.stringify($("#registrarForm").serialize())
                 }).done(function(HTML){
                     $("#solicitudAreaFragment").html(HTML);
 

@@ -15,8 +15,10 @@ public class SolicitudAreaComunForm {
     private String areaComunCodigo = "";
 
     public static SolicitudAreaComunForm construirForm(DisponibilidadAreaResponse response) {
-
-        return null;
+        SolicitudAreaComunForm form = new SolicitudAreaComunForm();
+        form.setDisponible(response.disponible);
+        form.setAreaComun(response.areaComun);
+        return form;
     }
 
     public AreaComun getAreaComun() {
