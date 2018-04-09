@@ -1,5 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.controllers.view.inquilino;
 
+import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaComunUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaRequest;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResponse;
@@ -22,6 +23,9 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
     @Autowired
     private DisponibilidadAreaComunUseCase disponibilidadAreaComunUseCase;
+    @Autowired
+    private SolicitudAreacomunService solicitudAreacomunService;
+
     private ModelAndView modelAndView ;
     private static final String SOLICITUD_AREACOMUN_FORM = "form";
     private static final String SOLICITUDES_AREACOMUN_REGISTRAR = "inquilino/solicitudes/areacomun/registrar";
@@ -38,6 +42,11 @@ public class SolicitudAreaComunController extends InquilinoController  {
     public ModelAndView solicitudesAreaComunPostRegistrar(SolicitudAreaComunForm form , RedirectAttributes redirectAttrs,
                                                  HttpSession httpSession){
         modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+        if(!form.disponible){
+            modelAndView.addObject(SOLICITUD_AREACOMUN_FORM, form);
+        } else{
+            solicitudAreacomunService.guardar(form);
+        }
 
         return modelAndView;
     }

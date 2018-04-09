@@ -36,29 +36,23 @@
 
                                     <div class="col-md-3 col-xs-12">
                                         <label class="control-label">Disponibilidad</label>
+                                        <input type="hidden" th:field="${form.disponible}"/>
                                         <span th:if="${form.disponible}" class="label label-success areacomun-disponibilidad">Disponible</span>
                                         <span th:if="${not form.disponible}" class="label label-danger areacomun-disponiblidad">No Disponible</span>
                                     </div>
                                 </div>
-
-
-
-
-                            <div class="form-group">
-                                <div class="col-md-12 col-xs-12">
-                                    <label class="control-label">Comentario</label>
-                                    <textarea th:field="${form.comentario}" class="form-control" rows="5"
-                                           type="text" name="comentario"></textarea>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-xs-12">
+                                        <label class="control-label">Comentario</label>
+                                        <textarea th:field="${form.comentario}" class="form-control" rows="5"
+                                               type="text" name="comentario"></textarea>
+                                    </div>
                                 </div>
-
-                            </div>
                             </th:block>
                         </div>
                     </div>
                     <div class="panel-footer">
                         <div class="form-horizontal text-right text-right">
-                            <button type="submit" class="hide" name="verificarDisponibilidad" id="verificarDisponibilidad"></button>
-
                             <button type="submit" name="cancelar"
                                     class="btn btn-link btn-outline">
                                 <span>Cancelar</span>
