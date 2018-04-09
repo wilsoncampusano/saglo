@@ -4,8 +4,8 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name ="solicitud_areacomun")
-public class SolicitudAreacomun {
+@Table(name ="solicitud_averia")
+public class SolicitudCasoAveria {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
@@ -14,9 +14,9 @@ public class SolicitudAreacomun {
 
   @ManyToOne
   public Inquilino inquilino;
-  @ManyToOne
-  public AreaComun areaComun;
 
+  @OneToMany
+  public MobiliarioInquilino mobiliarioInquilino;
 
   public long getId() {
     return id;
@@ -42,11 +42,11 @@ public class SolicitudAreacomun {
     this.inquilino = inquilino;
   }
 
-  public AreaComun getAreaComun() {
-    return areaComun;
+  public MobiliarioInquilino getMobiliarioInquilino() {
+    return mobiliarioInquilino;
   }
 
-  public void setAreaComun(AreaComun areaComun) {
-    this.areaComun = areaComun;
+  public void setMobiliarioInquilino(MobiliarioInquilino mobiliarioInquilino) {
+    this.mobiliarioInquilino = mobiliarioInquilino;
   }
 }

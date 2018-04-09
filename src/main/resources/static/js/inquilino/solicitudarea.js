@@ -51,6 +51,7 @@
                     $("#solicitudAreaFragment").html(HTML);
                     configurarAutoCompleteAreaComun({onResponse: onResponseSearchAreacomun, onSelect: onSelectAreaComun});
                     configurarFechas();
+                    configurarFechaSolicitud();
                 });
             });
         }

@@ -6,9 +6,13 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
+import equipo.once.elizabeth.richard.wilson.usecases.dtos.ListaSolicitudInquilinoDetalleForm;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created on 4/9/2018.
@@ -43,5 +47,13 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         boolean disponibilidad = areaComunService
             .disponibleALafecha(form.areaComun.codigo, form.fechaSolicitud);
         return disponibilidad;
+    }
+
+    @Override
+    public List<ListaSolicitudInquilinoDetalleForm> buscarSolicitudesDelInquilino(Inquilino inquilino) {
+        List<SolicitudAreacomun> solicitudAreacomuns =
+            solicitudAreaComunRepository.buscarSolicitudesDelInquilino(inquilino.getId());
+
+        return new ArrayList<>();
     }
 }

@@ -14,7 +14,7 @@ public abstract class CommonViewController {
 
     protected String dateFormatString = "dd/MM/yyyy";
 
-    protected final String MENSAJE_KEY = "mensajeKey";
+    protected final String MENSAJE_KEY = "mensaje";
 
     @InitBinder
     public void initBinder(WebDataBinder webDataBinder) {

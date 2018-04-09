@@ -24,6 +24,7 @@ public class SolicitudAreaComunController extends InquilinoController  {
 
     @Autowired
     private DisponibilidadAreaComunUseCase disponibilidadAreaComunUseCase;
+
     @Autowired
     private SolicitudAreacomunService solicitudAreacomunService;
 
