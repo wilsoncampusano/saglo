@@ -9,8 +9,11 @@
 <body>
 
 <div layout:fragment="content">
+    <div th:replace="alerta :: alert (mensaje=${mensaje})">...</div>
     <div class="row">
-        <form th:action="@{/solicitudes/areacomun#areacomun}" method="post" id="registrarForm">
+        <form th:action="@{/solicitudes/areacomun#areacomun}"
+              th:object="${form}"
+              method="post" id="registrarForm">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -24,7 +27,7 @@
                             <div class="form-group">
                                 <div class="col-md-3 col-xs-12">
                                     <label class="control-label">Ubicacion Averia</label>
-                                    <select class="form-control" type="text" id="">
+                                    <select th:field="*{ubicacionId}" class="form-control"  >
                                         <option>Seleccione</option>
                                         <option th:each="ubicacion : ${catalogoUbiciacion}" th:text="${ubicacion.value}">Opcion</option>
                                     </select>
@@ -33,7 +36,7 @@
                                 <div class="col-md-3 col-xs-12">
                                     <label class="control-label">Tipo de Averia</label>
 
-                                    <select type="text" class="form-control ">
+                                    <select  th:field="*{tipoAveriaId}" type="text" class="form-control ">
                                         <option>Seleccione</option>
                                         <option th:each="tipoaveria : ${catalogoTipoAveria}" th:text="${tipoaveria.value}">Opcion</option>
                                     </select>
@@ -42,7 +45,7 @@
                                 <div class="col-md-6 col-xs-12">
                                     <label class="control-label">Incidente</label>
 
-                                    <select type="text" class="form-control">
+                                    <select th:field="*{tipoIncidenteId}"  class="form-control">
                                         <option>Seleccione</option>
                                         <option th:each="incidente : ${catalogoIncidente}" th:text="${incidente.value}">Opcion</option>
                                     </select>
@@ -53,8 +56,7 @@
                             <div class="form-group">
                                 <div class="col-md-12 col-xs-12">
                                     <label class="control-label">Comentario</label>
-                                    <textarea class="form-control" rows="5"
-                                           type="text"/>
+                                    <textarea th:field="*{comentario}" class="form-control" rows="5" />
                                 </div>
 
                             </div>
