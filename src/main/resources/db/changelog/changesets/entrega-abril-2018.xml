@@ -38,6 +38,18 @@
         </sql>
     </changeSet>
 
+    <changeSet id="wilsoncampusano-002" author="wilsoncampusano">
+        <sql>
+         update inquilino set
+            usuario_id = (select id from usuario where username = 'wicampusano')
+            where codigo = 'I-wilson-001';
+
+         update inquilino set
+            usuario_id = (select id from usuario where username = 'ecapellan')
+            where codigo = 'I-elizabeth-002';
+        </sql>
+    </changeSet>
+
 
 
 </databaseChangeLog>
