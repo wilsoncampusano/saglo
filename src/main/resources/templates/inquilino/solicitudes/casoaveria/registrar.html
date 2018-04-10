@@ -11,7 +11,7 @@
 <div layout:fragment="content">
     <div th:replace="alerta :: alert (mensaje=${mensaje})">...</div>
     <div class="row">
-        <form th:action="@{/solicitudes/areacomun#areacomun}"
+        <form th:action="@{/inquilino/solicitudes/casoaveria}"
               th:object="${form}"
               method="post" id="registrarForm">
             <div class="col-md-12">
@@ -28,8 +28,10 @@
                                 <div class="col-md-3 col-xs-12">
                                     <label class="control-label">Ubicacion Averia</label>
                                     <select th:field="*{ubicacionId}" class="form-control"  >
-                                        <option>Seleccione</option>
-                                        <option th:each="ubicacion : ${catalogoUbiciacion}" th:text="${ubicacion.value}">Opcion</option>
+                                        <option value="0" >Seleccione</option>
+                                        <option th:each="ubicacion : ${catalogoUbiciacion}"
+                                                th:value="${ubicacion.key}"
+                                                th:text="${ubicacion.value}">Opcion</option>
                                     </select>
                                 </div>
 
@@ -37,8 +39,10 @@
                                     <label class="control-label">Tipo de Averia</label>
 
                                     <select  th:field="*{tipoAveriaId}" type="text" class="form-control ">
-                                        <option>Seleccione</option>
-                                        <option th:each="tipoaveria : ${catalogoTipoAveria}" th:text="${tipoaveria.value}">Opcion</option>
+                                        <option value="0" >Seleccione</option>
+                                        <option th:each="tipoaveria : ${catalogoTipoAveria}"
+                                                th:value="${tipoaveria.key}"
+                                                th:text="${tipoaveria.value}">Opcion</option>
                                     </select>
                                 </div>
 
@@ -46,8 +50,10 @@
                                     <label class="control-label">Incidente</label>
 
                                     <select th:field="*{tipoIncidenteId}"  class="form-control">
-                                        <option>Seleccione</option>
-                                        <option th:each="incidente : ${catalogoIncidente}" th:text="${incidente.value}">Opcion</option>
+                                        <option value="0" >Seleccione</option>
+                                        <option th:each="incidente : ${catalogoIncidente}"
+                                                th:value="${incidente.key}"
+                                                th:text="${incidente.value}">Opcion</option>
                                     </select>
                                 </div>
 

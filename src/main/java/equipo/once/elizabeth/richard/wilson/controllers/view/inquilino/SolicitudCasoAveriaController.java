@@ -4,7 +4,6 @@ import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudCasoAveriaForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +18,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping(value = "/inquilino/solicitudes")
 public class SolicitudCasoAveriaController extends InquilinoController  {
 
-    public static final String SOLICITUDES_AREACOMUN_REGISTRAR = "/inquilino/solicitudes/casoaveria/registrar";
+    public static final String SOLICITUDES_AVERIA_REGISTRAR = "/inquilino/solicitudes/casoaveria/registrar";
     public static final String FORMULARIO_KEY = "form";
 
     @Autowired
@@ -30,7 +29,7 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
 
     @RequestMapping(value = "/casoaveria", method = RequestMethod.GET)
     public ModelAndView solicitudesCasoAveriaGet(){
-        ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+        ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AVERIA_REGISTRAR);
 
         modelAndView.addObject("catalogoIncidente", solicitudAveriaCatalogoService.catalogoIncidenteAveria());
         modelAndView.addObject("catalogoTipoAveria", solicitudAveriaCatalogoService.catalogoTipoAveria());
@@ -44,9 +43,10 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
     }
 
     @RequestMapping(value = "casoaveria", method = RequestMethod.POST)
-    public ModelAndView solicitudesCasoAveriaPostRegistrar(SolicitudCasoAveriaForm form , RedirectAttributes redirectAttrs,
-                                                          HttpSession httpSession){
-        ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+    public ModelAndView solicitudesCasoAveriaPostRegistrar(SolicitudCasoAveriaForm form ,
+                                                           RedirectAttributes redirectAttrs,
+                                                           HttpSession httpSession){
+        ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AVERIA_REGISTRAR);
         Mensaje mensaje;
         Inquilino inquilino = new Inquilino();
 
@@ -61,6 +61,7 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
         }
 
         modelAndView.addObject(MENSAJE_KEY, mensaje);
+        modelAndView.addObject(FORMULARIO_KEY, form);
         return modelAndView;
     }
 
