@@ -1,5 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
+import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
 import equipo.once.elizabeth.richard.wilson.entities.dao.SolicitudAreaComunRepository;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
@@ -53,7 +54,17 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
     public List<ListaSolicitudInquilinoDetalleForm> buscarSolicitudesDelInquilino(Inquilino inquilino) {
         List<SolicitudAreacomun> solicitudAreacomuns =
             solicitudAreaComunRepository.buscarSolicitudesDelInquilino(inquilino.getId());
+        List<ListaSolicitudInquilinoDetalleForm> listas = new ArrayList<>();
+        for(SolicitudAreacomun s : solicitudAreacomuns){
+            ListaSolicitudInquilinoDetalleForm lista = new ListaSolicitudInquilinoDetalleForm();
 
-        return new ArrayList<>();
+            lista.tipoSolicitud= "Solicitud Uso Area";
+            lista.descripcion = String.format(" Solicitud del Area %s para la Fecha: %s \n" +
+                    " Nota :  ", s.areaComun.nombre, DateUtil.toString(s.fechaSolicitud ), s.comentario);
+            lista.estatus =  s.estatus;
+            lista.id = s.id;
+            listas.add(lista);
+        }
+        return listas;
     }
 }

@@ -50,6 +50,17 @@
         </sql>
     </changeSet>
 
+    <changeSet id="wilsoncampusano-003" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE solicitud_areacomun ADD estatus varchar(50) not null default 'PENDIENTE';
+        </sql>
+    </changeSet>
 
+
+    <changeSet id="wilsoncampusano-004" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE solicitud_areacomun ADD comentario varchar(500) default 'N/A';
+        </sql>
+    </changeSet>
 
 </databaseChangeLog>

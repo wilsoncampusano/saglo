@@ -10,7 +10,9 @@
 
 <div layout:fragment="content">
     <div class="row">
-        <form th:action="@{/solicitudes/areacomun#areacomun}" method="post" id="registrarForm">
+        <form th:action="@{/solicitudes/areacomun#areacomun}"
+              th:object="${solicitudesForm}"
+              method="post" id="registrarForm">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -31,18 +33,11 @@
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr>
-                                        <td>1</td>
-                                        <td>Solicitud Solucion Averia</td>
-                                        <td>Resuelto</td>
-                                        <td>Averia Dentro de la Villa -  Tuberia rota.</td>
-
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>Permiso de Uso Area</td>
-                                        <td>Aprobada</td>
-                                        <td>Uso de Piscina para fecha 2017/03/19</td>
+                                    <tr th:each="solicitud : ${solicitudesForm}">
+                                        <td th:text="${solicitud.id}">1</td>
+                                        <td th:text="${solicitud.tipoSolicitud}">Solicitud Solucion Averia</td>
+                                        <td th:text="${solicitud.estatus}">Resuelto</td>
+                                        <td th:text="${solicitud.descripcion}">Averia Dentro de la Villa -  Tuberia rota.</td>
                                     </tr>
                                     </tbody>
                                 </table>

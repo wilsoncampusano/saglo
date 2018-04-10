@@ -17,6 +17,9 @@ public class SolicitudAreacomun {
   @ManyToOne
   public AreaComun areaComun;
 
+  public String estatus;
+  public String comentario;
+
 
   public long getId() {
     return id;
@@ -48,5 +51,21 @@ public class SolicitudAreacomun {
 
   public void setAreaComun(AreaComun areaComun) {
     this.areaComun = areaComun;
+  }
+
+  public String getEstatus() {
+    return estatus;
+  }
+
+  public void setEstatus(String estatus) {
+    this.estatus = estatus;
+  }
+
+  public String getComentario() {
+    return comentario;
+  }
+
+  public void setComentario(String comentario) {
+    this.comentario = comentario;
   }
 }

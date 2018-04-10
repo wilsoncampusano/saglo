@@ -38,7 +38,7 @@ public class InquilinoSolicitudesController extends InquilinoController{
 
     List<ListaSolicitudInquilinoDetalleForm> sa = solicitudAreacomunService.buscarSolicitudesDelInquilino(inquilino);
     List<ListaSolicitudInquilinoDetalleForm> sr = solicitudAveriaService.buscarSolicitudesDelInquilino(inquilino);
-
+    solicitudes.addAll(sa);
 
     modelAndView.addObject("solicitudesForm",solicitudes );
     return modelAndView;

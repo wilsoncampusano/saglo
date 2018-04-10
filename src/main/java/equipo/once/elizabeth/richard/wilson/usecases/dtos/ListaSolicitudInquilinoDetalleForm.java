@@ -2,6 +2,7 @@ package equipo.once.elizabeth.richard.wilson.usecases.dtos;
 
 public class ListaSolicitudInquilinoDetalleForm {
 
+  public Long id;
   public String tipoSolicitud;
   public String estatus;
   public String descripcion;
@@ -29,5 +30,13 @@ public class ListaSolicitudInquilinoDetalleForm {
 
   public void setDescripcion(String descripcion) {
     this.descripcion = descripcion;
+  }
+
+  public Long getId() {
+    return id;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
   }
 }
