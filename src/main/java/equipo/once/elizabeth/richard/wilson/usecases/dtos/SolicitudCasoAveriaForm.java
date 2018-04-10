@@ -2,6 +2,8 @@ package equipo.once.elizabeth.richard.wilson.usecases.dtos;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 
+import java.util.Objects;
+
 /**
  * Created on 4/10/2018.
  */
@@ -11,7 +13,6 @@ public class SolicitudCasoAveriaForm {
     public Long tipoIncidenteId;
     public String comentario;
     public Inquilino inquilino;
-
 
     public Long getUbicacionId() {
         return ubicacionId;
@@ -51,5 +52,12 @@ public class SolicitudCasoAveriaForm {
 
     public void setInquilino(Inquilino inquilino) {
         this.inquilino = inquilino;
+    }
+
+    public boolean isValido() {
+        Long zero = 0L;
+        return (Objects.nonNull(ubicacionId) && !zero.equals(ubicacionId))
+                && (Objects.nonNull(tipoAveriaId) && !zero.equals(tipoAveriaId))
+                && (Objects.nonNull(tipoIncidenteId) && !zero.equals(tipoIncidenteId));
     }
 }

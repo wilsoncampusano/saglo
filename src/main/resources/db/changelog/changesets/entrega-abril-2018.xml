@@ -63,4 +63,31 @@
         </sql>
     </changeSet>
 
+
+    <changeSet id="wilsoncampusano-006" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE solicitud_averia ADD ubicacion_id int not null;
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-007" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE solicitud_averia ADD tipo_averia_id int not null;
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="wilsoncampusano-008" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE solicitud_averia ADD tipo_incidente_id int not null;
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-009" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE solicitud_averia ADD comentario varchar(500) default 'N/A';
+        </sql>
+    </changeSet>
+
+
 </databaseChangeLog>

@@ -1,6 +1,9 @@
 package equipo.once.elizabeth.richard.wilson.controllers.view.inquilino;
 
+import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoService;
+import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudCasoAveriaForm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,9 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
     @Autowired
     private SolicitudAveriaCatalogoService solicitudAveriaCatalogoService;
 
+    @Autowired
+    private SolicitudAveriaService solicitudAveriaService;
+
     @RequestMapping(value = "/casoaveria", method = RequestMethod.GET)
     public ModelAndView solicitudesCasoAveriaGet(){
         ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
@@ -37,19 +43,25 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
         return modelAndView;
     }
 
-    @RequestMapping(value = "casoaveria",params = {"registrar"}, method = RequestMethod.POST)
-    public ModelAndView solicitudesCasoAveriaPostRegistrar(SolicitudAreaComunForm form , RedirectAttributes redirectAttrs,
+    @RequestMapping(value = "casoaveria", method = RequestMethod.POST)
+    public ModelAndView solicitudesCasoAveriaPostRegistrar(SolicitudCasoAveriaForm form , RedirectAttributes redirectAttrs,
                                                           HttpSession httpSession){
         ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
+        Mensaje mensaje;
+        Inquilino inquilino = new Inquilino();
 
+        if(! form.isValido()){
+            mensaje = Mensaje.ADVERTENCIA;
+            mensaje.setMensaje("Favor completar los datos requeridos!");
+        }else{
+            form.inquilino = inquilino;
+            solicitudAveriaService.guardar(form);
+            mensaje = Mensaje.EXITO;
+            mensaje.setMensaje("Se ha guardado su solicitud!");
+        }
+
+        modelAndView.addObject(MENSAJE_KEY, mensaje);
         return modelAndView;
     }
 
-    @RequestMapping(value = "casoaveria",params = {"cancelar"}, method = RequestMethod.POST)
-    public ModelAndView solicitudesCasoAveriaPostCancelar(SolicitudAreaComunForm form , RedirectAttributes redirectAttrs,
-                                                         HttpSession httpSession){
-        ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AREACOMUN_REGISTRAR);
-
-        return modelAndView;
-    }
 }
