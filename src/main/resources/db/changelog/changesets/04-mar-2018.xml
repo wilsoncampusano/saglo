@@ -11,7 +11,7 @@
     <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
         <sql>
 
-            CREATE TABLE `saglo`.`solicitud_areacomun` (
+            CREATE TABLE `solicitud_areacomun` (
             `id` INT NOT NULL AUTO_INCREMENT,
             `inquilino_id` INT NOT NULL,
             `area_comun_id` INT NOT NULL,
@@ -97,7 +97,7 @@
     <changeSet id="wilsoncampusano-010.1" author="wilsoncampusano">
         <sql>
 
-            ALTER TABLE `saglo`.`mobiliario_inquilino`
+            ALTER TABLE `mobiliario_inquilino`
             ADD INDEX `fk_mob_inquilino_fk1_idx` (`inquilino_id` ASC);
             ALTER TABLE `saglo`.`mobiliario_inquilino`
             ADD CONSTRAINT `fk_mob_inquilino_fk1`

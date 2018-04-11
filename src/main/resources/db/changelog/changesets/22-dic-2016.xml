@@ -42,7 +42,7 @@
     <changeSet id="wilsoncampusano-005" author="wilsoncampusano">
         <sql>
 
-            CREATE TABLE `saglo`.`areacomun` (
+            CREATE TABLE `areacomun` (
             `id` INT NOT NULL AUTO_INCREMENT,
             `codigo` VARCHAR(45) NULL,
             `nombre` VARCHAR(50) NULL,
