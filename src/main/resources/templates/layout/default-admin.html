@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      layout:decorator="layout/default"
+      layout:decorator="layout/default" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8"/>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <div layout:fragment="nav">
-    <nav class="navbar navbar-default">
+    <nav class="navbar navbar-default" sec:authorize="hasRole('ROLE_ADMIN')">
         <div class="container">
             <div class="row">
                 <div class="navbar-header">

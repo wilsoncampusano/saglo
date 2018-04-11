@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
       layout:decorator="layout/default"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
@@ -10,8 +10,8 @@
     <title>Inquilino - </title>
 </head>
 <body>
-    <div layout:fragment="nav">
-        <nav class="navbar navbar-default">
+    <div layout:fragment="nav" >
+        <nav class="navbar navbar-default" sec:authorize="hasRole('ROLE_INQUILINO')">
             <div class="container">
                 <div class="row">
                  <div class="navbar-header">
