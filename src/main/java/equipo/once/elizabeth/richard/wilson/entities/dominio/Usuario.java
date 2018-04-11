@@ -9,4 +9,11 @@ public class Usuario {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   public long id;
+
+  public Usuario() {
+  }
+
+  public Usuario(Long id){
+    this.id = id;
+  }
 }

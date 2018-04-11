@@ -2,6 +2,7 @@ package equipo.once.elizabeth.richard.wilson.controllers.view.inquilino;
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Usuario;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudCasoAveriaForm;
@@ -53,7 +54,7 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
         ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AVERIA_REGISTRAR);
         cargarCatalogos(modelAndView);
         Mensaje mensaje;
-        Inquilino inquilino = new Inquilino();
+        Inquilino inquilino = new Inquilino(1L);
 
         if(! form.isValido()){
             mensaje = Mensaje.ADVERTENCIA;

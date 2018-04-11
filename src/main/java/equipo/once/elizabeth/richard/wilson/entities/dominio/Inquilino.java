@@ -5,12 +5,22 @@ import javax.persistence.*;
 @Entity
 @Table(name = "inquilino")
 public class Inquilino {
+  public Inquilino(Usuario usuario) {
+    this.usuario = usuario;
+  }
+
+  public Inquilino(Long id){
+    this.id = id;
+  }
+
+  public Inquilino() {
+  }
+
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
   public Long id;
   public String codigo;
   public String nombre;
-
   @OneToOne
   public Usuario usuario;
 
