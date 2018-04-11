@@ -20,6 +20,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
     private UserDetailsService userDetailsService;
 
+    @Autowired
+    private SagloAccessDeniedHandler sagloAccessDeniedHandler;
+
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder(){
         return new BCryptPasswordEncoder();
@@ -29,12 +32,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
                 .antMatchers("/js/**","/webjars/**","/static/","/registro" ).permitAll()
+                .antMatchers("/admin/**").hasAuthority ("ROLE_ADMIN")
+                .antMatchers("/inquilino/**").hasAuthority("ROLE_INQUILINO")
+                .antMatchers("/tecnico/**").hasAuthority("ROLE_TECNICO")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
                     .loginPage("/login")
                     .permitAll()
-                .and().logout().permitAll();
+                .and().logout().permitAll()
+        .and().exceptionHandling().accessDeniedHandler(sagloAccessDeniedHandler);
     }
 
     public void configureGlobal(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {

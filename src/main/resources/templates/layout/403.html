@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+</head>
+<body>
+
+
+<div class="container">
+
+    <div class="starter-template">
+        <h1>403 - No tiene Acceso</h1>
+        <div th:inline="text">Hello '[[${#httpServletRequest.remoteUser}]]',
+            No tienes permiso para ver esta sección.</div>
+    </div>
+
+</div>
+
+
+</body>
+</html>

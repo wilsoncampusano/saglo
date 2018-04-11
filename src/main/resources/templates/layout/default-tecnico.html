@@ -40,7 +40,13 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
 
-                        <li class="active"><a th:href="@{/login}">Salir <span class="sr-only">(current)</span></a></li>
+                        <li class="active">
+                            <a href="#" onclick="$('#logoutForm').click()">Salir <span class="sr-only">(current)</span>
+                            </a>
+                            <form  th:action="@{/logout}" method="post" class="hide">
+                                <input id="logoutForm" type="submit" value="Sign Out"/>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
