@@ -3,7 +3,7 @@ package equipo.once.elizabeth.richard.wilson.mocks;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudInquilinoService;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaComunForm;
 
 import java.util.ArrayList;
 import java.util.List;

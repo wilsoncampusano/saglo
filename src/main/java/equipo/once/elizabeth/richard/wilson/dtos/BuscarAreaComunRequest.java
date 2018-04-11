@@ -1,4 +1,4 @@
-package equipo.once.elizabeth.richard.wilson.usecases.dtos;
+package equipo.once.elizabeth.richard.wilson.dtos;
 
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunRequest;
 

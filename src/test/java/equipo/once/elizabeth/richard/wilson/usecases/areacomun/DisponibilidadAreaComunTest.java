@@ -2,8 +2,8 @@ package equipo.once.elizabeth.richard.wilson.usecases.areacomun;
 
 import equipo.once.elizabeth.richard.wilson.mocks.AreaComunServiceHappyPathMock;
 import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaComunUseCase;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaRequest;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResponse;
+import equipo.once.elizabeth.richard.wilson.dtos.DisponibilidadAreaRequest;
+import equipo.once.elizabeth.richard.wilson.dtos.DisponibilidadAreaResponse;
 import org.junit.Assert;
 import org.junit.Test;
 

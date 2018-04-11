@@ -4,7 +4,7 @@ import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import equipo.once.elizabeth.richard.wilson.usecases.DisponibilidadAreaComunUseCase;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaComunForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;

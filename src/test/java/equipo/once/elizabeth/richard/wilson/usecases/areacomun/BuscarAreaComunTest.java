@@ -2,11 +2,10 @@ package equipo.once.elizabeth.richard.wilson.usecases.areacomun;
 
 import equipo.once.elizabeth.richard.wilson.mocks.AreaComunServiceHappyPathMock;
 import equipo.once.elizabeth.richard.wilson.usecases.BuscarAreaComunUseCase;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarAreaComunRequest;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarAreaComunResponse;
+import equipo.once.elizabeth.richard.wilson.dtos.BuscarAreaComunRequest;
+import equipo.once.elizabeth.richard.wilson.dtos.BuscarAreaComunResponse;
 import org.junit.Assert;
 import org.junit.Test;
-import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 
 import static org.hamcrest.core.Is.is;
 public class BuscarAreaComunTest {

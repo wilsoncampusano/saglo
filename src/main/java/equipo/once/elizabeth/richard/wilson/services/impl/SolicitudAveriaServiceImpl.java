@@ -8,8 +8,8 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudCasoAveria;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.TipoSolicitud;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.ListaSolicitudInquilinoDetalleForm;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudCasoAveriaForm;
+import equipo.once.elizabeth.richard.wilson.dtos.ListaSolicitudInquilinoDetalleForm;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudCasoAveriaForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

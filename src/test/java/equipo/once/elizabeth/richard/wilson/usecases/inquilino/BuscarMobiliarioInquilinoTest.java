@@ -4,11 +4,8 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.mocks.InquilinoMock;
 import equipo.once.elizabeth.richard.wilson.mocks.MobiliarioServiceHappyPathMock;
 import equipo.once.elizabeth.richard.wilson.usecases.BuscarMobiliarioInquilinoUseCase;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoRequest;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.BuscarMobiliarioInquilinoResponse;
-import org.hamcrest.core.Is;
-import org.junit.Assert;
-import org.junit.Ignore;
+import equipo.once.elizabeth.richard.wilson.dtos.BuscarMobiliarioInquilinoRequest;
+import equipo.once.elizabeth.richard.wilson.dtos.BuscarMobiliarioInquilinoResponse;
 import org.junit.Test;
 
 import static org.hamcrest.core.Is.*;

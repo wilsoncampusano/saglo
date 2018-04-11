@@ -5,8 +5,8 @@ import equipo.once.elizabeth.richard.wilson.repository.SolicitudAreaComunReposit
 import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.ListaSolicitudInquilinoDetalleForm;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
+import equipo.once.elizabeth.richard.wilson.dtos.ListaSolicitudInquilinoDetalleForm;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaComunForm;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

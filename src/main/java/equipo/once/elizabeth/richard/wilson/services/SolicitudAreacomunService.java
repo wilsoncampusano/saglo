@@ -1,8 +1,9 @@
 package equipo.once.elizabeth.richard.wilson.services;
 
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.ListaSolicitudInquilinoDetalleForm;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudAreaComunForm;
+import equipo.once.elizabeth.richard.wilson.dtos.ListaSolicitudInquilinoDetalleForm;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaComunForm;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,4 +19,6 @@ public interface SolicitudAreacomunService {
     boolean isAreaComunDisponible(SolicitudAreaComunForm form );
 
     List<ListaSolicitudInquilinoDetalleForm> buscarSolicitudesDelInquilino(Inquilino inquilino);
+
+    List<SolicitudAreaDetalle> buscarTodasLasSolicitudesAreaPendientes();
 }

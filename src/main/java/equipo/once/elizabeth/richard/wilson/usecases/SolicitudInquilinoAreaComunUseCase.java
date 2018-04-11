@@ -1,8 +1,8 @@
 package equipo.once.elizabeth.richard.wilson.usecases;
 
 import equipo.once.elizabeth.richard.wilson.services.SolicitudInquilinoService;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudInquilinoAreaComunRequest;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudInquilinoAreaComunResponse;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudInquilinoAreaComunRequest;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudInquilinoAreaComunResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.InquilinoUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.UseCaseResponse;
 

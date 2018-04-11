@@ -2,8 +2,8 @@ package equipo.once.elizabeth.richard.wilson.usecases;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.PagoInquilino;
 import equipo.once.elizabeth.richard.wilson.services.PagoInquilinoService;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoRequest;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.PagoInquilinoResponse;
+import equipo.once.elizabeth.richard.wilson.dtos.PagoInquilinoRequest;
+import equipo.once.elizabeth.richard.wilson.dtos.PagoInquilinoResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.InquilinoUseCase;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.UseCaseResponse;
 

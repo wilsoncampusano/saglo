@@ -2,8 +2,8 @@ package equipo.once.elizabeth.richard.wilson.usecases;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaRequest;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.DisponibilidadAreaResponse;
+import equipo.once.elizabeth.richard.wilson.dtos.DisponibilidadAreaRequest;
+import equipo.once.elizabeth.richard.wilson.dtos.DisponibilidadAreaResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunResponse;
 import equipo.once.elizabeth.richard.wilson.usecases.interfaces.AreaComunUseCase;
 import org.springframework.beans.factory.annotation.Autowired;
