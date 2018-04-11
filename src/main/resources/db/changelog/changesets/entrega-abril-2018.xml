@@ -89,5 +89,11 @@
         </sql>
     </changeSet>
 
+    <changeSet id="wilsoncampusano-010" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE solicitud_averia ADD estatus varchar(50) not null default 'PENDIENTE';
+        </sql>
+    </changeSet>
+
 
 </databaseChangeLog>

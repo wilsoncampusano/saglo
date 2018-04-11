@@ -15,6 +15,7 @@ public class SolicitudCasoAveria {
   public Long tipoAveriaId;
   public Long tipoIncidenteId;
   public String comentario;
+  public String estatus;
 
   @ManyToOne
   public Inquilino inquilino;
@@ -84,5 +85,13 @@ public class SolicitudCasoAveria {
 
   public void setComentario(String comentario) {
     this.comentario = comentario;
+  }
+
+  public String getEstatus() {
+    return estatus;
+  }
+
+  public void setEstatus(String estatus) {
+    this.estatus = estatus;
   }
 }

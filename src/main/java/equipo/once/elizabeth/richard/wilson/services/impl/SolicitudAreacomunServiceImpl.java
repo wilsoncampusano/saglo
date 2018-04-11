@@ -2,10 +2,7 @@ package equipo.once.elizabeth.richard.wilson.services.impl;
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
 import equipo.once.elizabeth.richard.wilson.entities.dao.SolicitudAreaComunRepository;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.Estatus;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.ListaSolicitudInquilinoDetalleForm;
@@ -59,7 +56,7 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         for(SolicitudAreacomun s : solicitudAreacomuns){
             ListaSolicitudInquilinoDetalleForm lista = new ListaSolicitudInquilinoDetalleForm();
 
-            lista.tipoSolicitud= "Solicitud Uso Area";
+            lista.tipoSolicitud= TipoSolicitud.SOLICITUD_AREACOMUN;
             lista.descripcion = String.format(" Solicitud del Area %s para la Fecha: %s \n" +
                     " Nota :  ", s.areaComun.nombre, DateUtil.toString(s.fechaSolicitud ), s.comentario);
             lista.estatus =  s.estatus;
