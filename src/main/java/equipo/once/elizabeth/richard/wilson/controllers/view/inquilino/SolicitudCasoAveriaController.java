@@ -31,9 +31,7 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
     public ModelAndView solicitudesCasoAveriaGet(){
         ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AVERIA_REGISTRAR);
 
-        modelAndView.addObject("catalogoIncidente", solicitudAveriaCatalogoService.catalogoIncidenteAveria());
-        modelAndView.addObject("catalogoTipoAveria", solicitudAveriaCatalogoService.catalogoTipoAveria());
-        modelAndView.addObject("catalogoUbiciacion", solicitudAveriaCatalogoService.catalogoUbicacionAveria());
+        cargarCatalogos(modelAndView);
 
         SolicitudCasoAveriaForm formulario = new SolicitudCasoAveriaForm();
 
@@ -42,11 +40,18 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
         return modelAndView;
     }
 
+    private void cargarCatalogos(ModelAndView modelAndView) {
+        modelAndView.addObject("catalogoIncidente", solicitudAveriaCatalogoService.catalogoIncidenteAveria());
+        modelAndView.addObject("catalogoTipoAveria", solicitudAveriaCatalogoService.catalogoTipoAveria());
+        modelAndView.addObject("catalogoUbiciacion", solicitudAveriaCatalogoService.catalogoUbicacionAveria());
+    }
+
     @RequestMapping(value = "casoaveria", method = RequestMethod.POST)
     public ModelAndView solicitudesCasoAveriaPostRegistrar(SolicitudCasoAveriaForm form ,
                                                            RedirectAttributes redirectAttrs,
                                                            HttpSession httpSession){
         ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AVERIA_REGISTRAR);
+        cargarCatalogos(modelAndView);
         Mensaje mensaje;
         Inquilino inquilino = new Inquilino();
 
