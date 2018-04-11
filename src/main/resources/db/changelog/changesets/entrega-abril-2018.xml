@@ -110,6 +110,35 @@
     </changeSet>
 
 
+    <changeSet id="wilsoncampusano-013" author="wilsoncampusano">
+        <sql>
+            insert into usuario(username, password, activo) values ('inquilino', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy',1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-014" author="wilsoncampusano">
+        <sql>
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='inquilino'), (select id from role where role='ROLE_INQUILINO') );
+        </sql>
+    </changeSet>
+
+
+
+    <changeSet id="wilsoncampusano-015" author="wilsoncampusano">
+        <sql>
+            insert into usuario(username, password, activo) values ('tecnicos', '$2a$10$uB7ZCNOqtoVFT3s35V.PCOKCb9M5VSKW.zIUCZSftSMmpS2THUNHu',1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-016" author="wilsoncampusano">
+        <sql>
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='tecnicos'), (select id from role where role='ROLE_TECNICO') );
+        </sql>
+    </changeSet>
+
+
 
 
 </databaseChangeLog>
