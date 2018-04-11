@@ -14,10 +14,13 @@ import org.springframework.web.bind.annotation.InitBinder;
 import java.text.SimpleDateFormat;
 import java.util.Collection;
 import java.util.Date;
+import java.util.logging.Logger;
 
 
 @Controller
 public abstract class CommonViewController {
+    protected static Logger logger = Logger.getLogger(CommonViewController.class.getName());
+
 
     protected String dateFormatString = "dd/MM/yyyy";
 

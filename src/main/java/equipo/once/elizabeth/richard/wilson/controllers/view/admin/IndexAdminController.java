@@ -12,6 +12,7 @@ public class IndexAdminController extends AdminController {
   @RequestMapping(value = {"/","","/index", "home"}, method = RequestMethod.GET)
   public ModelAndView adminIndexGet(){
     ModelAndView modelAndView = new ModelAndView(ADMIN_INDEX_VIEW);
+    logger.info(String.format("%s con %s , %s", ADMIN_INDEX_VIEW, "seguridad", ""));
 
     return modelAndView;
   }

@@ -43,7 +43,10 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                     .loginPage("/login")
                     .permitAll()
-                .and().logout().permitAll()
+                .and().logout()
+                    .invalidateHttpSession(true)
+                    .clearAuthentication(true)
+                .permitAll()
         .and().exceptionHandling().accessDeniedHandler(sagloAccessDeniedHandler);
     }
 

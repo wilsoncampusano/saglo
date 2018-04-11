@@ -6,8 +6,6 @@ import equipo.once.elizabeth.richard.wilson.services.SecurityService;
 import equipo.once.elizabeth.richard.wilson.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -15,9 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
-import java.util.Collection;
-import java.util.Optional;
 
 /**
  * Created on 4/11/2018.
@@ -77,6 +72,7 @@ public class UsuarioController extends CommonViewController{
     public String welcome(Model model, Authentication authentication) {
         String ROLE = obtenerRole(authentication);
         String paginaParaRole = paginaParaRole(ROLE);
+        logger.info(String.format("%s con %s , %s", ROLE, paginaParaRole, authentication));
         return "redirect:"+paginaParaRole;
     }
 
