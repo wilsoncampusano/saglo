@@ -14,9 +14,14 @@ import java.util.List;
  */
 @Repository
 public interface SolicitudAreaComunRepository extends CrudRepository<SolicitudAreacomun, Long> {
+
     @Query("select sac from SolicitudAreacomun sac where sac.areaComun.codigo = :codigo and sac.fechaSolicitud = :fecha")
     List<SolicitudAreacomun> buscarAreacomunReservadaALaFecha(@Param("codigo") String codigo, @Param("fecha") Date fecha);
 
     @Query("select sac from SolicitudAreacomun sac where sac.inquilino.id = :inquilinoId")
     List<SolicitudAreacomun> buscarSolicitudesDelInquilino(@Param("inquilinoId") Long inquilinoId);
+
+
+    @Query("select s from SolicitudAreacomun s where s.estatus <> :estatus ")
+    List<SolicitudAreacomun> buscarTodasLasPendientesYEnProceso(@Param("estatus") String estatus);
 }

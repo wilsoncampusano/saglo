@@ -2,6 +2,7 @@ package equipo.once.elizabeth.richard.wilson.services.impl;
 
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
 import equipo.once.elizabeth.richard.wilson.repository.SolicitudAveriaRepository;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Estatus;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
@@ -56,5 +57,24 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
 
         SolicitudCasoAveria save = solicitudAveriaRepository.save(averia);
 
+    }
+
+    @Override
+    public List<SolicitudAveriaDetalle> buscarTodasLasSolicitudesAveriasPendiente() {
+        List<SolicitudAveriaDetalle> detalles = new ArrayList<>();
+
+        List<SolicitudCasoAveria> solicitudCasoAverias =
+            solicitudAveriaRepository.buscarTodasLasPendientesYEnProceso(Estatus.COMPLETADA);
+
+        for(SolicitudCasoAveria sa : solicitudCasoAverias){
+          SolicitudAveriaDetalle d = new SolicitudAveriaDetalle();
+            d.id = sa.id;
+            d.fechaSolicitud = sa.fechaSolicitud;
+            d.estatus = sa.estatus;
+            d.descripcion = sa.comentario;
+
+            detalles.add(d);
+        }
+        return detalles;
     }
 }

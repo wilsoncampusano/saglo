@@ -1,6 +1,8 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
 import equipo.once.elizabeth.richard.wilson.repository.SolicitudAreaComunRepository;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
@@ -63,5 +65,24 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
             listas.add(lista);
         }
         return listas;
+    }
+
+    @Override
+    public List<SolicitudAreaDetalle> buscarTodasLasSolicitudesAreaPendientes() {
+        List<SolicitudAreaDetalle> detalles = new ArrayList<>();
+
+        List<SolicitudAreacomun> solicitudAreacomun =
+            solicitudAreaComunRepository.buscarTodasLasPendientesYEnProceso(Estatus.COMPLETADA);
+
+        for(SolicitudAreacomun sa : solicitudAreacomun){
+            SolicitudAreaDetalle d = new SolicitudAreaDetalle();
+            d.id = sa.id;
+            d.fechaSolicitud = sa.fechaSolicitud;
+            d.estatus = sa.estatus;
+            d.descripcion = sa.comentario;
+
+            detalles.add(d);
+        }
+        return detalles;
     }
 }

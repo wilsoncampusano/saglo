@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="layout/default-inquilino">
+      layout:decorator="layout/default-admin">
 <head>
     <meta charset="UTF-8"/>
     <title>Saglo - Inquilino - Solicitudes</title>
@@ -10,13 +10,11 @@
 
 <div layout:fragment="content">
     <div class="row">
-        <form th:action="@{/solicitudes/areacomun#areacomun}"
-              th:object="${solicitudesForm}"
-              method="post" id="registrarForm">
+        <form method="post" id="registrarForm">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Solicitudes<label class="control-label"></label>
+                        <h3 class="panel-title">Solicitudes Reparacion Averia<label class="control-label"></label>
                         </h3>
                     </div>
 
@@ -27,17 +25,19 @@
                                     <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Tipo De Solicitud</th>
+                                        <th>Fecha Solicitud</th>
                                         <th>Estatus</th>
                                         <th>Descripcion</th>
+                                        <th>Accion</th>
                                     </tr>
                                     </thead>
                                     <tbody>
-                                    <tr th:each="solicitud : ${solicitudesForm}">
-                                        <td th:text="${solicitud.id}">1</td>
-                                        <td th:text="${solicitud.tipoSolicitud}">Solicitud Solucion Averia</td>
-                                        <td th:text="${solicitud.estatus}">Resuelto</td>
-                                        <td th:text="${solicitud.descripcion}">Averia Dentro de la Villa -  Tuberia rota.</td>
+                                    <tr th:each="averia : ${averias}">
+                                        <td th:text="${averia.id}">1</td>
+                                        <td th:text="${averia.fechaSolicitud}">Solicitud Solucion Averia</td>
+                                        <td th:text="${averia.estatus}">Resuelto</td>
+                                        <td th:text="${averia.descripcion}">Averia Dentro de la Villa -  Tuberia rota.</td>
+                                        <td><a th:href="@{/admin/locales/averias/asignar(averiaId=${averia.id})}">Asignar</a></td>
                                     </tr>
                                     </tbody>
                                 </table>
