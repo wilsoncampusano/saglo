@@ -21,12 +21,12 @@
             INDEX `solicitud_areacomun_ibfk_2_idx` (`area_comun_id` ASC),
             CONSTRAINT `solicitud_areacomun_ibfk_1`
             FOREIGN KEY (`inquilino_id`)
-            REFERENCES `saglo`.`inquilino` (`id`)
+            REFERENCES `inquilino` (`id`)
             ON DELETE NO ACTION
             ON UPDATE NO ACTION,
             CONSTRAINT `solicitud_areacomun_ibfk_2`
             FOREIGN KEY (`area_comun_id`)
-            REFERENCES `saglo`.`areacomun` (`id`)
+            REFERENCES `areacomun` (`id`)
             ON DELETE NO ACTION
             ON UPDATE NO ACTION);
         </sql>
@@ -85,7 +85,7 @@
     <changeSet id="wilsoncampusano-010" author="wilsoncampusano">
         <sql>
 
-            CREATE TABLE `saglo`.`mobiliario_inquilino` (
+            CREATE TABLE `mobiliario_inquilino` (
             `id` INT NOT NULL AUTO_INCREMENT,
             `mobiliario_id` INT NOT NULL,
             `inquilino_id` INT NOT NULL,
@@ -99,10 +99,10 @@
 
             ALTER TABLE `mobiliario_inquilino`
             ADD INDEX `fk_mob_inquilino_fk1_idx` (`inquilino_id` ASC);
-            ALTER TABLE `saglo`.`mobiliario_inquilino`
+            ALTER TABLE `mobiliario_inquilino`
             ADD CONSTRAINT `fk_mob_inquilino_fk1`
             FOREIGN KEY (`inquilino_id`)
-            REFERENCES `saglo`.`inquilino` (`id`)
+            REFERENCES `inquilino` (`id`)
             ON DELETE NO ACTION
             ON UPDATE NO ACTION;
 
