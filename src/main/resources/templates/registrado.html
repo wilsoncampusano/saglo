@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Saglo</title>
+    <link type="text/css" rel="stylesheet" href="/webjars/bootstrap/3.3.7/css/bootstrap.css" />
+    <link href="/static/css/main.css"/>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="jumbotron">
+                <h2 >
+                    Bienvenido !
+                </h2>
+                <p th:text="${usuario}">
+                    Sistema de Administracion y Gestion de Locales.
+                </p>
+                <p>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Registro</h3>
+                </div>
+                <div class="panel-body">
+                    <p> Se ha creado su cuenta en el sistema</p>
+                    <p> Para activar su usuario llamar a los telefonos</p>
+                    <ul>
+                        <li>809-914-1175</li>
+                        <li>809-701-4491</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="col-md-12">
+        </div>
+    </div>
+</div>
+</body>
+</html>

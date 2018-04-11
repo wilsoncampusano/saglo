@@ -13,6 +13,8 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Collection;
 import java.util.Optional;
@@ -38,8 +40,14 @@ public class UsuarioController extends CommonViewController{
         return "registro";
     }
 
+    @RequestMapping(value = "/registrado", method = RequestMethod.GET)
+    public String registrado(@RequestParam("usuario") String usuario, Model model) {
+        model.addAttribute("usuario", usuario);
+        return "registrado";
+    }
+
     @RequestMapping(value = "/registro", method = RequestMethod.POST)
-    public String registration(Usuario userForm, BindingResult bindingResult, Model model) {
+    public String registration(Usuario userForm, BindingResult bindingResult, Model model, RedirectAttributes redirectAttrs) {
         usuarioValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
@@ -48,9 +56,10 @@ public class UsuarioController extends CommonViewController{
 
         usuarioService.guardar(userForm);
 
-        securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
-
-        return "redirect:/welcome";
+        //securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
+        model.addAttribute("usuario", userForm.username);
+        redirectAttrs.addAttribute("usuario", userForm.username);
+        return "redirect:/registrado";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
