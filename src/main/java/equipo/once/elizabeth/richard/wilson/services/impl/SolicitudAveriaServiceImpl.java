@@ -36,8 +36,9 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
             l.tipoSolicitud = TipoSolicitud.SOLICITUD_AVERIA;
             l.id = s.id;
             l.descripcion = String.format("Solicitud caso averia en fecha %s Nota : %s", DateUtil.toString(s.fechaSolicitud), s.comentario);
+            listas.add(l);
         }
-        return new ArrayList<>();
+        return listas;
     }
 
     @Override
