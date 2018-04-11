@@ -5,10 +5,10 @@ import equipo.once.elizabeth.richard.wilson.entities.seguridad.Usuario;
 import equipo.once.elizabeth.richard.wilson.services.SecurityService;
 import equipo.once.elizabeth.richard.wilson.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -60,7 +60,7 @@ public class UsuarioController {
     }
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
-    public String welcome(Model model) {
+    public String welcome(Model model, Authentication authentication) {
         return "welcome";
     }
 
