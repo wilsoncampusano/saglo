@@ -37,7 +37,7 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         s.setFechaSolicitud(form.fechaSolicitud);
         s.setAreaComun(areaComun);
         s.setInquilino(inquilino);
-
+        s.estatus = "PENDIENTE";
         SolicitudAreacomun save = solicitudAreaComunRepository.save(s);
 
     }
