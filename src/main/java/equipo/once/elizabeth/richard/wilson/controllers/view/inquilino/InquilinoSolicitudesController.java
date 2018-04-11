@@ -5,6 +5,7 @@ import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.ListaSolicitudInquilinoDetalleForm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,15 +27,14 @@ public class InquilinoSolicitudesController extends InquilinoController{
   private SolicitudAveriaService solicitudAveriaService;
 
   @RequestMapping(value = {"/solicitudes/","solicitudes"})
-  public ModelAndView inquilinoSolicitudesGet(){
+  public ModelAndView inquilinoSolicitudesGet(Authentication authentication){
 
 
     ModelAndView modelAndView = new ModelAndView(INQUILINO_ESTADOS_SOLICITUDES);
 
     List<ListaSolicitudInquilinoDetalleForm> solicitudes = new ArrayList<>();
 
-    Inquilino inquilino = new Inquilino();
-    inquilino.setId(1L);
+    Inquilino inquilino = obtenerInquilino(authentication);
 
     List<ListaSolicitudInquilinoDetalleForm> sa = solicitudAreacomunService.buscarSolicitudesDelInquilino(inquilino);
     List<ListaSolicitudInquilinoDetalleForm> sr = solicitudAveriaService.buscarSolicitudesDelInquilino(inquilino);
