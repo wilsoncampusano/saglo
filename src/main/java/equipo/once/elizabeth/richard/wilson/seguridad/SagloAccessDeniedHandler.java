@@ -1,4 +1,4 @@
-package equipo.once.elizabeth.richard.wilson.entities.seguridad;
+package equipo.once.elizabeth.richard.wilson.seguridad;
 
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.Authentication;

@@ -1,6 +1,6 @@
-package equipo.once.elizabeth.richard.wilson.entities.dao;
+package equipo.once.elizabeth.richard.wilson.repository;
 
-import equipo.once.elizabeth.richard.wilson.entities.seguridad.Usuario;
+import equipo.once.elizabeth.richard.wilson.seguridad.Usuario;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

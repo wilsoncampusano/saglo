@@ -1,8 +1,8 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
-import equipo.once.elizabeth.richard.wilson.entities.dao.UsuarioRepository;
-import equipo.once.elizabeth.richard.wilson.entities.seguridad.Usuario;
-import equipo.once.elizabeth.richard.wilson.entities.seguridad.UsuarioRole;
+import equipo.once.elizabeth.richard.wilson.repository.UsuarioRepository;
+import equipo.once.elizabeth.richard.wilson.seguridad.Usuario;
+import equipo.once.elizabeth.richard.wilson.seguridad.UsuarioRole;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

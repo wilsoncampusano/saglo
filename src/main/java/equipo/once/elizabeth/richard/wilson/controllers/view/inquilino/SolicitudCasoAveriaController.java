@@ -6,6 +6,7 @@ import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoServ
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudCasoAveriaForm;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -49,17 +50,16 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
     @RequestMapping(value = "casoaveria", method = RequestMethod.POST)
     public ModelAndView solicitudesCasoAveriaPostRegistrar(SolicitudCasoAveriaForm form ,
                                                            RedirectAttributes redirectAttrs,
-                                                           HttpSession httpSession){
+                                                           HttpSession httpSession,
+                                                           Authentication auth){
         ModelAndView modelAndView = new ModelAndView(SOLICITUDES_AVERIA_REGISTRAR);
         cargarCatalogos(modelAndView);
         Mensaje mensaje;
-        Inquilino inquilino = new Inquilino(1L);
-
         if(! form.isValido()){
             mensaje = Mensaje.ADVERTENCIA;
             mensaje.setMensaje("Favor completar los datos requeridos!");
         }else{
-            form.inquilino = inquilino;
+            form.inquilino = obtenerInquilino(auth);
             solicitudAveriaService.guardar(form);
             mensaje = Mensaje.EXITO;
             mensaje.setMensaje("Se ha guardado su solicitud!");

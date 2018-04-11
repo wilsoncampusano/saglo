@@ -1,7 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.controllers.view;
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.UsuarioValidator;
-import equipo.once.elizabeth.richard.wilson.entities.seguridad.Usuario;
+import equipo.once.elizabeth.richard.wilson.seguridad.Usuario;
 import equipo.once.elizabeth.richard.wilson.services.SecurityService;
 import equipo.once.elizabeth.richard.wilson.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;

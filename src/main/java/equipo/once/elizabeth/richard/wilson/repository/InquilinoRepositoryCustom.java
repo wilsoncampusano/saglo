@@ -1,4 +1,4 @@
-package equipo.once.elizabeth.richard.wilson.entities.dao;
+package equipo.once.elizabeth.richard.wilson.repository;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import org.springframework.data.repository.CrudRepository;

@@ -2,7 +2,7 @@ package equipo.once.elizabeth.richard.wilson.services.impl;
 
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
-import equipo.once.elizabeth.richard.wilson.entities.dao.SolicitudAveriaRepository;
+import equipo.once.elizabeth.richard.wilson.repository.SolicitudAveriaRepository;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Estatus;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudCasoAveria;

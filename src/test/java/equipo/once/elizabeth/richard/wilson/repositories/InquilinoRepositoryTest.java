@@ -1,6 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.repositories;
 
-import equipo.once.elizabeth.richard.wilson.entities.dao.InquilinoRepositoryCustom;
+import equipo.once.elizabeth.richard.wilson.repository.InquilinoRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import org.junit.Assert;
 import org.junit.Before;

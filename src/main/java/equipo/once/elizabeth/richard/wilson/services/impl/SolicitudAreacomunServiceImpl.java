@@ -1,7 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
-import equipo.once.elizabeth.richard.wilson.entities.dao.SolicitudAreaComunRepository;
+import equipo.once.elizabeth.richard.wilson.repository.SolicitudAreaComunRepository;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
@@ -30,11 +30,10 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
     public void guardar(SolicitudAreaComunForm form) {
         SolicitudAreacomun s = new SolicitudAreacomun();
         AreaComun areaComun = areaComunService.buscarPorCodigo(form.areaComun.getCodigo());
-        Inquilino inquilino = new Inquilino();
-        inquilino.setId(1L);
         s.setFechaSolicitud(form.fechaSolicitud);
         s.setAreaComun(areaComun);
-        s.setInquilino(inquilino);
+        s.setInquilino(form.inquilino);
+        s.comentario = form.comentario;
         s.estatus = Estatus.PENDIENTE;
         SolicitudAreacomun save = solicitudAreaComunRepository.save(s);
 

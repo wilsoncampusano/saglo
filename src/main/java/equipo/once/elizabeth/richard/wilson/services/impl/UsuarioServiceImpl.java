@@ -1,8 +1,8 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
-import equipo.once.elizabeth.richard.wilson.entities.dao.RoleRepository;
-import equipo.once.elizabeth.richard.wilson.entities.dao.UsuarioRepository;
-import equipo.once.elizabeth.richard.wilson.entities.seguridad.Usuario;
+import equipo.once.elizabeth.richard.wilson.repository.RoleRepository;
+import equipo.once.elizabeth.richard.wilson.repository.UsuarioRepository;
+import equipo.once.elizabeth.richard.wilson.seguridad.Usuario;
 import equipo.once.elizabeth.richard.wilson.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;

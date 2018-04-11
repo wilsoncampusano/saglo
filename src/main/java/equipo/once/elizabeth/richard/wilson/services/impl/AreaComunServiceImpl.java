@@ -1,7 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
-import equipo.once.elizabeth.richard.wilson.entities.dao.AreaComunRepositoryCustom;
-import equipo.once.elizabeth.richard.wilson.entities.dao.SolicitudAreaComunRepository;
+import equipo.once.elizabeth.richard.wilson.repository.AreaComunRepositoryCustom;
+import equipo.once.elizabeth.richard.wilson.repository.SolicitudAreaComunRepository;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;

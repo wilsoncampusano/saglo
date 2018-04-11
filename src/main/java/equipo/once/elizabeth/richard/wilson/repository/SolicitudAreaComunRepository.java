@@ -1,7 +1,6 @@
-package equipo.once.elizabeth.richard.wilson.entities.dao;
+package equipo.once.elizabeth.richard.wilson.repository;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
-import equipo.once.elizabeth.richard.wilson.usecases.dtos.ListaSolicitudInquilinoDetalleForm;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;

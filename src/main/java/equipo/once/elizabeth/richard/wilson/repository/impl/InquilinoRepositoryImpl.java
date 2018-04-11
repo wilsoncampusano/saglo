@@ -1,6 +1,6 @@
-package equipo.once.elizabeth.richard.wilson.entities.dao.impl;
+package equipo.once.elizabeth.richard.wilson.repository.impl;
 
-import equipo.once.elizabeth.richard.wilson.entities.dao.InquilinoRepositoryCustom;
+import equipo.once.elizabeth.richard.wilson.repository.InquilinoRepositoryCustom;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 
 public class InquilinoRepositoryImpl implements InquilinoRepositoryCustom{

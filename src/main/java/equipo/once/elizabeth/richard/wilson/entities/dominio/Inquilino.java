@@ -1,6 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.entities.dominio;
 
-import equipo.once.elizabeth.richard.wilson.entities.seguridad.Usuario;
+import equipo.once.elizabeth.richard.wilson.seguridad.Usuario;
 
 import javax.persistence.*;
 
