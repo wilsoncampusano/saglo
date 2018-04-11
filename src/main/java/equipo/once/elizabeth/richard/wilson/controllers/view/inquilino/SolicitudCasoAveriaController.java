@@ -2,7 +2,6 @@ package equipo.once.elizabeth.richard.wilson.controllers.view.inquilino;
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.Usuario;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.usecases.dtos.SolicitudCasoAveriaForm;

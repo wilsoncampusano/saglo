@@ -96,4 +96,20 @@
     </changeSet>
 
 
+    <changeSet id="wilsoncampusano-011" author="wilsoncampusano">
+        <sql>
+            insert into usuario(username, password, activo) values ('administrador', '$2a$10$WAGpCob.LGUrWc8plb2LjeJrS4PBFJ..CJWf6RztzivP67KQu.9v6',1);
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-012" author="wilsoncampusano">
+        <sql>
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='administrador'), (select id from role where role='ROLE_ADMIN') );
+        </sql>
+    </changeSet>
+
+
+
+
 </databaseChangeLog>
