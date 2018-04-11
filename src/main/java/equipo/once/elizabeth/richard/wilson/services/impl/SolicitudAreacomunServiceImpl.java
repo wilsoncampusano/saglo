@@ -3,6 +3,7 @@ package equipo.once.elizabeth.richard.wilson.services.impl;
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
 import equipo.once.elizabeth.richard.wilson.entities.dao.SolicitudAreaComunRepository;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.AreaComun;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Estatus;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudAreacomun;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
@@ -37,7 +38,7 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         s.setFechaSolicitud(form.fechaSolicitud);
         s.setAreaComun(areaComun);
         s.setInquilino(inquilino);
-        s.estatus = "PENDIENTE";
+        s.estatus = Estatus.PENDIENTE;
         SolicitudAreacomun save = solicitudAreaComunRepository.save(s);
 
     }
