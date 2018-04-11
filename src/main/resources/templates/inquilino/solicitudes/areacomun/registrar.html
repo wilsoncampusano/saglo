@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       layout:decorator="layout/default-inquilino">
 <head>
     <meta charset="UTF-8"/>
@@ -10,7 +10,7 @@
 
 <div layout:fragment="content">
     <div th:replace="alerta :: alert (mensaje=${mensaje})">...</div>
-    <div class="row" sec:authorize="hasRole('ROLE_INQUILINO')">
+    <div class="row" >
         <form th:action="@{/inquilino/solicitudes/areacomun}"
               th:object="${form}"
               method="post" id="registrarForm">

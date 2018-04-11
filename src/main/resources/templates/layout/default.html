@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
     <meta charset="UTF-8"/>
@@ -13,7 +13,7 @@
     <title>Default Title</title>
 </head>
 
-<body sec:authorize="isAuthenticated()">
+<body>
 
 <div layout:fragment="nav"></div>
 
