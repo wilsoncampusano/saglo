@@ -14,4 +14,10 @@ public class HomeController {
 
     return "acerca";
   }
+
+  @RequestMapping(value = "/403", method = RequestMethod.GET)
+  public String noautorizado(Model model) {
+
+    return "403";
+  }
 }
