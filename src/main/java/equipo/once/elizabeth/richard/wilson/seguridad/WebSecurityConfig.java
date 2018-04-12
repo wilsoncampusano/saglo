@@ -30,15 +30,20 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        String[] permitidas = {"/js/**", "/webjars/**", "/static/**", "/registro", "/registrado", "/403", "/acerca"};
+        String[] NO_PERMITIDAS = {"/admin/**", "/inquilino/**", "/tecnico/**"};
+        String[] TODAS = {"/js/**", "/webjars/**", "/static/**", "/registro", "/registrado", "/403", "/acerca",
+                "/admin/**", "/inquilino/**", "/tecnico/**"};
         http.authorizeRequests()
-                .antMatchers("/js/**","/webjars/**","/static/**","/registro","/registrado","/403","/acerca" ).permitAll()
-                .antMatchers("/admin/**").hasAuthority ("ROLE_ADMIN")
+                .antMatchers(TODAS)
+                .permitAll()
+                /*.antMatchers("/admin/**").hasAuthority ("ROLE_ADMIN")
 
                 .antMatchers("/inquilino/**").hasAuthority("ROLE_INQUILINO")
 
                 .antMatchers("/tecnico/**").hasAuthority("ROLE_TECNICO")
 
-                .anyRequest().authenticated()
+                .anyRequest().authenticated()*/
                 .and()
                 .formLogin()
                     .loginPage("/login")
