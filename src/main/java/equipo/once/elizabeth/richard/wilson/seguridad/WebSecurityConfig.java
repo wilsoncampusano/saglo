@@ -35,15 +35,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         String[] TODAS = {"/js/**", "/webjars/**", "/static/**", "/registro", "/registrado", "/403", "/acerca",
                 "/admin/**", "/inquilino/**", "/tecnico/**"};
         http.authorizeRequests()
-                .antMatchers(TODAS)
+                .antMatchers(permitidas)
                 .permitAll()
-                /*.antMatchers("/admin/**").hasAuthority ("ROLE_ADMIN")
+                .antMatchers("/admin/**").hasAuthority ("ROLE_ADMIN")
 
                 .antMatchers("/inquilino/**").hasAuthority("ROLE_INQUILINO")
 
                 .antMatchers("/tecnico/**").hasAuthority("ROLE_TECNICO")
 
-                .anyRequest().authenticated()*/
+                .anyRequest().authenticated()
                 .and()
                 .formLogin()
                     .loginPage("/login")
