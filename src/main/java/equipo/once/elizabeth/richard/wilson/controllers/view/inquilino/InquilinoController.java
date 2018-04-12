@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/inquilino")
 public class InquilinoController extends CommonViewController {
-  public static final String INQUILINO_INDEX = "/inquilino/index";
+  public static final String INQUILINO_INDEX = "inquilino/index";
 }

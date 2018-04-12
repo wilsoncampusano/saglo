@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class InquilinoPerfilController extends InquilinoController {
 
 
-  private static final String INQUILINO_PERFIL = "/inquilino/perfil";
+  private static final String INQUILINO_PERFIL = "inquilino/perfil";
 
   @RequestMapping(value = {"/",""})
   public ModelAndView perfilGet(){

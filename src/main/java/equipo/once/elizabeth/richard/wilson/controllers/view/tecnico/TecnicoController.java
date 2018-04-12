@@ -8,6 +8,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/tecnico")
 public class TecnicoController extends CommonViewController {
-  public static final String TECNICO_INDEX_VIEW = "/tecnico/index";
+  public static final String TECNICO_INDEX_VIEW = "tecnico/index";
 
 }

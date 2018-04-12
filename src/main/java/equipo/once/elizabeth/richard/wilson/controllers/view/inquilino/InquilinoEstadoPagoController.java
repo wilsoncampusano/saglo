@@ -10,7 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class InquilinoEstadoPagoController extends InquilinoController {
 
 
-  private static final String INQUILINO_ESTADOS_PAGOS = "/inquilino/estados/pagos";
+  private static final String INQUILINO_ESTADOS_PAGOS = "inquilino/estados/pagos";
 
   @RequestMapping(value = {"/pagos/","/pagos"})
   public ModelAndView inquilinoSolicitudesGet(){

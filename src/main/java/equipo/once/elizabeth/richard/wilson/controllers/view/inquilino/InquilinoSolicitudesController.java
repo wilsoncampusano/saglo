@@ -17,7 +17,7 @@ import java.util.List;
 @RequestMapping(value = "/inquilino/estados/")
 public class InquilinoSolicitudesController extends InquilinoController{
 
-  private static final String INQUILINO_ESTADOS_SOLICITUDES = "/inquilino/estados/solicitudes";
+  private static final String INQUILINO_ESTADOS_SOLICITUDES = "inquilino/estados/solicitudes";
 
   @Autowired
   private SolicitudAreacomunService solicitudAreacomunService;

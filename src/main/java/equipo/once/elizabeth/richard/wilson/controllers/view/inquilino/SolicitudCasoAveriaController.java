@@ -18,7 +18,7 @@ import javax.servlet.http.HttpSession;
 @RequestMapping(value = "/inquilino/solicitudes")
 public class SolicitudCasoAveriaController extends InquilinoController  {
 
-    public static final String SOLICITUDES_AVERIA_REGISTRAR = "/inquilino/solicitudes/casoaveria/registrar";
+    public static final String SOLICITUDES_AVERIA_REGISTRAR = "inquilino/solicitudes/casoaveria/registrar";
     public static final String FORMULARIO_KEY = "form";
 
     @Autowired
