@@ -17,4 +17,6 @@ public interface SolicitudAveriaService {
   void guardar(SolicitudCasoAveriaForm form);
 
   List<SolicitudAveriaDetalle> buscarTodasLasSolicitudesAveriasPendiente();
+
+  SolicitudAveriaDetalle buscarSolicitudPorId(Long averiaId);
 }

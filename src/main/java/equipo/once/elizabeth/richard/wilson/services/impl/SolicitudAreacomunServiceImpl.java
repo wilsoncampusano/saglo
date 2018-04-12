@@ -85,4 +85,17 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         }
         return detalles;
     }
+
+    @Override
+    public SolicitudAreaDetalle buscarSolicitudPorId(Long solicitudId) {
+        SolicitudAreacomun one = solicitudAreaComunRepository.findOne(solicitudId);
+        SolicitudAreaDetalle detalle = new SolicitudAreaDetalle();
+
+        detalle.id = one.id;
+        detalle.descripcion = one.comentario;
+        detalle.estatus = one.estatus;
+        detalle.fechaSolicitud = one.fechaSolicitud;
+
+        return detalle;
+    }
 }

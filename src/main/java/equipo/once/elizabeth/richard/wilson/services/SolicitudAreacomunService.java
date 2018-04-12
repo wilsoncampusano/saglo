@@ -21,4 +21,6 @@ public interface SolicitudAreacomunService {
     List<ListaSolicitudInquilinoDetalleForm> buscarSolicitudesDelInquilino(Inquilino inquilino);
 
     List<SolicitudAreaDetalle> buscarTodasLasSolicitudesAreaPendientes();
+
+    SolicitudAreaDetalle buscarSolicitudPorId(Long solicitudId);
 }

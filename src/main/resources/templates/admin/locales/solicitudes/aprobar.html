@@ -1,10 +1,77 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default-admin">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <title>Saglo - Admin - Aprobar</title>
 </head>
 <body>
+
+<div layout:fragment="content">
+    <div th:replace="alerta :: alert (mensaje=${mensaje})">...</div>
+    <div class="row" >
+        <form th:action="@{/admin/locales/solicitud/aprobar}"
+              th:object="${solicitudArea}"
+              method="post" id="registrarForm">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Aprobar Solicitud <label class="control-label"></label>
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="form-horizontal" role="form" id="solicitudAreaFragment">
+                                <div class="form-group">
+                                    <div class="col-md-6 col-xs-12">
+                                        <label class="control-label">Area Comun</label>
+                                        <input class="form-control autocomplete" type="text" id="areacomunautocomplete"/>
+                                    </div>
+                                    <div class="col-md-3 col-xs-12">
+                                        <label class="control-label">Fecha Solicitud</label>
+                                        <input type="hidden"  id="form_areaComun_codigo" />
+                                        <input type="text" class="form-control fechas"  id="fechaSolicitud"/>
+                                    </div>
+
+                                    <div class="col-md-3 col-xs-12">
+                                        <label class="control-label">Disponibilidad</label>
+                                        <input type="hidden" />
+                                        <span  class="label label-success areacomun-disponibilidad">Disponible</span>
+                                        <span  class="label label-danger areacomun-disponiblidad">No Disponible</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="col-md-12 col-xs-12">
+                                        <label class="control-label">Comentario</label>
+                                        <textarea  class="form-control" rows="5"
+                                                  type="text" name="comentario"></textarea>
+                                    </div>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="form-horizontal text-right text-right">
+                            <button type="submit" name="cancelar"
+                                    class="btn btn-link btn-outline">
+                                <span>Cancelar</span>
+                            </button>
+                            <button id="guardarSolicitud" type="submit" name="registrar"
+                                    class="btn btn-success">
+                                <span class="fa fa-save"></span>
+                                <span>Solicitar</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div layout:fragment="script">
+    <script th:src="@{/js/inquilino/solicitudarea.js}" type="application/javascript"></script>
+</div>
 
 </body>
 </html>
