@@ -1,6 +1,6 @@
 buildscript {
 	ext {
-		springBootVersion = '1.5.12.RELEASE'
+		springBootVersion = '1.4.1.RELEASE'
 	}
 	repositories {
 		mavenCentral()
@@ -44,7 +44,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.springframework.boot:spring-boot-starter-security')
-	compile ('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')
 
 	//DEVELOPMENT DEPENDENCIES
 	runtime('org.springframework.boot:spring-boot-devtools')
