@@ -49,8 +49,8 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .loginPage("/login")
                     .permitAll()
                 .and().logout()
-                    /*.invalidateHttpSession(true)
-                    .clearAuthentication(true)*/
+                    .invalidateHttpSession(true)
+                    .clearAuthentication(true)
                 .permitAll()
         .and().exceptionHandling().accessDeniedHandler(sagloAccessDeniedHandler);
     }

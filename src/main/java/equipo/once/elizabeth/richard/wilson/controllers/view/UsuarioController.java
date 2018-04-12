@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.Objects;
+
 /**
  * Created on 4/11/2018.
  */
@@ -70,6 +72,9 @@ public class UsuarioController extends CommonViewController{
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model, Authentication authentication) {
+        if(Objects.isNull(authentication)){
+            return "redirect:/login";
+        }
         String ROLE = obtenerRole(authentication);
         String paginaParaRole = paginaParaRole(ROLE);
         logger.info(String.format("%s con %s , %s", ROLE, paginaParaRole, authentication));
