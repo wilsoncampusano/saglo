@@ -26,16 +26,16 @@
                             <div class="form-group">
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Inquilino</label>
-                                    <p >Piscina</p>
+                                    <p th:text="${solicitudAveria.inquilinoNombre}">Piscina</p>
                                 </div>
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Mobiliario</label>
-                                    <p >10/12/2018</p>
+                                    <p th:text="${solicitudAveria.mobiliarioDescripcion}">10/12/2018</p>
 
                                 </div>
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Fecha Solicitud</label>
-                                    <p >Juan Perez</p>
+                                    <p th:text="${solicitudAveria.fechaSolicitud}">Juan Perez</p>
 
                                 </div>
 
@@ -44,16 +44,16 @@
                             <div class="form-group">
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Ubicacion</label>
-                                    <p >Piscina</p>
+                                    <p th:text="${solicitudAveria.ubicacion}">Piscina</p>
                                 </div>
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Tipo de Averia</label>
-                                    <p >10/12/2018</p>
+                                    <p th:text="${solicitudAveria.tipoAveria}">10/12/2018</p>
 
                                 </div>
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Tipo de Incidente</label>
-                                    <p >Juan Perez</p>
+                                    <p th:text="${solicitudAveria.tipoIncidente}">Juan Perez</p>
 
                                 </div>
 
@@ -61,7 +61,7 @@
                             <div class="form-group">
                                 <div class="col-md-12 col-xs-12">
                                     <label class="control-label">Comentario</label>
-                                        <textarea  disabled="disabled" class="form-control" rows="5"
+                                        <textarea th:text="${solicitudAveria.descripcion}"  disabled="disabled" class="form-control" rows="5"
                                                    type="text" name="comentario"></textarea>
 
                                 </div>

@@ -6,6 +6,8 @@ import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
 import equipo.once.elizabeth.richard.wilson.repository.SolicitudAveriaRepository;
+import equipo.once.elizabeth.richard.wilson.services.MobiliarioInquilinoService;
+import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.dtos.ListaSolicitudInquilinoDetalleForm;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudCasoAveriaForm;
@@ -21,6 +23,12 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
 
     @Autowired
     SolicitudAveriaRepository solicitudAveriaRepository;
+
+    @Autowired
+    SolicitudAveriaCatalogoService solicitudAveriaCatalogoService;
+
+    @Autowired
+    MobiliarioInquilinoService mobiliarioInquilinoService;
 
     @Override
     public List<ListaSolicitudInquilinoDetalleForm> buscarSolicitudesDelInquilino(Inquilino inquilino) {
@@ -79,6 +87,12 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
     @Override
     public SolicitudAveriaDetalle buscarSolicitudPorId(Long averiaId) {
         SolicitudCasoAveria one = solicitudAveriaRepository.findOne(averiaId);
+        Catalogo ubicacion = solicitudAveriaCatalogoService.buscarUbicacion(one.ubicacionId);
+        Catalogo tipoAveria = solicitudAveriaCatalogoService.buscarTipoAveria(one.tipoAveriaId);
+        Catalogo tipoIncidente = solicitudAveriaCatalogoService.buscarTipoIncidente(one.tipoIncidenteId);
+        MobiliarioInquilino mobiliarioInquilino = mobiliarioInquilinoService.buscar(one.inquilino);
+
+
         SolicitudAveriaDetalle detalle = new SolicitudAveriaDetalle();
 
         detalle.id = one.id;
@@ -86,8 +100,11 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
         detalle.estatus = one.estatus;
         detalle.fechaSolicitud = one.fechaSolicitud;
         detalle.inquilinoNombre = one.inquilino.nombre;
-        detalle.mobiliarioDescripcion = one.inquilino.codigo;
-        detalle.ubicacion = one.ubicacionId.toString();
+        detalle.mobiliarioDescripcion = String.format("%s %s: %s", mobiliarioInquilino.mobiliario.codigo, mobiliarioInquilino.mobiliario.nombre, mobiliarioInquilino.mobiliario.descripcion);
+        detalle.ubicacion = ubicacion.nombre;
+        detalle.tipoAveria = tipoAveria.nombre;
+        detalle.tipoIncidente = tipoIncidente.nombre;
+
 
         return detalle;
     }

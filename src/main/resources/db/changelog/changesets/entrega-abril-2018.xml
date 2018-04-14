@@ -187,6 +187,7 @@
                 id int not null AUTO_INCREMENT,
                 codigo varchar(20) not null,
                 nombre varchar(100) not null,
+                valor int not null,
                 descripcion varchar(200),
                 PRIMARY KEY (id)
             );
@@ -195,26 +196,51 @@
 
     <changeSet id="wilsoncampusano-024" author="wilsoncampusano">
         <sql>
-            insert into catalogos(codigo, nombre)
-            values ('UBICACION', 'Interna');
+            insert into catalogos(codigo, nombre, valor)
+            values ('UBICACION', 'Interna', 1);
 
-            insert into catalogos(codigo, nombre)
-            values ('UBICACION', 'Interna');
+            insert into catalogos(codigo, nombre, valor)
+            values ('UBICACION', 'Externa',2 );
 
-            insert into catalogos(codigo, nombre)
-            values ('TIPO_AVERIA', 'Electricidad');
-            insert into catalogos(codigo, nombre)
-            values ('TIPO_AVERIA', 'Agua');
-            insert into catalogos(codigo, nombre)
-            values ('TIPO_AVERIA', 'Equipo');
+            insert into catalogos(codigo, nombre,valor)
+            values ('TIPO_AVERIA', 'Electricidad', 1);
+            insert into catalogos(codigo, nombre,valor)
+            values ('TIPO_AVERIA', 'Agua', 2);
+            insert into catalogos(codigo, nombre,valor)
+            values ('TIPO_AVERIA', 'Equipo', 3);
 
 
-            insert into catalogos(codigo, nombre)
-            values ('TIPO_INCIDENTE', 'Tuberia Rota');
-            insert into catalogos(codigo, nombre)
-            values ('TIPO_INCIDENTE', 'No hay Agua');
-            insert into catalogos(codigo, nombre)
-            values ('TIPO_INCIDENTE', 'Etc');
+            insert into catalogos(codigo, nombre,valor)
+            values ('TIPO_INCIDENTE', 'Tuberia Rota', 1);
+            insert into catalogos(codigo, nombre,valor)
+            values ('TIPO_INCIDENTE', 'No hay Agua', 2);
+            insert into catalogos(codigo, nombre,valor)
+            values ('TIPO_INCIDENTE', 'Etc',3);
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-025" author="wilsoncampusano">
+        <sql>
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V001-AP002', 'Villa Palma Apto. I', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V001-AP003', 'Villa Palma Apto. I', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V001-AP004', 'Villa Palma Apto. II', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V001-AP005', 'Villa Palma Apto. ambar', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V002-AP001', 'Villa Rosa Apto. I', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V002-AP002', 'Villa Rosa Apto. II', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V003-AP001', 'Villa Ambar Apto. I', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V004-AP001', 'Villa Marmol Apto. I', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V004-AP002', 'Villa Marmol Apto. II', 'Villa con piscina, balcon y vista a las montanias');
+            insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V004-AP003', 'Villa Marmol Apto. III', 'Villa con piscina, balcon y vista a las montanias');
         </sql>
     </changeSet>
 
