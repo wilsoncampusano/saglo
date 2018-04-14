@@ -139,6 +139,86 @@
     </changeSet>
 
 
+    <changeSet id="wilsoncampusano-017" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE tecnico ADD tipo varchar(100) not null default 'SIN TIPO';
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-018" author="wilsoncampusano">
+        <sql>
+            insert into tecnico(usuario_id, nombre, tipo)
+            values((select id from usuario where username = 'tecnicos'), 'Bob Construye', 'PLOMERO')
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="wilsoncampusano-019" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE mobiliario ADD codigo varchar(100) not null default 'MB-000'
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-020" author="wilsoncampusano">
+        <sql>
+           insert into mobiliario(codigo, nombre, descripcion)
+            values ('MB-V001-AP001', 'Villa I Apto. I', 'Villa con piscina, balcon y vista a las montanias')
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="wilsoncampusano-021" author="wilsoncampusano">
+        <sql>
+            insert into tecnico(usuario_id, nombre, tipo)
+            values((select id from usuario where username = 'tecnicos'), 'Bob Construye', 'PLOMERO')
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-022" author="wilsoncampusano">
+        <sql>
+            insert into mobiliario_inquilino(inquilino_id, mobiliario_id)
+            values((select id from inquilino where codigo = 'I-wilson-001'), (select id from mobiliario where codigo = 'MB-V001-AP001'))
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-023" author="wilsoncampusano">
+        <sql>
+            create table catalogos(
+                id int not null AUTO_INCREMENT,
+                codigo varchar(20) not null,
+                nombre varchar(100) not null,
+                descripcion varchar(200),
+                PRIMARY KEY (id)
+            );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-024" author="wilsoncampusano">
+        <sql>
+            insert into catalogos(codigo, nombre)
+            values ('UBICACION', 'Interna');
+
+            insert into catalogos(codigo, nombre)
+            values ('UBICACION', 'Interna');
+
+            insert into catalogos(codigo, nombre)
+            values ('TIPO_AVERIA', 'Electricidad');
+            insert into catalogos(codigo, nombre)
+            values ('TIPO_AVERIA', 'Agua');
+            insert into catalogos(codigo, nombre)
+            values ('TIPO_AVERIA', 'Equipo');
+
+
+            insert into catalogos(codigo, nombre)
+            values ('TIPO_INCIDENTE', 'Tuberia Rota');
+            insert into catalogos(codigo, nombre)
+            values ('TIPO_INCIDENTE', 'No hay Agua');
+            insert into catalogos(codigo, nombre)
+            values ('TIPO_INCIDENTE', 'Etc');
+        </sql>
+    </changeSet>
+
+
 
 
 </databaseChangeLog>

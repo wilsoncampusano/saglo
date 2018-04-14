@@ -10,6 +10,7 @@ public class Tecnico {
   public long id;
   public String username;
   public String password;
+  public String tipo;
   public Integer activo;
 
   public long getId() {
@@ -42,5 +43,13 @@ public class Tecnico {
 
   public void setActivo(Integer activo) {
     this.activo = activo;
+  }
+
+  public String getTipo() {
+    return tipo;
+  }
+
+  public void setTipo(String tipo) {
+    this.tipo = tipo;
   }
 }

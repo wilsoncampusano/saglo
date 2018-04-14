@@ -14,6 +14,7 @@ public class Mobiliario {
 
   @Column(name = "descripcion")
   public String descripcion;
+  public String codigo;
 
   public long getId() {
     return id;
@@ -37,5 +38,13 @@ public class Mobiliario {
 
   public void setDescripcion(String descripcion) {
     this.descripcion = descripcion;
+  }
+
+  public String getCodigo() {
+    return codigo;
+  }
+
+  public void setCodigo(String codigo) {
+    this.codigo = codigo;
   }
 }

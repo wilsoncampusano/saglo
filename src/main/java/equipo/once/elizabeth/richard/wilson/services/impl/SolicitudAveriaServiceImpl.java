@@ -85,6 +85,9 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
         detalle.descripcion = one.comentario;
         detalle.estatus = one.estatus;
         detalle.fechaSolicitud = one.fechaSolicitud;
+        detalle.inquilinoNombre = one.inquilino.nombre;
+        detalle.mobiliarioDescripcion = one.inquilino.codigo;
+        detalle.ubicacion = one.ubicacionId.toString();
 
         return detalle;
     }
