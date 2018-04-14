@@ -7,4 +7,6 @@ public class Estatus {
     public static final String PENDIENTE = "PENDIENTE";
     public static final String PROCESO = "PROCESO";
     public static final String COMPLETADA = "COMPLETADA";
+    public static final String RECHAZADA = "RECHAZADA";
+    public static final String APROBADA = "APROBADA";
 }

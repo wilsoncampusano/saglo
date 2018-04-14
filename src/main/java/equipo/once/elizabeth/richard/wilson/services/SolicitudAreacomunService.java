@@ -23,4 +23,7 @@ public interface SolicitudAreacomunService {
     List<SolicitudAreaDetalle> buscarTodasLasSolicitudesAreaPendientes();
 
     SolicitudAreaDetalle buscarSolicitudPorId(Long solicitudId);
+
+    void cambiarEstado(String estado, SolicitudAreaDetalle solicitudAreaDetalle);
+
 }

@@ -1,12 +1,15 @@
 package equipo.once.elizabeth.richard.wilson.controllers.view.admin;
 
+import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Estatus;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -66,7 +69,7 @@ public class AdminSolicitudesController extends AdminController {
 
 
   @RequestMapping(value = {"/solicitud/aprobar","solicitud/aprobar"})
-  public ModelAndView getGestionar(@RequestParam("solicitudId") Long solicitudId, Authentication authentication){
+  public ModelAndView getGestionar(@RequestParam(value = "solicitudId", required = false) Long solicitudId, Authentication authentication){
 
     ModelAndView modelAndView = new ModelAndView(ADMIN_SOLICITUDES_GESTIONAR);
 
@@ -75,6 +78,37 @@ public class AdminSolicitudesController extends AdminController {
     modelAndView.addObject("solicitudArea",sa);
     return modelAndView;
   }
+
+  @PostMapping(value = {"/solicitud/aprobar","solicitud/aprobar"}, params = {"aprobar"})
+  public ModelAndView posGestionarAprobar(SolicitudAreaDetalle solicitudAreaDetalle,  Authentication authentication){
+
+    ModelAndView modelAndView = new ModelAndView(ADMIN_SOLICITUDES_GESTIONAR);
+
+    solicitudAreacomunService.cambiarEstado(Estatus.APROBADA, solicitudAreaDetalle);
+
+
+    Mensaje mensaje = Mensaje.EXITO;
+    mensaje.setMensaje("La solicitud ha sido aprobada");
+    modelAndView.addObject(MENSAJE_KEY, mensaje);
+    modelAndView.addObject("solicitudArea",solicitudAreaDetalle);
+    return modelAndView;
+  }
+
+  @PostMapping(value = {"/solicitud/aprobar","solicitud/aprobar"}, params = {"rechazar"})
+  public ModelAndView posGestionarRechazar(SolicitudAreaDetalle solicitudAreaDetalle, Authentication authentication){
+
+    ModelAndView modelAndView = new ModelAndView(ADMIN_SOLICITUDES_GESTIONAR);
+
+    solicitudAreacomunService.cambiarEstado(Estatus.RECHAZADA, solicitudAreaDetalle);
+
+    Mensaje mensaje = Mensaje.ADVERTENCIA;
+    mensaje.setMensaje("La solicitud fue Rechazada");
+
+    modelAndView.addObject(MENSAJE_KEY, mensaje);
+    modelAndView.addObject("solicitudArea",solicitudAreaDetalle);
+    return modelAndView;
+  }
+
 
   @RequestMapping(value = {"/averias/asignar","averias/asignar"})
   public ModelAndView getAsignar(@RequestParam("averiaId") Long averiaId, Authentication authentication){

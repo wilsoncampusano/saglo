@@ -24,42 +24,53 @@
                     <div class="panel-body">
                         <div class="form-horizontal" role="form" id="solicitudAreaFragment">
                                 <div class="form-group">
-                                    <div class="col-md-6 col-xs-12">
+                                    <div class="col-md-3 col-xs-12">
                                         <label class="control-label">Area Comun</label>
-                                        <input class="form-control autocomplete" type="text" id="areacomunautocomplete"/>
+                                        <p th:text="${solicitudArea.areacomunNombre}">Piscina</p>
+                                        <input type="hidden" th:field="${solicitudArea.id}"></input>
+                                        <input type="hidden" th:field="${solicitudArea.areacomunNombre}"/>
                                     </div>
                                     <div class="col-md-3 col-xs-12">
                                         <label class="control-label">Fecha Solicitud</label>
-                                        <input type="hidden"  id="form_areaComun_codigo" />
-                                        <input type="text" class="form-control fechas"  id="fechaSolicitud"/>
-                                    </div>
+                                        <p th:text="${solicitudArea.fechaSolicitud}">10/12/2018</p>
+                                        <input type="hidden" th:field="${solicitudArea.fechaSolicitud}"/>
 
+                                    </div>
                                     <div class="col-md-3 col-xs-12">
-                                        <label class="control-label">Disponibilidad</label>
-                                        <input type="hidden" />
-                                        <span  class="label label-success areacomun-disponibilidad">Disponible</span>
-                                        <span  class="label label-danger areacomun-disponiblidad">No Disponible</span>
+                                        <label class="control-label">Inquilino</label>
+                                        <p th:text="${solicitudArea.inquilinoNombre}">Juan Perez</p>
+                                        <input type="hidden" th:field="${solicitudArea.inquilinoNombre}"/>
+
+                                    </div>
+                                    <div class="col-md-3 col-xs-12">
+                                        <label class="control-label">Mobiliario</label>
+                                        <p th:text="${solicitudArea.mobiliarioNombre}">Villa C apto 1</p>
+                                        <input type="hidden" th:field="${solicitudArea.mobiliarioNombre}"/>
+
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <div class="col-md-12 col-xs-12">
                                         <label class="control-label">Comentario</label>
-                                        <textarea  class="form-control" rows="5"
+                                        <textarea  th:text="${solicitudArea.descripcion}" disabled="disabled" class="form-control" rows="5"
                                                   type="text" name="comentario"></textarea>
+                                        <input type="hidden" th:field="${solicitudArea.descripcion}"/>
+
                                     </div>
                                 </div>
+
                         </div>
                     </div>
                     <div class="panel-footer">
                         <div class="form-horizontal text-right text-right">
-                            <button type="submit" name="cancelar"
-                                    class="btn btn-link btn-outline">
-                                <span>Cancelar</span>
+                            <button type="submit" name="rechazar"
+                                    class="btn btn-danger">
+                                <span>Rechazar</span>
                             </button>
-                            <button id="guardarSolicitud" type="submit" name="registrar"
+                            <button id="aprobarSolicitud" type="submit" name="aprobar"
                                     class="btn btn-success">
                                 <span class="fa fa-save"></span>
-                                <span>Solicitar</span>
+                                <span>Aprobar</span>
                             </button>
                         </div>
                     </div>
@@ -70,7 +81,7 @@
 </div>
 
 <div layout:fragment="script">
-    <script th:src="@{/js/inquilino/solicitudarea.js}" type="application/javascript"></script>
+    <script th:src="@{/js/admin/aprobar.js}" type="application/javascript"></script>
 </div>
 
 </body>

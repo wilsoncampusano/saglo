@@ -95,7 +95,20 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         detalle.descripcion = one.comentario;
         detalle.estatus = one.estatus;
         detalle.fechaSolicitud = one.fechaSolicitud;
+        detalle.inquilinoNombre = one.inquilino.nombre;
+        detalle.areacomunNombre = one.areaComun.nombre;
+        detalle.mobiliarioNombre = one.estatus;
+
+
 
         return detalle;
+    }
+
+    @Override
+    public void cambiarEstado(String estado, SolicitudAreaDetalle solicitudAreaDetalle) {
+        SolicitudAreacomun one = solicitudAreaComunRepository.findOne(solicitudAreaDetalle.id);
+        one.estatus = estado;
+        solicitudAreaDetalle.estatus = estado;
+        solicitudAreaComunRepository.save(one);
     }
 }

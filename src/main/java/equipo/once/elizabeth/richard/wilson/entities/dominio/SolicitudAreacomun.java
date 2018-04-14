@@ -5,6 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name ="solicitud_areacomun")
+@Cacheable(false)
 public class SolicitudAreacomun {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
