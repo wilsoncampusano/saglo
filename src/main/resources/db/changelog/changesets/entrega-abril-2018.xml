@@ -244,6 +244,13 @@
         </sql>
     </changeSet>
 
+    <changeSet id="wilsoncampusano-026" author="wilsoncampusano">
+        <sql>
+            update inquilino set nombre = 'Juan Perez';
+        </sql>
+    </changeSet>
+
+
 
 
 
