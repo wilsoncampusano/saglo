@@ -37,7 +37,10 @@
                                         <td th:text="${solicitud.fechaSolicitud}">Solicitud Solucion Averia</td>
                                         <td th:text="${solicitud.estatus}">Resuelto</td>
                                         <td th:text="${solicitud.descripcion}">Averia Dentro de la Villa -  Tuberia rota.</td>
-                                        <td><a th:href="@{/admin/locales/solicitud/aprobar(solicitudId=${solicitud.id})}">Gestionar</a></td>
+                                        <td>
+                                            <a th:if="${solicitud.estatus != 'APROBADA'}" th:href="@{/admin/locales/solicitud/aprobar(solicitudId=${solicitud.id})}">Gestionar</a>
+                                            <a th:if="${solicitud.estatus == 'APROBADA'}" href="#"> - </a>
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
