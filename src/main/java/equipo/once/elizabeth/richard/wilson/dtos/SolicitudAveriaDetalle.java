@@ -15,7 +15,7 @@ public class SolicitudAveriaDetalle {
   public String tipoIncidente;
   public String tipoTecnico;
   public Long tecnicoId;
-
+  public String tecnico;
 
 
   public Long getId() {
@@ -104,5 +104,13 @@ public class SolicitudAveriaDetalle {
 
   public void setTecnicoId(Long tecnicoId) {
     this.tecnicoId = tecnicoId;
+  }
+
+  public String getTecnico() {
+    return tecnico;
+  }
+
+  public void setTecnico(String tecnico) {
+    this.tecnico = tecnico;
   }
 }

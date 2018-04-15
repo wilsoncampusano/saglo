@@ -2,6 +2,7 @@ package equipo.once.elizabeth.richard.wilson.services.impl;
 
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
 import equipo.once.elizabeth.richard.wilson.repository.SolicitudAveriaRepository;
@@ -10,12 +11,14 @@ import equipo.once.elizabeth.richard.wilson.services.CatalogoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.dtos.ListaSolicitudInquilinoDetalleForm;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudCasoAveriaForm;
+import equipo.once.elizabeth.richard.wilson.services.TecnicoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import java.util.logging.Logger;
 
 @Service
@@ -31,6 +34,9 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
 
     @Autowired
     MobiliarioInquilinoService mobiliarioInquilinoService;
+
+    @Autowired
+    TecnicoService tecnicoService;
 
     @Override
     public List<ListaSolicitudInquilinoDetalleForm> buscarSolicitudesDelInquilino(Inquilino inquilino) {
@@ -84,7 +90,7 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
             d.fechaSolicitud = sa.fechaSolicitud;
             d.estatus = sa.estatus;
             d.descripcion = sa.comentario;
-
+            d.tecnico = String.format("%s / %s", Objects.isNull(sa.tecnico) ? "": sa.tecnico.nombre , Objects.nonNull(sa.tecnico)? sa.tecnico.tipo : "");
             detalles.add(d);
         }
         return detalles;
@@ -113,5 +119,19 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
 
 
         return detalle;
+    }
+
+    @Override
+    public void asignar(SolicitudAveriaDetalle solicitudAveriaDetalle) {
+        SolicitudCasoAveria one = solicitudAveriaRepository.findOne(solicitudAveriaDetalle.id);
+        Tecnico tecnico = tecnicoService.buscarPorId(solicitudAveriaDetalle.tecnicoId);
+        one.tecnico = tecnico;
+        solicitudAveriaRepository.save(one);
+    }
+
+    @Override
+    public void cambiarEstado(String proceso, Long solicitudAveriaDetalle) {
+        SolicitudCasoAveria one = solicitudAveriaRepository.findOne(solicitudAveriaDetalle);
+        one.estatus = proceso;
     }
 }

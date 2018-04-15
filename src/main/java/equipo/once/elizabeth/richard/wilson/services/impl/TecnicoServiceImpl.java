@@ -18,4 +18,9 @@ public class TecnicoServiceImpl implements TecnicoService {
   public List<Tecnico> buscarTecnicosPorTipo(String tipoTecnico){
     return tecnicoRepository.buscarPorTipo(tipoTecnico);
   }
+
+  @Override
+  public Tecnico buscarPorId(Long tecnicoId) {
+    return tecnicoRepository.findOne(tecnicoId);
+  }
 }

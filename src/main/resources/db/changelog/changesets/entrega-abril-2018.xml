@@ -356,6 +356,13 @@
     </changeSet>
 
 
+    <changeSet id="wilsoncampusano-033" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE solicitud_averia ADD tecnico_id int default null;
+        </sql>
+    </changeSet>
+
+
 
 
 </databaseChangeLog>

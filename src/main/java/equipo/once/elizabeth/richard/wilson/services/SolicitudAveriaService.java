@@ -1,5 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.services;
 
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.dtos.ListaSolicitudInquilinoDetalleForm;
@@ -19,4 +20,9 @@ public interface SolicitudAveriaService {
   List<SolicitudAveriaDetalle> buscarTodasLasSolicitudesAveriasPendiente();
 
   SolicitudAveriaDetalle buscarSolicitudPorId(Long averiaId);
+
+
+  void asignar(SolicitudAveriaDetalle solicitudAveriaDetalle);
+
+  void cambiarEstado(String proceso, Long solicitudAveriaDetalle);
 }

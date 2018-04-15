@@ -8,4 +8,6 @@ import java.util.List;
 @Service
 public interface TecnicoService {
   List<Tecnico> buscarTecnicosPorTipo(String tipoTecnico);
+
+  Tecnico buscarPorId(Long tecnicoId);
 }

@@ -22,6 +22,9 @@ public class SolicitudCasoAveria {
   public Inquilino inquilino;
 
   @ManyToOne
+  public Tecnico tecnico;
+
+  @ManyToOne
   public MobiliarioInquilino mobiliarioInquilino;
 
   public long getId() {
@@ -94,5 +97,13 @@ public class SolicitudCasoAveria {
 
   public void setEstatus(String estatus) {
     this.estatus = estatus;
+  }
+
+  public Tecnico getTecnico() {
+    return tecnico;
+  }
+
+  public void setTecnico(Tecnico tecnico) {
+    this.tecnico = tecnico;
   }
 }

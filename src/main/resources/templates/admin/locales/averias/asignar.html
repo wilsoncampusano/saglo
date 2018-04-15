@@ -19,6 +19,7 @@
                     <div class="panel-heading">
                         <h3 class="panel-title">Reporte Solicitud Averia <label class="control-label"></label>
                         </h3>
+                        <input type="hidden" th:field="${solicitudAveria.id}"/>
                     </div>
 
                     <div class="panel-body">
@@ -83,7 +84,7 @@
                                 <div class="col-md-6 col-xs-12">
                                     <label class="control-label">Tipo Tecnico</label>
                                     <select class="selectpicker" id="selectTipoTecnico"
-                                            th:field="${solicitudAveria.tipoTecnico}">
+                                            th:field="${solicitudAveria.tipoTecnico}"  required="required">
                                         <option value="">Seleccione</option>
                                         <option th:each="catalogo : ${tipoTecnicos}"
                                                 th:text="${catalogo.nombre}"
@@ -93,7 +94,7 @@
                                 <div class="col-md-6 col-xs-12">
                                     <label class="control-label">Tecnicos</label>
                                     <select class="selectpicker" id="tecnicos"
-                                            th:field="${solicitudAveria.tecnicoId}">
+                                            th:field="${solicitudAveria.tecnicoId}" required="required">
                                         <option value="">Seleccione</option>
                                         <option th:fragment="tecnicos" th:each="tecnico : ${tecnicos}"
                                                 th:text="${tecnico.nombre}"
