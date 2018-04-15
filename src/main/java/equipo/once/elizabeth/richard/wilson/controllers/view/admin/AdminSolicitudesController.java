@@ -18,9 +18,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Controller
 @RequestMapping(value = "/admin/locales/")
@@ -123,9 +125,21 @@ public class AdminSolicitudesController extends AdminController {
 
 
   @RequestMapping(value = {"/averias/asignar","averias/asignar"})
-  public ModelAndView getAsignar(@RequestParam("averiaId") Long averiaId, Authentication authentication){
+  public ModelAndView getAsignar(@RequestParam("averiaId") Long averiaId,
+                                 @RequestParam(value = "exito", required = false) String exito,
+                                  Authentication authentication){
 
     ModelAndView modelAndView = new ModelAndView(ADMIN_AVERIAS_APROBAR);
+
+    if(Objects.nonNull(exito) && exito.equals("true")){
+
+      Mensaje mensaje = Mensaje.EXITO;
+      mensaje.setMensaje("La solicitud fue asignada con exito!");
+
+      modelAndView.addObject(MENSAJE_KEY, mensaje);
+
+    }
+
 
     SolicitudAveriaDetalle sa = solicitudAveriaService.buscarSolicitudPorId(averiaId);
     List<Catalogo> tipoTecnicos = catalogoService.buscarTipoTecnicos();
@@ -135,19 +149,15 @@ public class AdminSolicitudesController extends AdminController {
   }
 
   @PostMapping(value = {"/averias/asignar","averias/asignar"}, params = {"asignar"})
-  public ModelAndView posAsignarAveria(SolicitudAveriaDetalle solicitudAveriaDetalle, Authentication authentication){
-
-    ModelAndView modelAndView = new ModelAndView(ADMIN_AVERIAS_APROBAR);
+  public String posAsignarAveria(SolicitudAveriaDetalle solicitudAveriaDetalle,
+                                 Authentication authentication , RedirectAttributes redirectAttributes){
 
     solicitudAveriaService.asignar(solicitudAveriaDetalle);
     solicitudAveriaService.cambiarEstado(Estatus.PROCESO, solicitudAveriaDetalle.id);
 
-    Mensaje mensaje = Mensaje.EXITO;
-    mensaje.setMensaje("La solicitud fue asignada con exito!");
-
-    modelAndView.addObject(MENSAJE_KEY, mensaje);
-    modelAndView.addObject("solicitudAveria",solicitudAveriaDetalle);
-    return modelAndView;
+    redirectAttributes.addAttribute("averiaId", solicitudAveriaDetalle.id);
+    redirectAttributes.addAttribute("exito", "true");
+    return "redirect:/admin/locales/averias/asignar";
   }
 
 
