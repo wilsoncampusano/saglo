@@ -14,12 +14,14 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 /**
  * Created on 4/9/2018.
  */
 @Service
 public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService {
+    Logger logger = Logger.getLogger(SolicitudAreacomunServiceImpl.class.getName());
 
     @Autowired
     private SolicitudAreaComunRepository solicitudAreaComunRepository;
@@ -37,8 +39,12 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         s.setInquilino(form.inquilino);
         s.comentario = form.comentario;
         s.estatus = Estatus.PENDIENTE;
-        SolicitudAreacomun save = solicitudAreaComunRepository.save(s);
+        try {
+            SolicitudAreacomun save = solicitudAreaComunRepository.save(s);
+        }catch (Exception e){
+            logger.severe(String.format("Error guardando SAGLO : %s ",e.getMessage()));
 
+        }
     }
 
     @Override
@@ -109,6 +115,10 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         SolicitudAreacomun one = solicitudAreaComunRepository.findOne(solicitudAreaDetalle.id);
         one.estatus = estado;
         solicitudAreaDetalle.estatus = estado;
+        try{
         solicitudAreaComunRepository.save(one);
+        }catch (Exception e){
+            logger.severe(String.format("Error SAGLO %s", e.getMessage()));
+        }
     }
 }
