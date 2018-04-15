@@ -17,9 +17,12 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.logging.Logger;
 
 @Service
 public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
+
+    Logger logger = Logger.getLogger(SolicitudAveriaServiceImpl.class.getName());
 
     @Autowired
     SolicitudAveriaRepository solicitudAveriaRepository;
@@ -61,7 +64,11 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
         averia.comentario = form.comentario;
         averia.estatus = Estatus.PENDIENTE;
 
+        try{
         SolicitudCasoAveria save = solicitudAveriaRepository.save(averia);
+        }catch(Exception e ){
+            logger.severe(String.format("Error guardando SAGLO : %s ",e.getMessage()));
+        }
 
     }
 
