@@ -1,7 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.controllers.view.inquilino;
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
-import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoService;
+import equipo.once.elizabeth.richard.wilson.services.CatalogoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudCasoAveriaForm;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
     public static final String FORMULARIO_KEY = "form";
 
     @Autowired
-    private SolicitudAveriaCatalogoService solicitudAveriaCatalogoService;
+    private CatalogoService catalogoService;
 
     @Autowired
     private SolicitudAveriaService solicitudAveriaService;
@@ -41,9 +41,9 @@ public class SolicitudCasoAveriaController extends InquilinoController  {
     }
 
     private void cargarCatalogos(ModelAndView modelAndView) {
-        modelAndView.addObject("catalogoIncidente", solicitudAveriaCatalogoService.catalogoIncidenteAveria());
-        modelAndView.addObject("catalogoTipoAveria", solicitudAveriaCatalogoService.catalogoTipoAveria());
-        modelAndView.addObject("catalogoUbiciacion", solicitudAveriaCatalogoService.catalogoUbicacionAveria());
+        modelAndView.addObject("catalogoIncidente", catalogoService.catalogoIncidenteAveria());
+        modelAndView.addObject("catalogoTipoAveria", catalogoService.catalogoTipoAveria());
+        modelAndView.addObject("catalogoUbiciacion", catalogoService.catalogoUbicacionAveria());
     }
 
     @RequestMapping(value = "casoaveria", method = RequestMethod.POST)

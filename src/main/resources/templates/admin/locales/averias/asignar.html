@@ -82,11 +82,23 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-xs-12">
                                     <label class="control-label">Tipo Tecnico</label>
-                                    <p >Piscina</p>
+                                    <select class="selectpicker" id="selectTipoTecnico"
+                                            th:field="${solicitudAveria.tipoTecnico}">
+                                        <option value="">Seleccione</option>
+                                        <option th:each="catalogo : ${tipoTecnicos}"
+                                                th:text="${catalogo.nombre}"
+                                                th:value="${catalogo.nombre}"></option>
+                                    </select>
                                 </div>
                                 <div class="col-md-6 col-xs-12">
-                                    <label class="control-label">Nombre</label>
-                                    <p >10/12/2018</p>
+                                    <label class="control-label">Tecnicos</label>
+                                    <select class="selectpicker" id="tecnicos"
+                                            th:field="${solicitudAveria.tecnicoId}">
+                                        <option value="">Seleccione</option>
+                                        <option th:fragment="tecnicos" th:each="tecnico : ${tecnicos}"
+                                                th:text="${tecnico.nombre}"
+                                                th:value="${tecnico.id}"></option>
+                                    </select>
                                 </div>
                             </div>
 

@@ -10,6 +10,8 @@ public class SolicitudAreaDetalle {
   public String inquilinoNombre;
   public String areacomunNombre;
   public String mobiliarioNombre;
+  public String tipoTecnico;
+  public Long tecnicoId;
 
 
   public Long getId() {
@@ -66,5 +68,21 @@ public class SolicitudAreaDetalle {
 
   public void setMobiliarioNombre(String mobiliarioNombre) {
     this.mobiliarioNombre = mobiliarioNombre;
+  }
+
+  public String getTipoTecnico() {
+    return tipoTecnico;
+  }
+
+  public void setTipoTecnico(String tipoTecnico) {
+    this.tipoTecnico = tipoTecnico;
+  }
+
+  public Long getTecnicoId() {
+    return tecnicoId;
+  }
+
+  public void setTecnicoId(Long tecnicoId) {
+    this.tecnicoId = tecnicoId;
   }
 }

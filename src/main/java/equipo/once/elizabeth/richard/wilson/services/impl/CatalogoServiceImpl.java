@@ -2,15 +2,16 @@ package equipo.once.elizabeth.richard.wilson.services.impl;
 
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Catalogo;
 import equipo.once.elizabeth.richard.wilson.repository.CatalogoRepository;
-import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoService;
+import equipo.once.elizabeth.richard.wilson.services.CatalogoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Component
-public class SolicitudAveriaCatalogoServiceImpl implements SolicitudAveriaCatalogoService {
+public class CatalogoServiceImpl implements CatalogoService {
 
   @Autowired
   CatalogoRepository catalogoRepository;
@@ -55,5 +56,10 @@ public class SolicitudAveriaCatalogoServiceImpl implements SolicitudAveriaCatalo
   @Override
   public Catalogo buscarTipoIncidente(Long tipoIncidenteId) {
     return catalogoRepository.buscar("TIPO_INCIDENTE", tipoIncidenteId);
+  }
+
+  @Override
+  public List<Catalogo> buscarTipoTecnicos() {
+    return catalogoRepository.buscar("TIPO_TECNICO");
   }
 }

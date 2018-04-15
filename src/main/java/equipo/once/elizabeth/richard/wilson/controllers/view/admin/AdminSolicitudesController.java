@@ -3,9 +3,14 @@ package equipo.once.elizabeth.richard.wilson.controllers.view.admin;
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Catalogo;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Estatus;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.Tecnico;
+import equipo.once.elizabeth.richard.wilson.services.CatalogoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
+import equipo.once.elizabeth.richard.wilson.services.TecnicoService;
+import liquibase.structure.core.Catalog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
@@ -31,6 +36,12 @@ public class AdminSolicitudesController extends AdminController {
 
   @Autowired
   private SolicitudAveriaService solicitudAveriaService;
+
+  @Autowired
+  CatalogoService catalogoService;
+
+  @Autowired
+  TecnicoService tecnicoService;
 
   @RequestMapping(value = {"/averias","averias"})
   public ModelAndView solicitudesAveria(Authentication authentication){
@@ -116,7 +127,8 @@ public class AdminSolicitudesController extends AdminController {
     ModelAndView modelAndView = new ModelAndView(ADMIN_AVERIAS_APROBAR);
 
     SolicitudAveriaDetalle sa = solicitudAveriaService.buscarSolicitudPorId(averiaId);
-
+    List<Catalogo> tipoTecnicos = catalogoService.buscarTipoTecnicos();
+    modelAndView.addObject("tipoTecnicos", tipoTecnicos);
     modelAndView.addObject("solicitudAveria",sa);
     return modelAndView;
   }
@@ -135,4 +147,17 @@ public class AdminSolicitudesController extends AdminController {
     modelAndView.addObject("solicitudArea",solicitudAreaDetalle);
     return modelAndView;
   }
+
+
+  @PostMapping(value = {"/solicitudes/averia/ajax/tecnicos","solicitudes/averia/ajax/tecnicos"})
+  public ModelAndView postTecnicos(SolicitudAreaDetalle solicitudAreaDetalle, Authentication authentication){
+
+    ModelAndView modelAndView = new ModelAndView(ADMIN_SOLICITUDES_GESTIONAR);
+    List<Tecnico> tecnicos = tecnicoService.buscarTecnicosPorTipo(solicitudAreaDetalle.tipoTecnico);
+    modelAndView.addObject("tecnicos",tecnicos);
+    modelAndView.addObject("solicitudArea",solicitudAreaDetalle);
+    return modelAndView;
+  }
+
+
 }

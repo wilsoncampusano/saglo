@@ -2,12 +2,11 @@ package equipo.once.elizabeth.richard.wilson.services.impl;
 
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
-import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
 import equipo.once.elizabeth.richard.wilson.repository.SolicitudAveriaRepository;
 import equipo.once.elizabeth.richard.wilson.services.MobiliarioInquilinoService;
-import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaCatalogoService;
+import equipo.once.elizabeth.richard.wilson.services.CatalogoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAveriaService;
 import equipo.once.elizabeth.richard.wilson.dtos.ListaSolicitudInquilinoDetalleForm;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudCasoAveriaForm;
@@ -28,7 +27,7 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
     SolicitudAveriaRepository solicitudAveriaRepository;
 
     @Autowired
-    SolicitudAveriaCatalogoService solicitudAveriaCatalogoService;
+    CatalogoService catalogoService;
 
     @Autowired
     MobiliarioInquilinoService mobiliarioInquilinoService;
@@ -94,9 +93,9 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
     @Override
     public SolicitudAveriaDetalle buscarSolicitudPorId(Long averiaId) {
         SolicitudCasoAveria one = solicitudAveriaRepository.findOne(averiaId);
-        Catalogo ubicacion = solicitudAveriaCatalogoService.buscarUbicacion(one.ubicacionId);
-        Catalogo tipoAveria = solicitudAveriaCatalogoService.buscarTipoAveria(one.tipoAveriaId);
-        Catalogo tipoIncidente = solicitudAveriaCatalogoService.buscarTipoIncidente(one.tipoIncidenteId);
+        Catalogo ubicacion = catalogoService.buscarUbicacion(one.ubicacionId);
+        Catalogo tipoAveria = catalogoService.buscarTipoAveria(one.tipoAveriaId);
+        Catalogo tipoIncidente = catalogoService.buscarTipoIncidente(one.tipoIncidenteId);
         MobiliarioInquilino mobiliarioInquilino = mobiliarioInquilinoService.buscar(one.inquilino);
 
 

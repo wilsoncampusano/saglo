@@ -5,7 +5,7 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.Catalogo;
 import java.util.List;
 import java.util.Map;
 
-public interface SolicitudAveriaCatalogoService {
+public interface CatalogoService {
 
   Map<String, String> catalogoUbicacionAveria();
   Map<String, String> catalogoTipoAveria();
@@ -16,4 +16,6 @@ public interface SolicitudAveriaCatalogoService {
   Catalogo buscarTipoAveria(Long tipoAveriaId);
 
   Catalogo buscarTipoIncidente(Long tipoIncidenteId);
+
+  List<Catalogo> buscarTipoTecnicos();
 }
