@@ -13,6 +13,9 @@ public class SolicitudAveriaDetalle {
   public String ubicacion;
   public String tipoAveria;
   public String tipoIncidente;
+  public String tipoTecnico;
+  public Long tecnicoId;
+
 
 
   public Long getId() {
@@ -85,5 +88,21 @@ public class SolicitudAveriaDetalle {
 
   public void setTipoIncidente(String tipoIncidente) {
     this.tipoIncidente = tipoIncidente;
+  }
+
+  public String getTipoTecnico() {
+    return tipoTecnico;
+  }
+
+  public void setTipoTecnico(String tipoTecnico) {
+    this.tipoTecnico = tipoTecnico;
+  }
+
+  public Long getTecnicoId() {
+    return tecnicoId;
+  }
+
+  public void setTecnicoId(Long tecnicoId) {
+    this.tecnicoId = tecnicoId;
   }
 }

@@ -1,14 +1,13 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.DateUtil;
-import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
-import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
-import equipo.once.elizabeth.richard.wilson.repository.SolicitudAreaComunRepository;
-import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
-import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
-import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import equipo.once.elizabeth.richard.wilson.dtos.ListaSolicitudInquilinoDetalleForm;
 import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaComunForm;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
+import equipo.once.elizabeth.richard.wilson.repository.SolicitudAreaComunRepository;
+import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
+import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

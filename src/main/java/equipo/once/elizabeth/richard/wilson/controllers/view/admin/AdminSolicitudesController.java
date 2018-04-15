@@ -31,6 +31,7 @@ public class AdminSolicitudesController extends AdminController {
   private static final String ADMIN_AVERIAS_SOLICITUDES = "admin/solicitudes/averias";
   private static final String ADMIN_SOLICITUDES_GESTIONAR= "admin/locales/solicitudes/aprobar";
   private static final String ADMIN_AVERIAS_APROBAR= "admin/locales/averias/asignar";
+  private static final String ADMIN_AVERIAS_ASIGNAR= "admin/locales/averias/asignar :: tecnicos";
   @Autowired
   private SolicitudAreacomunService solicitudAreacomunService;
 
@@ -150,12 +151,12 @@ public class AdminSolicitudesController extends AdminController {
 
 
   @PostMapping(value = {"/solicitudes/averia/ajax/tecnicos","solicitudes/averia/ajax/tecnicos"})
-  public ModelAndView postTecnicos(SolicitudAreaDetalle solicitudAreaDetalle, Authentication authentication){
+  public ModelAndView postTecnicos(SolicitudAveriaDetalle solicitudAveriaDetalle, Authentication authentication){
 
-    ModelAndView modelAndView = new ModelAndView(ADMIN_SOLICITUDES_GESTIONAR);
-    List<Tecnico> tecnicos = tecnicoService.buscarTecnicosPorTipo(solicitudAreaDetalle.tipoTecnico);
+    ModelAndView modelAndView = new ModelAndView(ADMIN_AVERIAS_ASIGNAR);
+    List<Tecnico> tecnicos = tecnicoService.buscarTecnicosPorTipo(solicitudAveriaDetalle.tipoTecnico);
     modelAndView.addObject("tecnicos",tecnicos);
-    modelAndView.addObject("solicitudArea",solicitudAreaDetalle);
+    modelAndView.addObject("solicitudArea",solicitudAveriaDetalle);
     return modelAndView;
   }
 

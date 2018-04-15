@@ -5,6 +5,7 @@
 
     $(function () {
         // init
+        configurarListaTipoTecnico();
     });
 
 
