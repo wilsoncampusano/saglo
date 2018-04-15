@@ -309,16 +309,16 @@
         <sql>
             INSERT INTO usuario (username, password)
             VALUES
-            ('inquilino1', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy', 1);
+            ('inquilino1', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy');
 
             INSERT INTO usuario (username, password)
             VALUES
-            ('inquilino2', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy', 1);
+            ('inquilino2', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy');
 
 
             INSERT INTO usuario (username, password)
             VALUES
-            ('inquilino3', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy', 1);
+            ('inquilino3', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy');
 
         </sql>
     </changeSet>
