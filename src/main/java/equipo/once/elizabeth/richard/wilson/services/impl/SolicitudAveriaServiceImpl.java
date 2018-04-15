@@ -133,5 +133,6 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
     public void cambiarEstado(String proceso, Long solicitudAveriaDetalle) {
         SolicitudCasoAveria one = solicitudAveriaRepository.findOne(solicitudAveriaDetalle);
         one.estatus = proceso;
+        solicitudAveriaRepository.save(one);
     }
 }

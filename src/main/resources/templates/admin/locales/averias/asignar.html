@@ -11,7 +11,7 @@
 <div layout:fragment="content">
     <div th:replace="alerta :: alert (mensaje=${mensaje})">...</div>
     <div class="row" >
-        <form th:action="@{/admin/locales/solicitud/aprobar}"
+        <form th:action="@{/admin/locales/averias/asignar}"
               th:object="${solicitudAveria}"
               method="post" id="registrarForm">
             <div class="col-md-12">
@@ -64,13 +64,9 @@
                                     <label class="control-label">Comentario</label>
                                         <textarea th:text="${solicitudAveria.descripcion}"  disabled="disabled" class="form-control" rows="5"
                                                    type="text" name="comentario"></textarea>
-
                                 </div>
                             </div>
-
                         </div>
-
-
                     </div>
 
                     <div class="panel-heading">

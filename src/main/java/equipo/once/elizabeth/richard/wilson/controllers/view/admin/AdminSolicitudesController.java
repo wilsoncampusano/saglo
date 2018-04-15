@@ -137,16 +137,16 @@ public class AdminSolicitudesController extends AdminController {
   @PostMapping(value = {"/averias/asignar","averias/asignar"}, params = {"asignar"})
   public ModelAndView posAsignarAveria(SolicitudAveriaDetalle solicitudAveriaDetalle, Authentication authentication){
 
-    ModelAndView modelAndView = new ModelAndView(ADMIN_SOLICITUDES_GESTIONAR);
+    ModelAndView modelAndView = new ModelAndView(ADMIN_AVERIAS_APROBAR);
 
     solicitudAveriaService.asignar(solicitudAveriaDetalle);
     solicitudAveriaService.cambiarEstado(Estatus.PROCESO, solicitudAveriaDetalle.id);
 
-    Mensaje mensaje = Mensaje.ADVERTENCIA;
+    Mensaje mensaje = Mensaje.EXITO;
     mensaje.setMensaje("La solicitud fue asignada con exito!");
 
     modelAndView.addObject(MENSAJE_KEY, mensaje);
-    modelAndView.addObject("solicitudArea",solicitudAveriaDetalle);
+    modelAndView.addObject("solicitudAveria",solicitudAveriaDetalle);
     return modelAndView;
   }
 
@@ -157,7 +157,7 @@ public class AdminSolicitudesController extends AdminController {
     ModelAndView modelAndView = new ModelAndView(ADMIN_AVERIAS_ASIGNAR);
     List<Tecnico> tecnicos = tecnicoService.buscarTecnicosPorTipo(solicitudAveriaDetalle.tipoTecnico);
     modelAndView.addObject("tecnicos",tecnicos);
-    modelAndView.addObject("solicitudArea",solicitudAveriaDetalle);
+    modelAndView.addObject("solicitudAveria",solicitudAveriaDetalle);
     return modelAndView;
   }
 
