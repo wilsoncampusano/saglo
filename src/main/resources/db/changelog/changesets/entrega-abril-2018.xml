@@ -251,6 +251,110 @@
     </changeSet>
 
 
+    <changeSet id="wilsoncampusano-027" author="wilsoncampusano">
+        <sql>
+            insert into catalogos(codigo, nombre, valor)
+            values ('TIPO_TECNICO', 'PLOMERO', 1);
+
+            insert into catalogos(codigo, nombre, valor)
+            values ('TIPO_TECNICO', 'MECANICO', 1);
+
+
+            insert into catalogos(codigo, nombre, valor)
+            values ('TIPO_TECNICO', 'ELECTRICISTA', 1);
+
+            insert into catalogos(codigo, nombre, valor)
+            values ('TIPO_TECNICO', 'JARDINERO', 1);
+
+        </sql>
+    </changeSet>
+
+
+
+    <changeSet id="wilsoncampusano-028" author="wilsoncampusano">
+        <sql>
+            insert into usuario(username, password, activo) values ('tecnicos1', '$2a$10$uB7ZCNOqtoVFT3s35V.PCOKCb9M5VSKW.zIUCZSftSMmpS2THUNHu',1);
+            insert into usuario(username, password, activo) values ('tecnicos2', '$2a$10$uB7ZCNOqtoVFT3s35V.PCOKCb9M5VSKW.zIUCZSftSMmpS2THUNHu',1);
+            insert into usuario(username, password, activo) values ('tecnicos3', '$2a$10$uB7ZCNOqtoVFT3s35V.PCOKCb9M5VSKW.zIUCZSftSMmpS2THUNHu',1);
+
+        </sql>
+    </changeSet>
+
+
+    <changeSet id="wilsoncampusano-028.1" author="wilsoncampusano">
+        <sql>
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='tecnicos1'), (select id from role where role='ROLE_TECNICO') );
+
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='tecnicos2'), (select id from role where role='ROLE_TECNICO') );
+
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='tecnicos3'), (select id from role where role='ROLE_TECNICO') );
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-029" author="wilsoncampusano">
+        <sql>
+            insert into tecnico(usuario_id, nombre, tipo)
+            values((select id from usuario where username = 'tecnicos1'), 'Marcos Diaz', 'ELECTRICISTA');
+            insert into tecnico(usuario_id, nombre, tipo)
+            values((select id from usuario where username = 'tecnicos2'), 'Roberto Clemente', 'MECANICO');
+            insert into tecnico(usuario_id, nombre, tipo)
+            values((select id from usuario where username = 'tecnicos3'), 'Manuel Perez', 'JARDINERO');
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-030" author="wilsoncampusano">
+        <sql>
+            INSERT INTO usuario (username, password)
+            VALUES
+            ('inquilino1', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy', 1);
+
+            INSERT INTO usuario (username, password)
+            VALUES
+            ('inquilino2', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy', 1);
+
+
+            INSERT INTO usuario (username, password)
+            VALUES
+            ('inquilino3', '$2a$10$ugCkgYDtgUX/E4xZLaz1g.bustTqIzoqxKsydWtc9VyRRlNshz7Xy', 1);
+
+        </sql>
+    </changeSet>
+
+    <changeSet id="wilsoncampusano-031" author="wilsoncampusano">
+        <sql>
+
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='inquilino1'), (select id from role where role='ROLE_INQUILINO') );
+
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='inquilino2'), (select id from role where role='ROLE_INQUILINO') );
+
+            insert into usuario_role(usuario_id, role_id)
+            values ((select id from usuario where username='inquilino3'), (select id from role where role='ROLE_INQUILINO') );
+        </sql>
+    </changeSet>
+
+
+
+    <changeSet id="wilsoncampusano-032" author="wilsoncampusano">
+        <sql>
+            INSERT INTO inquilino ( codigo, nombre, usuario_id)
+            VALUES
+            ( 'I-hector-002', 'Hector Gonzalez Perez',(select id from usuario where username='inquilino1'));
+
+            INSERT INTO inquilino ( codigo, nombre, usuario_id)
+            VALUES
+            ( 'I-miguel-002', 'Miguel Perez',(select id from usuario where username='inquilino2'));
+
+            INSERT INTO inquilino ( codigo, nombre, usuario_id)
+            VALUES
+            ( 'I-sofia-002', 'Sofia Perez',(select id from usuario where username='inquilino3'));
+        </sql>
+    </changeSet>
+
 
 
 
