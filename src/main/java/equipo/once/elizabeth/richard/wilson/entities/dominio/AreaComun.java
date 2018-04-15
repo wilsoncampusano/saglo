@@ -5,6 +5,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "areacomun")
+@Cacheable(false)
 public class AreaComun{
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

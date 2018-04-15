@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "tecnico")
+@Cacheable(false)
 public class Tecnico {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)

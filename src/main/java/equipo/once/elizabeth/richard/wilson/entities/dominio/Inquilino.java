@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "inquilino")
+@Cacheable(false)
 public class Inquilino {
   public Inquilino(Usuario usuario) {
     this.usuario = usuario;

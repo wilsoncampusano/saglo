@@ -5,6 +5,7 @@ import java.util.Date;
 
 @Entity
 @Table(name ="solicitud_averia")
+@Cacheable(false)
 public class SolicitudCasoAveria {
   @Id
   @GeneratedValue(strategy = GenerationType.AUTO)
