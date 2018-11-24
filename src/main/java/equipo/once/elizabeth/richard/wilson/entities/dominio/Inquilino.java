@@ -3,6 +3,7 @@ package equipo.once.elizabeth.richard.wilson.entities.dominio;
 import equipo.once.elizabeth.richard.wilson.seguridad.Usuario;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "inquilino")
@@ -24,6 +25,7 @@ public class Inquilino {
   public Long id;
   public String codigo;
   public String nombre;
+  public Date fechaIngreso;
   @OneToOne
   public Usuario usuario;
 

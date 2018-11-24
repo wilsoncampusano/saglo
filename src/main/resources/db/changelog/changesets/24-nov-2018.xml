@@ -30,5 +30,13 @@
     </changeSet>
 
 
+    <changeSet id="wilsoncampusano-003" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE inquilino ADD fecha_ingreso DATETIME DEFAULT CURRENT_TIMESTAMP
+        </sql>
+    </changeSet>
+
+
+
 
 </databaseChangeLog>

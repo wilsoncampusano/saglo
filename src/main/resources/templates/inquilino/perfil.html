@@ -19,7 +19,37 @@
                     </div>
 
                     <div class="panel-body">
-                        <div class="form-horizontal" role="form">
+                        <div class="form-vertical" role="form">
+
+                                <h2 class="form-signin-heading">Datos</h2>
+
+                                <div class="form-group ">
+                                    <label>Usuario</label>
+                                    <input th:value="${inquilino.usuario.username}" type="text" disabled="disabled"  class="form-control" placeholder="Usuario"
+                                           autofocus="true"/>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label>Nombre</label>
+                                    <input  th:value="${inquilino.nombre}" type="text" disabled="disabled"  class="form-control" placeholder="Nombre"/>
+                                </div>
+
+
+                                <div class="form-group ">
+                                    <label>Fecha Ingreso</label>
+                                    <input  th:value="${inquilino.fechaIngreso}" type="text" disabled="disabled" class="form-control"
+                                           placeholder="Fecha Ingreso"/>
+                                </div>
+
+                                <div class="form-group ">
+                                    <label>Local/Villa/Apartamento</label>
+                                    <input  th:value="${mobiliarioInquilino.mobiliario.nombre}" type="text" disabled="disabled" class="form-control"
+                                           placeholder="Local/Villa/Apartamento"/>
+                                </div>
+
+
+
+                                <!--<button class="btn btn-lg btn-primary btn-block" type="submit">Registrar</button>-->
 
 
 
