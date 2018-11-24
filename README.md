@@ -1,5 +1,5 @@
 # saglo
-Sistema de Administracion y Gestion de Locales
+Sistema de Administración y Gestión de Locales
 
 
 [![Build Status](https://travis-ci.org/wilsoncampusano/saglo.svg?branch=develop)](https://travis-ci.org/wilsoncampusano/saglo)
