@@ -7,6 +7,7 @@ import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.*;
 import equipo.once.elizabeth.richard.wilson.repository.SolicitudAreaComunRepository;
 import equipo.once.elizabeth.richard.wilson.services.AreaComunService;
+import equipo.once.elizabeth.richard.wilson.services.MobiliarioInquilinoService;
 import equipo.once.elizabeth.richard.wilson.services.SolicitudAreacomunService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +28,9 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
 
     @Autowired
     private AreaComunService areaComunService;
+
+    @Autowired
+    private MobiliarioInquilinoService mobiliarioInquilinoService;
 
 
     @Override
@@ -94,6 +98,8 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
     @Override
     public SolicitudAreaDetalle buscarSolicitudPorId(Long solicitudId) {
         SolicitudAreacomun one = solicitudAreaComunRepository.findOne(solicitudId);
+        MobiliarioInquilino mobiliarioInquilino = mobiliarioInquilinoService.buscar(one.inquilino);
+
         SolicitudAreaDetalle detalle = new SolicitudAreaDetalle();
 
         detalle.id = one.id;
@@ -102,7 +108,7 @@ public class SolicitudAreacomunServiceImpl implements SolicitudAreacomunService 
         detalle.fechaSolicitud = one.fechaSolicitud;
         detalle.inquilinoNombre = one.inquilino.nombre;
         detalle.areacomunNombre = one.areaComun.nombre;
-        detalle.mobiliarioNombre = one.estatus;
+        detalle.mobiliarioNombre = mobiliarioInquilino.mobiliario.nombre;
 
 
 
