@@ -21,13 +21,13 @@ public class PagosInquilinoFechaUseCase implements InquilinoUseCase{
     public void solicitar() {
 
         List<PagoInquilino> pagoInquilinos = pagoInquilinoService
-                .pagosPorInquilinoDesdeFecha(request.entidad, request.fechaInicio);
+                .pagosPorInquilino(request.entidad);
 
         response = new PagoInquilinoResponse();
 
         response.pagos = pagoInquilinos.stream().filter(pagoInquilino ->
         {
-            return pagoInquilino.estado.equals(request.estado);
+            return true;
         }).collect(Collectors.toList());
     }
 

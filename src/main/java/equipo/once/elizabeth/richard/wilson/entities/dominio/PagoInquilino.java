@@ -2,6 +2,8 @@ package equipo.once.elizabeth.richard.wilson.entities.dominio;
 
 
 import javax.persistence.*;
+import java.math.BigDecimal;
+import java.util.Date;
 
 @Entity
 @Table(name = "pago_inquilino")
@@ -17,7 +19,9 @@ public class PagoInquilino {
     @ManyToOne
     public Pago pago;
 
-    public String estado;
+    public Date fechaCuota;
+
+    public BigDecimal monto;
 
     public long getId() {
         return id;
@@ -43,11 +47,5 @@ public class PagoInquilino {
         this.pago = pago;
     }
 
-    public String getEstado() {
-        return estado;
-    }
 
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
 }

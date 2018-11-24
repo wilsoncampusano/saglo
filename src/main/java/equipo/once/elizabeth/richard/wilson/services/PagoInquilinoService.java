@@ -7,6 +7,6 @@ import java.util.List;
 
 
 public interface PagoInquilinoService {
-    List<PagoInquilino> pagosPorInquilinoDesdeFecha(Inquilino entidad, String fecha);
+    List<PagoInquilino> pagosPorInquilino(Inquilino entidad);
 
 }
