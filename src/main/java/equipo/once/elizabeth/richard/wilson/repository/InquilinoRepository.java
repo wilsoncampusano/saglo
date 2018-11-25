@@ -6,9 +6,14 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public interface InquilinoRepository extends CrudRepository<Inquilino, Long> {
 
   @Query("select i from Inquilino i where i.usuario.username = :username")
   Inquilino bucarPorUsuario(@Param("username") String username);
+
+  @Query("select i from Inquilino i where i.activo = 1L ")
+  List<Inquilino> activos();
 }

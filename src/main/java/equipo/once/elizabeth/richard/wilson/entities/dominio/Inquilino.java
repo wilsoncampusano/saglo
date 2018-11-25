@@ -26,6 +26,7 @@ public class Inquilino {
   public String codigo;
   public String nombre;
   public Date fechaIngreso;
+  public Long activo;
   @OneToOne
   public Usuario usuario;
 

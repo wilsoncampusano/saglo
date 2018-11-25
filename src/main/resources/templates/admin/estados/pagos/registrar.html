@@ -27,6 +27,14 @@
                             <div class="form-group">
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Inquilino</label>
+                                    <!--th:field="${solicitudAveria.tipoTecnico}"-->
+                                    <select class="selectpicker" id="selectTipoTecnico"
+                                          required="required">
+                                        <option value="">Seleccione</option>
+                                        <option th:each="inquilinoDto : ${inquilinosDto}"
+                                                th:text="${inquilinoDto.inquilinoNombre}"
+                                                th:value="${inquilinoDto.inquilinoId}"></option>
+                                    </select>
                                     <!--<p th:text="${solicitudAveria.inquilinoNombre}">Piscina</p>-->
                                 </div>
                                 <div class="col-md-4 col-xs-12">
