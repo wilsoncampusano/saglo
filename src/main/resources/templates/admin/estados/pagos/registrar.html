@@ -1,10 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default-admin">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="UTF-8"/>
+    <title>Saglo - Inquilino - Solicitudes</title>
 </head>
 <body>
+
+<div layout:fragment="content">
+    <div class="row">
+        <form method="post" id="registrarForm">
+            <div class="col-md-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Registro de Pagos<label class="control-label"></label>
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="form-horizontal" role="form">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Fecha Solicitud</th>
+                                        <th>Estatus</th>
+                                        <th>Descripción</th>
+                                        <th>Técnico</th>
+                                        <th>Acción</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr th:each="averia : ${averias}">
+                                        <td th:text="${averia.id}">1</td>
+                                        <td th:text="${averia.fechaSolicitud}">Solicitud Solucion Averia</td>
+                                        <td th:text="${averia.estatus}">Resuelto</td>
+                                        <td th:text="${averia.descripcion}">Averia Dentro de la Villa -  Tuberia rota.</td>
+                                        <td th:text="${averia.tecnico}"></td>
+                                        <td>
+                                            <a th:if="${averia.estatus == 'PENDIENTE'}"
+                                               th:href="@{/admin/locales/averias/asignar(averiaId=${averia.id})}">Asignar</a>
+                                            <label th:if="${averia.estatus == 'PROCESO'}" href="#" alt="No puede asignar"
+                                                   disabled="disabled">Sin Acción</label>
+
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="form-horizontal text-right text-right">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div layout:fragment="script">
+    <script th:src="@{/js/inquilino/solicitudes.js}" type="application/javascript"></script>
+</div>
 
 </body>
 </html>
