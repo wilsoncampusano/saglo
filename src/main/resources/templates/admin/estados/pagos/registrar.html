@@ -12,39 +12,34 @@
     <div th:replace="alerta :: alert (mensaje=${mensaje})">...</div>
     <div class="row" >
         <form th:action="@{/admin/locales/averias/asignar}"
-              th:object="${pagoForm}"
+              th:object="${form}"
               method="post" id="registrarForm">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <h3 class="panel-title">Registrar Pago<label class="control-label"></label>
                         </h3>
-                        <!--<input type="hidden" th:field="${solicitudAveria.id}"/>-->
                     </div>
 
                     <div class="panel-body">
-                        <div class="form-horizontal" role="form" id="solicitudAreaFragment">
+                        <div class="form-vertical" role="form" id="solicitudAreaFragment">
                             <div class="form-group">
-                                <div class="col-md-4 col-xs-12">
+
+                                <div class="col-md-6 col-xs-6">
                                     <label class="control-label">Inquilino</label>
-                                    <!--th:field="${solicitudAveria.tipoTecnico}"-->
-                                    <select class="selectpicker" id="selectTipoTecnico"
-                                          required="required">
+
+                                    <select  id="selectTipoTecnico"
+                                          required="required" th:field="${form.inquilinoId}">
                                         <option value="">Seleccione</option>
                                         <option th:each="inquilinoDto : ${inquilinosDto}"
-                                                th:text="${inquilinoDto.inquilinoNombre}"
+                                                th:text="${inquilinoDto.inquilinoNombre + ' Mobiliario : ' + inquilinoDto.inquilinoMobiliario}"
                                                 th:value="${inquilinoDto.inquilinoId}"></option>
                                     </select>
-                                    <!--<p th:text="${solicitudAveria.inquilinoNombre}">Piscina</p>-->
                                 </div>
-                                <div class="col-md-4 col-xs-12">
-                                    <label class="control-label">Mobiliario</label>
-                                    <!--<p th:text="${solicitudAveria.mobiliarioDescripcion}">10/12/2018</p>-->
 
-                                </div>
-                                <div class="col-md-4 col-xs-12">
-                                    <label class="control-label">Fecha Solicitud</label>
-                                    <!--<p th:text="${solicitudAveria.fechaSolicitud}">Juan Perez</p>-->
+                                <div class="col-md-6 col-xs-6">
+                                    <label class="control-label">Fecha Pago</label>
+                                    <input type="text" class="form-control fechas" th:field="${form.fechaPago}" />
 
                                 </div>
 
@@ -52,63 +47,19 @@
 
                             <div class="form-group">
                                 <div class="col-md-4 col-xs-12">
-                                    <label class="control-label">Ubicacion</label>
-                                    <!--<p th:text="${solicitudAveria.ubicacion}">Piscina</p>-->
-                                </div>
-                                <div class="col-md-4 col-xs-12">
-                                    <label class="control-label">Tipo de Averia</label>
-                                    <!--<p th:text="${solicitudAveria.tipoAveria}">10/12/2018</p>-->
-
-                                </div>
-                                <div class="col-md-4 col-xs-12">
-                                    <label class="control-label">Tipo de Incidente</label>
-                                    <!--<p th:text="${solicitudAveria.tipoIncidente}">Juan Perez</p>-->
-
+                                    <label class="control-label">Monto</label>
+                                    <input type="text" class="form-control" th:field="${form.monto}"/>
                                 </div>
 
                             </div>
                             <div class="form-group">
                                 <div class="col-md-12 col-xs-12">
                                     <label class="control-label">Comentario</label>
-              <!--                          <textarea th:text="${solicitudAveria.descripcion}"  disabled="disabled" class="form-control" rows="5"
-                                                  type="text" name="comentario"></textarea>-->
+                                     <textarea th:text="${form.comentario}"   class="form-control" rows="5"
+                                                  type="text" name="comentario"></textarea>
                                 </div>
                             </div>
                         </div>
-                    </div>
-
-                    <div class="panel-heading">
-                        <h3 class="panel-title">Asignar Tecnico <label class="control-label"></label>
-                        </h3>
-                    </div>
-
-                    <div class="panel-body">
-                        <div class="form-horizontal" role="form" >
-                            <div class="form-group">
-                                <div class="col-md-6 col-xs-12">
-                                    <label class="control-label">Tipo Tecnico</label>
-                                    <!--<select class="selectpicker" id="selectTipoTecnico"
-                                            th:field="${solicitudAveria.tipoTecnico}"  required="required">
-                                        <option value="">Seleccione</option>
-                                        <option th:each="catalogo : ${tipoTecnicos}"
-                                                th:text="${catalogo.nombre}"
-                                                th:value="${catalogo.nombre}"></option>
-                                    </select>-->
-                                </div>
-                                <div class="col-md-6 col-xs-12">
-                                    <label class="control-label">Tecnicos</label>
-                                    <!--<select class="selectpicker" id="tecnicos"
-                                            th:field="${solicitudAveria.tecnicoId}" required="required">
-                                        <option value="">Seleccione</option>
-                                        <option th:fragment="tecnicos" th:each="tecnico : ${tecnicos}"
-                                                th:text="${tecnico.nombre}"
-                                                th:value="${tecnico.id}"></option>
-                                    </select>-->
-                                </div>
-                            </div>
-
-                        </div>
-
                     </div>
 
                     <div class="panel-footer">
@@ -120,7 +71,7 @@
                             <button id="aprobarSolicitud" type="submit" name="asignar"
                                     class="btn btn-success">
                                 <span class="fa fa-save"></span>
-                                <span>Asignar</span>
+                                <span>Registrar Pago</span>
                             </button>
                         </div>
                     </div>
@@ -131,7 +82,7 @@
 </div>
 
 <div layout:fragment="script">
-    <script th:src="@{/js/admin/asignaraveria.js}" type="application/javascript"></script>
+    <script th:src="@{/js/admin/registrarpago.js}" type="application/javascript"></script>
 </div>
 
 </body>

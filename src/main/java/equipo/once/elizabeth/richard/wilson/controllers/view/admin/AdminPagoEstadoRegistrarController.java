@@ -1,5 +1,6 @@
 package equipo.once.elizabeth.richard.wilson.controllers.view.admin;
 
+import equipo.once.elizabeth.richard.wilson.dtos.FormRegistroPago;
 import equipo.once.elizabeth.richard.wilson.dtos.InquilinoPagoDto;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.services.InquilinoService;
@@ -28,7 +29,11 @@ public class AdminPagoEstadoRegistrarController extends AdminController {
 
     List<InquilinoPagoDto> inquilinos = inquilinoService.inquilinosMobiliario();
 
-    modelAndView.addObject("inquilinos", inquilinos);
+
+    FormRegistroPago formRegistroPago = new FormRegistroPago();
+
+    modelAndView.addObject("inquilinosDto", inquilinos);
+    modelAndView.addObject("form", formRegistroPago);
     return modelAndView;
   }
 }
