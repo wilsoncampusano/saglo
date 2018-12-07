@@ -135,4 +135,9 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
         one.estatus = proceso;
         solicitudAveriaRepository.save(one);
     }
+
+    @Override
+    public List<SolicitudCasoAveria> buscarPendientesAsignadasA(Tecnico tecnico) {
+        return solicitudAveriaRepository.buscarAsignadasA(tecnico.getId());
+    }
 }

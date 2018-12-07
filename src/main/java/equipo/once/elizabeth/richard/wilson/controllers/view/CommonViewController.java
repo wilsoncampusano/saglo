@@ -7,6 +7,7 @@ import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Tecnico;
 import equipo.once.elizabeth.richard.wilson.seguridad.Usuario;
 import equipo.once.elizabeth.richard.wilson.services.InquilinoService;
+import equipo.once.elizabeth.richard.wilson.services.TecnicoService;
 import equipo.once.elizabeth.richard.wilson.services.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
@@ -32,6 +33,9 @@ public abstract class CommonViewController {
 
     @Autowired
     InquilinoService inquilinoService;
+
+    @Autowired
+    TecnicoService tecnicoService;
 
 
     protected String dateFormatString = "dd/MM/yyyy";
@@ -66,7 +70,12 @@ public abstract class CommonViewController {
     }
 
     protected Tecnico obtenerTecnico(Authentication authentication){
-        return new Tecnico();
+        User principal = (User) authentication.getPrincipal();
+
+        Usuario usuario = usuarioService.buscarPorUsername(principal.getUsername());
+
+        Tecnico tecnico = tecnicoService.buscarPorUsuario(usuario);
+        return tecnico;
     }
 
     public String paginaParaRole(String role){

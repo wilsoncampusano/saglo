@@ -13,4 +13,6 @@ public interface TecnicoRepository extends CrudRepository<Tecnico, Long> {
   @Query("select t from Tecnico t where t.tipo = :tipoTecnico")
   List<Tecnico> buscarPorTipo(@Param("tipoTecnico") String tipoTecnico);
 
+  @Query("select t from Tecnico t where t.usuario.id = :usuarioId")
+  Tecnico buscarPorUsuario(@Param("usuarioId") Long usuarioId);
 }

@@ -16,4 +16,7 @@ public interface SolicitudAveriaRepository extends CrudRepository<SolicitudCasoA
 
   @Query("select s from SolicitudCasoAveria s where s.estatus <> :estatus ")
   List<SolicitudCasoAveria> buscarTodasLasPendientesYEnProceso(@Param("estatus") String estatus);
+
+  @Query(value = "select s.* from solicitud_averia s where s.tecnico_id = ?1", nativeQuery = true)
+  List<SolicitudCasoAveria> buscarAsignadasA(Long tecnicoId);
 }
