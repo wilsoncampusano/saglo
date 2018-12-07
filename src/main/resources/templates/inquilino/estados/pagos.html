@@ -81,7 +81,7 @@
                                         <tr th:each="pago : ${pagos}">
                                             <td th:text="${pago.id}">1</td>
                                             <td th:text="${pago.fechaCuota}">2016</td>
-                                            <td th:text="${pago.tipo}">Cuota Mantenimineto</td>
+                                            <td th:text="${pago.pago.tipoPago}">Cuota Mantenimineto</td>
                                         </tr>
                                     </th:block>
 
