@@ -1,5 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.services.impl;
 
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudCasoAveria;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Tecnico;
 import equipo.once.elizabeth.richard.wilson.repository.TecnicoRepository;
@@ -38,5 +40,10 @@ public class TecnicoServiceImpl implements TecnicoService {
   @Override
   public List<SolicitudCasoAveria> buscarAverias(Tecnico tecnico) {
     return solicitudAveriaService.buscarPendientesAsignadasA(tecnico);
+  }
+
+  @Override
+  public SolicitudAveriaDetalle buscarAveria(Long averiaId, Tecnico tecnico) {
+    return solicitudAveriaService.buscarSolicitudPorId(averiaId);
   }
 }

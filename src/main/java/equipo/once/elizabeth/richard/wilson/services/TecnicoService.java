@@ -1,5 +1,7 @@
 package equipo.once.elizabeth.richard.wilson.services;
 
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAreaDetalle;
+import equipo.once.elizabeth.richard.wilson.dtos.SolicitudAveriaDetalle;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.SolicitudCasoAveria;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Tecnico;
 import equipo.once.elizabeth.richard.wilson.seguridad.Usuario;
@@ -17,4 +19,6 @@ public interface TecnicoService {
   Tecnico buscarPorUsuario(Usuario usuario);
 
   List<SolicitudCasoAveria> buscarAverias(Tecnico tecnico);
+
+  SolicitudAveriaDetalle buscarAveria(Long averiaId, Tecnico tecnico);
 }
