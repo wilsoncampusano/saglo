@@ -11,7 +11,7 @@
 <div layout:fragment="content">
     <div th:replace="alerta :: alert (mensaje=${mensaje})">...</div>
     <div class="row" >
-        <form th:action="@{/admin/locales/averias/asignar}"
+        <form th:action="@{/admin/estados/pagos/registrar}"
               th:object="${form}"
               method="post" id="registrarForm">
             <div class="col-md-12">
@@ -68,7 +68,7 @@
                                     class="btn btn-link">
                                 <span>Cancelar</span>
                             </button>
-                            <button id="aprobarSolicitud" type="submit" name="asignar"
+                            <button id="aprobarSolicitud" type="submit" name="registrar"
                                     class="btn btn-success">
                                 <span class="fa fa-save"></span>
                                 <span>Registrar Pago</span>

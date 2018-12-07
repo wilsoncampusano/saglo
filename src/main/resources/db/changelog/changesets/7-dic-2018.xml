@@ -13,4 +13,12 @@
         </sql>
     </changeSet>
 
+
+
+    <changeSet id="wilsoncampusano-002" author="wilsoncampusano">
+        <sql>
+            ALTER TABLE pago_inquilino ADD fecha_cuota DATETIME DEFAULT CURRENT_TIMESTAMP;
+        </sql>
+    </changeSet>
+
 </databaseChangeLog>

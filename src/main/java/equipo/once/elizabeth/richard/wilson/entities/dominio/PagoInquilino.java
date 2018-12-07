@@ -19,6 +19,7 @@ public class PagoInquilino {
     @ManyToOne
     public Pago pago;
 
+
     public Date fechaCuota;
 
     public BigDecimal monto;
