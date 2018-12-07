@@ -26,6 +26,7 @@ public class SolicitudCasoAveria {
 
   @ManyToOne
   public MobiliarioInquilino mobiliarioInquilino;
+  public String comentarioSolucion;
 
   public long getId() {
     return id;

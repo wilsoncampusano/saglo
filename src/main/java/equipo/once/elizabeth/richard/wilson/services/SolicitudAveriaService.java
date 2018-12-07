@@ -29,4 +29,6 @@ public interface SolicitudAveriaService {
   void cambiarEstado(String proceso, Long solicitudAveriaDetalle);
 
   List<SolicitudCasoAveria> buscarPendientesAsignadasA(Tecnico tecnico);
+
+  void comentario(String comentario, Long id);
 }

@@ -15,6 +15,7 @@
     <include file="db/changelog/changesets/entrega-abril-2018.xml"/>
     <include file="db/changelog/changesets/24-nov-2018.xml"/>
     <include file="db/changelog/changesets/25-nov-2018.xml"/>
+    <include file="db/changelog/changesets/7-dic-2018.xml"/>
 
 
 </databaseChangeLog>

@@ -137,6 +137,13 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
     }
 
     @Override
+    public void comentario(String comentario, Long id) {
+        SolicitudCasoAveria one = solicitudAveriaRepository.findOne(id);
+        one.comentarioSolucion = comentario;
+        solicitudAveriaRepository.save(one);
+    }
+
+    @Override
     public List<SolicitudCasoAveria> buscarPendientesAsignadasA(Tecnico tecnico) {
         return solicitudAveriaRepository.buscarAsignadasA(tecnico.getId());
     }
