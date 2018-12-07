@@ -35,7 +35,7 @@ public class TecnicoSolucionAveriaController extends TecnicoController{
   }
 
 
-  @RequestMapping(value = {"/solicitud/aprobar","solicitud/aprobar"})
+  @RequestMapping(value = {"/averias/gestionar","/averias/gestionar/"})
   public ModelAndView getGestionar(@RequestParam(value = "averiaId", required = false) Long averiaId,
                                    Authentication authentication){
 
@@ -46,6 +46,14 @@ public class TecnicoSolucionAveriaController extends TecnicoController{
 
     modelAndView.addObject("averia",sa);
     return modelAndView;
+  }
+
+  @RequestMapping(value = {"/averias/gestionar","/averias/gestionar/"}, params = {"aprobar"})
+  public ModelAndView postGestionar(SolicitudAveriaDetalle solicitudAveriaDetalle,
+                                   Authentication authentication){
+
+
+    return null;
   }
 
 }

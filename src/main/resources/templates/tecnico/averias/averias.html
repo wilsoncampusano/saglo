@@ -11,15 +11,15 @@
 <div layout:fragment="content">
     <div th:replace="alerta :: alert (mensaje=${mensaje})">...</div>
     <div class="row" >
-        <form th:action="@{/admin/locales/averias/asignar}"
-              th:object="${solicitudAveria}"
+        <form th:action="@{/tecnico/averias/averias/}"
+              th:object="${averia}"
               method="post" id="registrarForm">
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <h3 class="panel-title">Reporte Solicitud Averia <label class="control-label"></label>
+                        <h3 class="panel-title">Solicitud Averia <label class="control-label"></label>
                         </h3>
-                        <input type="hidden" th:field="${solicitudAveria.id}"/>
+                        <input type="hidden" th:field="${averia.id}"/>
                     </div>
 
                     <div class="panel-body">
@@ -27,16 +27,16 @@
                             <div class="form-group">
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Inquilino</label>
-                                    <p th:text="${solicitudAveria.inquilinoNombre}">Piscina</p>
+                                    <p th:text="${averia.inquilinoNombre}">Piscina</p>
                                 </div>
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Mobiliario</label>
-                                    <p th:text="${solicitudAveria.mobiliarioDescripcion}">10/12/2018</p>
+                                    <p th:text="${averia.mobiliarioDescripcion}">10/12/2018</p>
 
                                 </div>
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Fecha Solicitud</label>
-                                    <p th:text="${solicitudAveria.fechaSolicitud}">Juan Perez</p>
+                                    <p th:text="${averia.fechaSolicitud}">Juan Perez</p>
 
                                 </div>
 
@@ -45,24 +45,29 @@
                             <div class="form-group">
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Ubicacion</label>
-                                    <p th:text="${solicitudAveria.ubicacion}">Piscina</p>
+                                    <p th:text="${averia.ubicacion}">Piscina</p>
                                 </div>
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Tipo de Averia</label>
-                                    <p th:text="${solicitudAveria.tipoAveria}">10/12/2018</p>
+                                    <p th:text="${averia.tipoAveria}">10/12/2018</p>
 
                                 </div>
                                 <div class="col-md-4 col-xs-12">
                                     <label class="control-label">Tipo de Incidente</label>
-                                    <p th:text="${solicitudAveria.tipoIncidente}">Juan Perez</p>
+                                    <p th:text="${averia.tipoIncidente}">Juan Perez</p>
 
                                 </div>
 
                             </div>
                             <div class="form-group">
-                                <div class="col-md-12 col-xs-12">
+                                <div class="col-md-6 col-xs-6">
+                                    <label class="control-label">Comentario del Inquilino</label>
+                                        <textarea th:text="${averia.descripcion}"  disabled="disabled" class="form-control" rows="5"
+                                                  type="text" name="descripcion"></textarea>
+                                </div>
+                                <div class="col-md-6 col-xs-6">
                                     <label class="control-label">Comentario</label>
-                                        <textarea th:text="${solicitudAveria.descripcion}"  disabled="disabled" class="form-control" rows="5"
+                                        <textarea th:text="${averia.comentario}"  class="form-control" rows="5"
                                                   type="text" name="comentario"></textarea>
                                 </div>
                             </div>
@@ -70,7 +75,7 @@
                     </div>
 
                     <div class="panel-heading">
-                        <h3 class="panel-title">Asignar Tecnico <label class="control-label"></label>
+                        <h3 class="panel-title">Estado Averia <label class="control-label"></label>
                         </h3>
                     </div>
 
@@ -78,25 +83,16 @@
                         <div class="form-horizontal" role="form" >
                             <div class="form-group">
                                 <div class="col-md-6 col-xs-12">
-                                    <label class="control-label">Tipo Tecnico</label>
+                                    <label class="control-label">Gestionar</label>
                                     <select class="selectpicker" id="selectTipoTecnico"
-                                            th:field="${solicitudAveria.tipoTecnico}"  required="required">
+                                            th:field="${averia.estado}"  required="required">
                                         <option value="">Seleccione</option>
-                                        <option th:each="catalogo : ${tipoTecnicos}"
+                                        <option th:each="catalogo : ${estados}"
                                                 th:text="${catalogo.nombre}"
                                                 th:value="${catalogo.nombre}"></option>
                                     </select>
                                 </div>
-                                <div class="col-md-6 col-xs-12">
-                                    <label class="control-label">Tecnicos</label>
-                                    <select class="selectpicker" id="tecnicos"
-                                            th:field="${solicitudAveria.tecnicoId}" required="required">
-                                        <option value="">Seleccione</option>
-                                        <option th:fragment="tecnicos" th:each="tecnico : ${tecnicos}"
-                                                th:text="${tecnico.nombre}"
-                                                th:value="${tecnico.id}"></option>
-                                    </select>
-                                </div>
+
                             </div>
 
                         </div>
@@ -112,7 +108,7 @@
                             <button id="aprobarSolicitud" type="submit" name="asignar"
                                     class="btn btn-success">
                                 <span class="fa fa-save"></span>
-                                <span>Asignar</span>
+                                <span>Guardar</span>
                             </button>
                         </div>
                     </div>
