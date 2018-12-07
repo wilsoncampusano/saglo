@@ -116,6 +116,7 @@ public class SolicitudAveriaServiceImpl implements SolicitudAveriaService {
         detalle.ubicacion = ubicacion.nombre;
         detalle.tipoAveria = tipoAveria.nombre;
         detalle.tipoIncidente = tipoIncidente.nombre;
+        detalle.comentario = one.comentarioSolucion;
 
 
         return detalle;

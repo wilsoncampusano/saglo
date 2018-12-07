@@ -36,8 +36,8 @@
                                         <td th:text="${averia.fechaSolicitud}">1</td>
                                         <td th:text="${averia.estatus}">Resuelto</td>
                                         <td>
-                                            <a th:if="${averia.estatus != 'APROBADA'}" th:href="@{/tecnico/averias/gestionar(averiaId=${averia.id})}">Gestionar</a>
-                                            <a th:if="${averia.estatus == 'APROBADA'}" href="#"> - </a>
+                                            <a th:if="${averia.estatus != 'COMPLETADA'}" th:href="@{/tecnico/averias/gestionar(averiaId=${averia.id})}">Gestionar</a>
+                                            <a th:if="${averia.estatus == 'COMPLETADA'}" href="#"> - </a>
                                         </td>
                                     </tr>
                                     </tbody>
