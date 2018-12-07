@@ -3,7 +3,9 @@ package equipo.once.elizabeth.richard.wilson.controllers.view.admin;
 import equipo.once.elizabeth.richard.wilson.controllers.view.util.Mensaje;
 import equipo.once.elizabeth.richard.wilson.dtos.FormRegistroPago;
 import equipo.once.elizabeth.richard.wilson.dtos.InquilinoPagoDto;
+import equipo.once.elizabeth.richard.wilson.dtos.PagoInquilinoDTO;
 import equipo.once.elizabeth.richard.wilson.entities.dominio.Inquilino;
+import equipo.once.elizabeth.richard.wilson.entities.dominio.PagoInquilino;
 import equipo.once.elizabeth.richard.wilson.services.InquilinoService;
 import equipo.once.elizabeth.richard.wilson.services.PagoInquilinoService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +25,7 @@ import java.util.Objects;
 @RequestMapping(value = "/admin/estados")
 public class AdminPagoEstadoRegistrarController extends AdminController {
   private static final String ADMIN_PAGOS_REGISTRAR = "admin/estados/pagos/registrar";
+  private static final String PAGO_LISTADO = "admin/estados/pagos/pagosListado";
   @Autowired
   InquilinoService inquilinoService;
 
@@ -70,5 +73,18 @@ public class AdminPagoEstadoRegistrarController extends AdminController {
     redirectAttributes.addAttribute("exito", "true");
 
     return "redirect:/admin/estados/pagos/registrar";
+  }
+
+
+
+  @RequestMapping(value = {"/pagos/listado","/pagos/listado/"})
+  public ModelAndView listadoPagos(Authentication authentication){
+
+
+    ModelAndView modelAndView = new ModelAndView(PAGO_LISTADO);
+
+    List<PagoInquilinoDTO> pagoInquilinos = pagoInquilinoService.registrados();
+    modelAndView.addObject("pagos", pagoInquilinos);
+    return modelAndView;
   }
 }

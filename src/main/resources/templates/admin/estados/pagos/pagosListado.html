@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/default-admin">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Saglo - Admin - Pagos</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+    <div class="row">
+        <form action="#" method="post" id="registrarForm">
+            <div class="col-md-12">
+
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Pagos Realizados<label class="control-label"></label>
+                        </h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <div class="form-horizontal" role="form">
+                            <div class="table-responsive">
+                                <table class="table table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th>#</th>
+                                        <th>Inquilino</th>
+                                        <th>Mobiliario</th>
+                                        <th>Fecha de la Cuota</th>
+                                        <th>Monto</th>
+                                        <th>Concepto</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <th:block th:if="${pagos != null and !pagos.isEmpty()}">
+                                        <tr th:each="pago : ${pagos}">
+                                            <td th:text="${pago.id}">1</td>
+                                            <td th:text="${pago.inquilino}">1</td>
+                                            <td th:text="${pago.mobiliario}">1</td>
+                                            <td th:text="${pago.fecha}">2016</td>
+                                            <td th:text="${pago.monto}">2016</td>
+                                            <td th:text="${pago.concepto}">Cuota Mantenimineto</td>
+                                        </tr>
+                                    </th:block>
+
+                                    <th:block th:if="${pagos == null or pagos.isEmpty()}">
+                                        <p>No tiene pagos realizados a la fecha.</p>
+                                    </th:block>
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div class="form-horizontal text-right text-right">
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div layout:fragment="script">
+    <script th:src="@{/js/inquilino/pagos.js}" type="application/javascript"></script>
+</div>
+
+</body>
+</html>
