@@ -84,12 +84,12 @@
                             <div class="form-group">
                                 <div class="col-md-6 col-xs-12">
                                     <label class="control-label">Gestionar</label>
-                                    <select class="selectpicker" id="selectTipoTecnico"
-                                            th:field="${averia.estado}"  required="required">
-                                        <option value="">Seleccione</option>
-                                        <option th:each="catalogo : ${estados}"
-                                                th:text="${catalogo.nombre}"
-                                                th:value="${catalogo.nombre}"></option>
+
+                                    <select th:field="${averia.estado}"  class="form-control">
+                                        <option value="0" >Seleccione</option>
+                                        <option th:each="estado : ${estados}"
+                                                th:value="${estado.key}"
+                                                th:text="${estado.value}">Opcion</option>
                                     </select>
                                 </div>
 

@@ -11,6 +11,8 @@ public interface CatalogoService {
   Map<String, String> catalogoTipoAveria();
   Map<String, String> catalogoIncidenteAveria();
 
+  Map<String, String> catalogoEstadosAveria();
+
   Catalogo buscarUbicacion(Long ubicacionId);
 
   Catalogo buscarTipoAveria(Long tipoAveriaId);
@@ -18,4 +20,6 @@ public interface CatalogoService {
   Catalogo buscarTipoIncidente(Long tipoIncidenteId);
 
   List<Catalogo> buscarTipoTecnicos();
+
+  List<Catalogo> estadosAveria();
 }

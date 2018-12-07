@@ -44,6 +44,15 @@ public class CatalogoServiceImpl implements CatalogoService {
 
 
   @Override
+  public Map<String, String> catalogoEstadosAveria() {
+    HashMap<String, String> incidentes = new HashMap<>();
+    incidentes.put("PENDIENTE","Pendiente de Realizar");
+    incidentes.put("PROCESO","En Proceso");
+    incidentes.put("COMPLETADA","Completada");
+    return incidentes;
+  }
+
+  @Override
   public Catalogo buscarUbicacion(Long ubicacionId) {
     return catalogoRepository.buscar("UBICACION",ubicacionId) ;
   }
@@ -61,5 +70,10 @@ public class CatalogoServiceImpl implements CatalogoService {
   @Override
   public List<Catalogo> buscarTipoTecnicos() {
     return catalogoRepository.buscar("TIPO_TECNICO");
+  }
+
+  @Override
+  public List<Catalogo> estadosAveria() {
+    return null;
   }
 }
